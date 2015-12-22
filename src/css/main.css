@@ -1,60 +1,210 @@
 body {
-    font-family: ProximaNova, sans-serif;
+	font-family: ProximaNova, sans-serif;
 }
-header.main-header {}
+.page-wrapper {
+	/*background-image: url('../img/bg/main-bg.jpg');*/
+	/*-webkit-background-size: cover;*/
+	/*background-size: cover;*/
+}
+.content-wrapper {
+	background-image: url('../img/bg/triangles.png');
+	position: relative;
+}
+.content-wrapper > #clouds-bg {
+	background-image: url('../img/bg/clouds.png');
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	animation: cloudsFloating 80s linear;
+	animation-iteration-count: 99;
+	-webkit-animation: cloudsFloating 80s linear;
+	-webkit-animation-iteration-count: 99;
+	z-index: 0;
+}
+header.main-header {
+	background-color: #ffa857;
+}
 header.main-header .my-profile-link-holder {}
 header.main-header .my-profile-link-holder span {
-    color: black;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 36px;
-    text-transform: uppercase;
+	color: black;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+	text-transform: uppercase;
 }
 header.main-header .header-phone-holder {}
 header.main-header .header-phone-holder .phone-number {
-    color: black;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 36px;
-    text-transform: uppercase;
+	color: black;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 36px;
+	text-transform: uppercase;
 }
 header.main-header .header-phone-holder .call-back {
-    color: #b26c2b;
-    font-size: 11px;
-    font-weight: 300;
-    line-height: 36px;
-    text-decoration: underline;
+	color: #b26c2b;
+	font-size: 11px;
+	font-weight: 300;
+	line-height: 36px;
+	text-decoration: underline;
 }
-
+.operators-list {
+	display: inline-block;
+	vertical-align: middle;
+}
+.operators-list li {
+	color: #000;
+	font-size: 14px;
+	height: 16px;
+}
+.operators-list li .operator-icon {}
+.operators-list li .operator-icon > * {
+	vertical-align: middle;
+}
 section.main-form {}
-section.main-form .input-holder {}
-section.main-form .input-holder .input-name {
-    color: #7a0fad;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 36px;
+section.main-form .container {
+	padding: 20px;
 }
-section.main-form .input-holder .input-label {
-    color: #bdcfe7;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 12px;
+section.main-form .main-input-holder {
+	background-color: #ffffff;
+	margin: 20px 10px;
+	position: relative;
+	height: 60px;
+}
+section.main-form .main-input-holder:before {
+	content: "";
+	background-image: url('../img/icons/input-left.png');
+	position: absolute;
+	top: 0;
+	height: 60px;
+	width: 7px;
+	left: -7px;
+}
+section.main-form .main-input-holder::after {
+	content: "";
+	background-image: url('../img/icons/input-right.png');
+	position: absolute;
+	top: 0;
+	height: 60px;
+	width: 7px;
+	right: -7px;
+}
+section.main-form .main-input-holder .illustration-holder {
+	float: left;
+	height: 60px;
+	position: relative;
+	width: 46px;
+}
+section.main-form .main-input-holder .illustration-holder .input-illustration {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	vertical-align: middle;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+section.main-form .main-input-holder .text-holder {
+	overflow: hidden;
+	padding-left: 6px;
+	padding-right: 30px;
+}
+section.main-form .main-input-holder .input-name {
+	color: #7a0fad;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 26px;
+}
+section.main-form .main-input-holder .canopen-illustration {
+	position: absolute;
+	right: 2px;
+	bottom: 8px;
+}
+section.main-form .main-input-holder .input-label {
+	color: #bdcfe7;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 12px;
+}
+section.main-form .main-input-holder .input-holder input {
+	border: none;
+}
+section.main-form .main-input-holder .date-holder {
+	font-size: 14px;
+	line-height: 14px;
+}
+section.main-form .main-input-holder .date-holder .date-wrapper {
+	overflow: hidden;
+}
+section.main-form .main-input-holder .date-holder .date-day {
+	font-size: 32px;
+	line-height: 32px;
+	float: left;
+}
+section.main-form .main-input-holder .date-holder .date-month-year {}
+section.main-form .main-input-holder .date-holder .date-week {
+	color: #526073;
 }
 
+.sales-items {}
+.sales-items .sales-item {
+	background-color: #fff;
+	color: #fff;
+	position: relative;
+	float: left;
+	width: 33.3%;
+}
+.sales-items .sales-item p {
+	color: #526073;
+}
+.sales-items .sale-name {
+	position: absolute;
+	top: 0;
+}
+section.current-sales {}
+section.current-sales h4 {
+	text-align: center;
+}
+section.current-sales h4 span {
+	position: relative;
+}
+section.current-sales h4 span:before,
+section.current-sales h4 span:after {
+	background-image: url('../img/icons/wings.png');
+	content: "";
+	position: absolute;
+	height: 48px;
+	width: 110px;
+}
+section.current-sales h4 span:before {
+	left: -160px;
+	background-position: 0 0;
+}
+section.current-sales h4 span:after {
+	right: -160px;
+	background-position: 110px 0;
+}
 section.information-block-1 {
-    margin-bottom: 78px;
+	padding-bottom: 78px;
 }
 section.information-block-1 h5 {
-    color: black;
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 36px;
-    margin-bottom: 28px;
+	color: black;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 36px;
+	margin-bottom: 28px;
 }
 section.information-block-1 p {
-    color: #526073;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20px;
-    margin-bottom: 17px;
+	color: #526073;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+	margin-bottom: 17px;
+}
+footer.main-footer {
+	background-color: #211b36;
+	color: #ffffff;
+}
+footer.main-footer a {
+	color: #c328e7;
 }

@@ -1,0 +1,458 @@
+@keyframes cloudsFloating {
+	from {
+		background-position: left;
+		opacity: 0;
+	}
+	1% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		background-position: right;
+	}
+}
+@-webkit-keyframes cloudsFloating {
+	from {
+		background-position: left;
+		opacity: 0;
+	}
+	1% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		background-position: right;
+	}
+}
+
+@-webkit-keyframes fadeIn1 {
+    from {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn1 {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeInUp1 {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp1 {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+        transform: translate3d(0, 100px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp1 {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInDown1 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -150%);
+		-moz-transform: translate(-50%, -150%);
+		-ms-transform: translate(-50%, -150%);
+		-o-transform: translate(-50%, -150%);
+		transform: translate(-50%, -150%);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes fadeInDown1 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -150%);
+		-moz-transform: translate(-50%, -150%);
+		-ms-transform: translate(-50%, -150%);
+		-o-transform: translate(-50%, -150%);
+		transform: translate(-50%, -150%);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+/**/
+@-webkit-keyframes fadeOutUp1 {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -150%);
+		-moz-transform: translate(-50%, -150%);
+		-ms-transform: translate(-50%, -150%);
+		-o-transform: translate(-50%, -150%);
+		transform: translate(-50%, -150%);
+	}
+}
+
+@keyframes fadeOutUp1 {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -150%);
+		-moz-transform: translate(-50%, -150%);
+		-ms-transform: translate(-50%, -150%);
+		-o-transform: translate(-50%, -150%);
+		transform: translate(-50%, -150%);
+	}
+}
+
+@-webkit-keyframes lightbox-holder-open {
+	from {
+		background-color: rgba(238, 33, 81, .0);
+	}
+
+	100% {
+		background-color: rgba(238, 33, 81, .6);
+	}
+}
+@keyframes lightbox-holder-open {
+	from {
+		background-color: rgba(238, 33, 81, .0);
+	}
+
+	100% {
+		background-color: rgba(238, 33, 81, .6);
+	}
+}
+
+@-webkit-keyframes fadeScaleIn1 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -50%) scale(0.7);
+		-ms-transform: translate(-50%, -50%) scale(0.7);
+		-o-transform: translate(-50%, -50%) scale(0.7);
+		transform: translate(-50%, -50%) scale(0.7);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+@keyframes fadeScaleIn1 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -50%) scale(0.7);
+		-ms-transform: translate(-50%, -50%) scale(0.7);
+		-o-transform: translate(-50%, -50%) scale(0.7);
+		transform: translate(-50%, -50%) scale(0.7);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@-webkit-keyframes fadeScaleOut1 {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -50%) scale(0.7);
+		-ms-transform: translate(-50%, -50%) scale(0.7);
+		-o-transform: translate(-50%, -50%) scale(0.7);
+		transform: translate(-50%, -50%) scale(0.7);
+	}
+}
+@keyframes fadeScaleOut1 {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-50%, -50%) scale(0.7);
+		-ms-transform: translate(-50%, -50%) scale(0.7);
+		-o-transform: translate(-50%, -50%) scale(0.7);
+		transform: translate(-50%, -50%) scale(0.7);
+	}
+}
+
+.lightbox-holder {
+	-webkit-animation: lightbox-holder-open ease-out .4s;
+	animation: lightbox-holder-open ease-out .4s;
+
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+.content-holder {
+	-webkit-animation: fadeInUp1 ease-out .4s;
+	animation: fadeInUp1 ease-out .4s;
+
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+
+/* SWIPE SLIDEs */
+
+@-webkit-keyframes swipeLeft {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-100%, -50%) scale(1);
+		-ms-transform: translate(-100%, -50%) scale(1);
+		-o-transform: translate(-100%, -50%) scale(1);
+		transform: translate(-100%, -50%) scale(1);
+	}
+}
+@keyframes swipeLeft {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(-100%, -50%) scale(1);
+		-ms-transform: translate(-100%, -50%) scale(1);
+		-o-transform: translate(-100%, -50%) scale(1);
+		transform: translate(-100%, -50%) scale(1);
+	}
+}
+
+@-webkit-keyframes swipeRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(100%, -50%) scale(1);
+		-ms-transform: translate(100%, -50%) scale(1);
+		-o-transform: translate(100%, -50%) scale(1);
+		transform: translate(100%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+@keyframes swipeRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(100%, -50%) scale(1);
+		-ms-transform: translate(100%, -50%) scale(1);
+		-o-transform: translate(100%, -50%) scale(1);
+		transform: translate(100%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+/* reverse */
+@-webkit-keyframes swipeLeftRev {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(100%, -50%) scale(1);
+		-ms-transform: translate(100%, -50%) scale(1);
+		-o-transform: translate(100%, -50%) scale(1);
+		transform: translate(100%, -50%) scale(1);
+	}
+}
+@keyframes swipeLeftRev {
+	from {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(100%, -50%) scale(1);
+		-ms-transform: translate(100%, -50%) scale(1);
+		-o-transform: translate(100%, -50%) scale(1);
+		transform: translate(100%, -50%) scale(1);
+	}
+}
+
+@-webkit-keyframes swipeRightRev {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(100%, -50%) scale(1);
+		-ms-transform: translate(100%, -50%) scale(1);
+		-o-transform: translate(100%, -50%) scale(1);
+		transform: translate(100%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+@keyframes swipeRightRev {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-100%, -50%) scale(1);
+		-ms-transform: translate(-100%, -50%) scale(1);
+		-o-transform: translate(-100%, -50%) scale(1);
+		transform: translate(-100%, -50%) scale(1);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(-50%, -50%) scale(1);
+		-ms-transform: translate(-50%, -50%) scale(1);
+		-o-transform: translate(-50%, -50%) scale(1);
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.switchingOut.lightbox-cell,
+.switchingOut .lightbox {
+	-webkit-animation: swipeLeft ease-in .2s;
+	animation: swipeLeft ease-in .2s;
+
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+.switchingIn.lightbox-cell,
+.switchingIn .lightbox {
+	-webkit-animation: swipeRight ease-out .2s;
+	animation: swipeRight ease-out .2s;
+
+	-webkit-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+}
+.switchingIn.reverse.lightbox-cell,
+.switchingIn.reverse .lightbox {
+    -webkit-animation: swipeRightRev ease-out .2s;
+    animation: swipeRightRev ease-out .2s;
+}
+.switchingOut.reverse.lightbox-cell,
+.switchingOut.reverse .lightbox {
+    -webkit-animation: swipeLeftRev ease-in .2s;
+    animation: swipeLeftRev ease-in .2s;
+}
+
+.lightbox-cell.opening,
+.opening .lightbox {
+    -webkit-animation: fadeScaleIn1 ease-out .3s;
+    animation: fadeScaleIn1 ease-out .3s;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+.lightbox-cell.clothing {
+    -webkit-animation: fadeScaleOut1 ease-out .2s;
+    animation: fadeScaleOut1 ease-out .2s;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}

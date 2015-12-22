@@ -3,195 +3,245 @@
 <head>
 	<meta charset="UTF-8">
 	<title>A-AVIA</title>
-	<link rel="stylesheet" href="css/main.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="stylesheet" href="css/animate.min.css">-->
+	<!--<link rel="stylesheet" href="css/normalize.css">-->
+	<!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/global.css">
+	<!--<link rel="stylesheet" href="css/fonts.css">-->
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/elements.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 	<div class="page-wrapper">
 		<header class="main-header">
-			<div class="col-md-4">
-				<div class="main-logo-holder">
-					<img src="img/icons/main-logo.png" alt="logo"/>
+			<div class="container">
+				<div class="col-md-4">
+					<div class="main-logo-holder">
+						<img src="img/icons/main-logo.png" alt="logo"/>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="my-profile-link-holder">
-					<i class="fa fa-male"></i>
-					<span>Личный кабинет</span>
+				<div class="col-md-4">
+					<div class="my-profile-link-holder">
+						<i class="fa fa-male"></i>
+						<span>Личный кабинет</span>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="header-phone-holder">
-					<ul class="operators-list">
-						<li>
-							<div class="operator-icon">
-								<img src="img/icons/life.png" alt="operator">
-								<span class="operator-prefix">063</span>
-							</div>
-						</li>
-						<li>
-							<div class="operator-icon">
-								<img src="img/icons/mts.png" alt="operator">
-								<span class="operator-prefix">095</span>
-							</div>
-						</li>
-						<li>
-							<div class="operator-icon">
-								<img src="img/icons/kyivstar.png" alt="operator">
-								<span class="operator-prefix">096</span>
-							</div>
-						</li>
-					</ul>
-					<span class="phone-number">724-04-04</span>
-					<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+				<div class="col-md-4">
+					<div class="header-phone-holder">
+						<ul class="operators-list">
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/life.png" alt="operator">
+									<span class="operator-prefix">063</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/mts.png" alt="operator">
+									<span class="operator-prefix">095</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/kyivstar.png" alt="operator">
+									<span class="operator-prefix">096</span>
+								</div>
+							</li>
+						</ul>
+						<span class="phone-number">724-04-04</span>
+						<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+					</div>
 				</div>
 			</div>
 		</header>
-		<section class="main-form">
-			<form action="#">
-				<div class="col-md-5 col-offset-1 input-holder">
-					<img class="input-illustration" src="img/icons/pin.png" alt="from">
-					<div class="input-name">Откуда</div>
-					<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
-					<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-				</div>
-				<div class="col-md-5 input-holder">
-					<img class="input-illustration" src="img/icons/pin.png" alt="to">
-					<div class="input-name">Куда</div>
-					<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
-					<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-				</div>
-				<div class="col-md-3 col-offset-1 input-holder">
-					<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
-					<div class="input-name">Вылет</div>
-					<div class="date-holder">
-						<div class="date-day">19</div>
-						<div class="date-month-year">октября 2015</div>
-						<div class="date-week">Понедельник</div>
+
+		<div class="content-wrapper">
+			<div id="clouds-bg"></div>
+			<section class="main-form">
+				<form action="#" class="container">
+					<div class="col-md-5 col-offset-1 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/pin.png" alt="from">
+						</div>
+						<div class="text-holder">
+							<div class="input-name">Откуда</div>
+							<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+						</div>
+						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+					</div>
+					<div class="col-md-5 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/pin.png" alt="to">
+						</div>
+						<div class="text-holder">
+							<div class="input-name">Куда</div>
+							<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+						</div>
+						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+					</div>
+					<div class="col-md-3 col-offset-1 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
+						</div>
+						<div class="text-holder">
+						<div class="input-name">Вылет</div>
+							<div class="date-holder">
+								<div class="date-day">19</div>
+								<div class="date-wrapper">
+									<div class="date-month-year">октября 2015</div>
+									<div class="date-week">Понедельник</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
+						</div>
+						<div class="text-holder">
+							<div class="input-name">Назад</div>
+							<div class="date-holder">
+								<div class="date-day">27</div>
+								<div class="date-wrapper">
+									<div class="date-month-year">октября 2015</div>
+									<div class="date-week">Вторник</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/person.png" alt="person">
+						</div>
+						<div class="text-holder">
+							<div class="input-name">Класс салона и пассажиры</div>
+							<div class="input-state">3 пассажира, эконом</div>
+						</div>
+						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+						<div class="dropdown-holder persons-dropdown">
+							<!-- dropdown -->
+							<div class="form-group">
+								<span class="label-1">Класс салона</span>
+								<select name="ticket-class" id="ticket-class" class="type-1">
+									<option value="1">Lorem</option>
+									<option value="2">Consequatur</option>
+									<option value="3">Officiis</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<span class="label-1">Взрослые</span>
+								<span class="label-2">от 12 лет</span>
+								<input type="number" class="person-counter">
+							</div>
+							<div class="form-group">
+								<span class="label-1">Дети</span>
+								<span class="label-2">до 12 лет</span>
+								<input type="number" class="person-counter">
+							</div>
+							<div class="form-group">
+								<span class="label-1">Новорожденные</span>
+								<span class="label-2">до 2 лет</span>
+								<input type="number" class="person-counter">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-offset-4 main-input-holder">
+						<div class="illustration-holder">
+							<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
+						</div>
+						<div class="input-name">У меня есть промокод</div>
+						<div class="input-holder">
+							<input type="text" placeholder="Ввести">
+						</div>
+						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+					</div>
+					<button class="type-1 col-md-4 col-offset-4">найти</button>
+				</form>
+			</section>
+			<section class="current-sales">
+				<div class="container">
+					<h4>
+						<span>Действующие акции</span>
+					</h4>
+					<div class="sales-items">
+						<a href="#" class="sales-item">
+							<div class="illustration">
+								<div class="image-holder">
+									<img src="img/content/sale-1.jpg" alt="sale">
+								</div>
+								<div class="sale-name">Киев <i class="fa fa-plane"></i> Нью-Йорк</div>
+								<div class="price-info type-1">400$</div>
+							</div>
+							<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
+						</a>
+						<a href="#" class="sales-item">
+							<div class="illustration">
+								<div class="image-holder">
+									<img src="img/content/sale-2.jpg" alt="sale">
+								</div>
+								<div class="sale-name">Билеты бизнес-класса</div>
+								<div class="price-info type-1">-5%</div>
+							</div>
+							<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
+						</a>
+						<a href="#" class="sales-item">
+							<div class="illustration">
+								<div class="image-holder">
+									<img src="img/content/sale-3.jpg" alt="sale">
+								</div>
+								<div class="sale-name">Раннее бронирование</div>
+								<div class="price-info type-1">-15%</div>
+							</div>
+							<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
+						</a>
+					</div>
+					<div class="arrows-holder-1">
+						<i class="fa fa-arrow-down"></i>
 					</div>
 				</div>
-				<div class="col-md-3 input-holder">
-					<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
-					<div class="input-name">Назад</div>
-					<div class="date-holder">
-						<div class="date-day">27</div>
-						<div class="date-month-year">октября 2015</div>
-						<div class="date-week">Вторник</div>
-					</div>
+			</section>
+			<section class="information-block-1">
+				<div class="container">
+					<h5>Уважаемые клиенты</h5>
+					<p>В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
+					<p>Если Вас интересует мультисегментный перелет, либо рейсы с вылетом из аэропортов США или Канады, либо внутренние перелеты по США, то Вы можете позвонить нам и менеджеры просчитают Ваш заказ в ручном режиме.</p>
+					<p>Наши цены всегда ниже, чем у конкурентов! Позвоните и убедитесь!</p>
 				</div>
-				<div class="col-md-4 input-holder">
-					<img class="input-illustration" src="img/icons/person.png" alt="person">
-					<div class="input-name">Класс салона и пассажиры</div>
-					<div class="input-state">3 пассажира, эконом</div>
-					<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-					<div class="dropdown-holder persons-dropdown">
-						<!-- dropdown -->
-						<div class="form-group">
-							<span class="label-1">Класс салона</span>
-							<select name="ticket-class" id="ticket-class" class="type-1">
-								<option value="1">Lorem</option>
-								<option value="2">Consequatur</option>
-								<option value="3">Officiis</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<span class="label-1">Взрослые</span>
-							<span class="label-2">от 12 лет</span>
-							<input type="number" class="person-counter">
-						</div>
-						<div class="form-group">
-							<span class="label-1">Дети</span>
-							<span class="label-2">до 12 лет</span>
-							<input type="number" class="person-counter">
-						</div>
-						<div class="form-group">
-							<span class="label-1">Новорожденные</span>
-							<span class="label-2">до 2 лет</span>
-							<input type="number" class="person-counter">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-offset-4 input-holder">
-					<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
-					<div class="input-name">У меня есть промокод</div>
-					<div class="input-holder">
-						<input type="text" placeholder="Ввести">
-					</div>
-					<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-				</div>
-				<button class="type-1 col-md-4 col-offset-4">найти</button>
-			</form>
-		</section>
-		<section class="current-sales">
-			<h4>
-				<span>Действующие акции</span>
-			</h4>
-			<div class="sales-items">
-				<a href="#" class="sales-item">
-					<div class="illustration">
-						<div class="image-holder">
-							<img src="img/content/sale-1.jpg" alt="sale">
-						</div>
-						<div class="sale-name">Киев <i class="fa fa-plane"></i> Нью-Йорк</div>
-						<div class="price-info type-1">400$</div>
-					</div>
-					<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
-				</a>
-				<a href="#" class="sales-item">
-					<div class="illustration">
-						<div class="image-holder">
-							<img src="img/content/sale-2.jpg" alt="sale">
-						</div>
-						<div class="sale-name">Билеты бизнес-класса</div>
-						<div class="price-info type-1">-5%</div>
-					</div>
-					<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
-				</a>
-				<a href="#" class="sales-item">
-					<div class="illustration">
-						<div class="image-holder">
-							<img src="img/content/sale-3.jpg" alt="sale">
-						</div>
-						<div class="sale-name">Раннее бронирование</div>
-						<div class="price-info type-1">-15%</div>
-					</div>
-					<p class="description">В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
-				</a>
-			</div>
-			<div class="arrows-holder-1">
-				<i class="fa fa-arrow-down"></i>
-			</div>
-		</section>
-		<section class="information-block-1">
-			<h5>Уважаемые клиенты</h5>
-			<p>В автоматическом режиме работает поиск с вылетом из аэропортов Украины на рейсы в обе стороны.</p>
-			<p>Если Вас интересует мультисегментный перелет, либо рейсы с вылетом из аэропортов США или Канады, либо внутренние перелеты по США, то Вы можете позвонить нам и менеджеры просчитают Ваш заказ в ручном режиме.</p>
-			<p>Наши цены всегда ниже, чем у конкурентов! Позвоните и убедитесь!</p>
-		</section>
+			</section>
+		</div>
+
 		<footer class="main-footer">
-			<div class="col-md-4">
-				<div class="payment-systems-holder">
-					<a href="#" tabindex="-1">
-						<img src="img/icons/visa.png" alt="visa">
-					</a>
-					<a href="#" tabindex="-1">
-						<img src="img/icons/mastercard.png" alt="mastercard">
-					</a>
-					<a href="#" tabindex="-1">
-						<img src="img/icons/platon.png" alt="platon">
-					</a>
+			<div class="container">
+				<div class="col-md-4">
+					<div class="payment-systems-holder">
+						<a href="#" tabindex="-1">
+							<img src="img/icons/visa.png" alt="visa">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/mastercard.png" alt="mastercard">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/platon.png" alt="platon">
+						</a>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="copyright-holder">
-					<span>© ООО «Альфа-Авиа» 2015</span>
+				<div class="col-md-4">
+					<div class="copyright-holder">
+						<span>© ООО «Альфа-Авиа» 2015</span>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="about-link-holder">
-					<a href="#">
-						<i class="fa fa-question-circle"></i>
-						<span>Как это работает</span>
-					</a>
+				<div class="col-md-4">
+					<div class="about-link-holder">
+						<a href="#">
+							<i class="fa fa-question-circle"></i>
+							<span>Как это работает</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>
