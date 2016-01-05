@@ -6,11 +6,11 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--<link rel="stylesheet" href="css/animate.min.css">-->
-	<!--<link rel="stylesheet" href="css/normalize.css">-->
-	<!--<link rel="stylesheet" href="css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="../libs/normalize/normalize.css">
+	<link rel="stylesheet" href="../libs/font-awesome-4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/global.css">
-	<!--<link rel="stylesheet" href="css/fonts.css">-->
+	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/animation.css">
 	<link rel="stylesheet" href="css/elements.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -23,11 +23,13 @@
 				<div class="col-md-4">
 					<div class="main-logo-holder">
 						<img src="img/icons/main-logo.png" alt="logo"/>
+						<span>Самые дешевые авиабилеты</span>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="my-profile-link-holder">
-						<i class="fa fa-male"></i>
+						<!--<i class="fa fa-male"></i>-->
+						<img src="img/icons/person.png" alt="person"/>
 						<span>Личный кабинет</span>
 					</div>
 				</div>
@@ -36,131 +38,152 @@
 						<ul class="operators-list">
 							<li>
 								<div class="operator-icon">
-									<img src="img/icons/life.png" alt="operator">
+									<img src="img/icons/life.png" alt="operator" class="life">
 									<span class="operator-prefix">063</span>
 								</div>
 							</li>
 							<li>
 								<div class="operator-icon">
-									<img src="img/icons/mts.png" alt="operator">
+									<img src="img/icons/mts.png" alt="operator" class="mts">
 									<span class="operator-prefix">095</span>
 								</div>
 							</li>
 							<li>
 								<div class="operator-icon">
-									<img src="img/icons/kyivstar.png" alt="operator">
+									<img src="img/icons/kyivstar.png" alt="operator" class="kyivstar">
 									<span class="operator-prefix">096</span>
 								</div>
 							</li>
 						</ul>
-						<span class="phone-number">724-04-04</span>
-						<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+						<span class="phone-number">
+							<span>724-04-04</span>
+							<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+						</span>
 					</div>
 				</div>
 			</div>
 		</header>
 
 		<div class="content-wrapper">
+
 			<div id="clouds-bg"></div>
+
 			<section class="main-form">
 				<form action="#" class="container">
-					<div class="col-md-5 col-offset-1 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/pin.png" alt="from">
+
+					<div class="row">
+
+						<div class="main-input-holder big">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/pin.png" alt="from">
+							</div>
+							<div class="text-holder">
+								<div class="input-name">Откуда</div>
+								<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+							</div>
+							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 						</div>
-						<div class="text-holder">
-							<div class="input-name">Откуда</div>
-							<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+						
+						<div class="main-input-holder big">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/pin.png" alt="to">
+							</div>
+							<div class="text-holder">
+								<div class="input-name">Куда</div>
+								<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+							</div>
+							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 						</div>
-						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 					</div>
-					<div class="col-md-5 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/pin.png" alt="to">
+
+					<div class="row">
+
+						<div class="main-input-holder small">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
+							</div>
+							<div class="text-holder">
+							<div class="input-name">Вылет</div>
+								<div class="date-holder">
+									<div class="date-day">19</div>
+									<div class="date-wrapper">
+										<div class="date-month-year">октября 2015</div>
+										<div class="date-week">Понедельник</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="text-holder">
-							<div class="input-name">Куда</div>
-							<div class="input-label">Введите аэропорт или город либо выберите из списка</div>
+						
+						<div class="main-input-holder small">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
+							</div>
+							<div class="text-holder">
+								<div class="input-name">Назад</div>
+								<div class="date-holder">
+									<div class="date-day">27</div>
+									<div class="date-wrapper">
+										<div class="date-month-year">октября 2015</div>
+										<div class="date-week">Вторник</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-					</div>
-					<div class="col-md-3 col-offset-1 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
-						</div>
-						<div class="text-holder">
-						<div class="input-name">Вылет</div>
-							<div class="date-holder">
-								<div class="date-day">19</div>
-								<div class="date-wrapper">
-									<div class="date-month-year">октября 2015</div>
-									<div class="date-week">Понедельник</div>
+						
+						<div class="main-input-holder small">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/person.png" alt="person">
+							</div>
+							<div class="text-holder">
+								<div class="input-name">Класс салона и пассажиры</div>
+								<div class="input-state">3 пассажира, эконом</div>
+							</div>
+							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+							<div class="dropdown-holder persons-dropdown">
+								<!-- dropdown -->
+								<div class="form-group">
+									<span class="label-1">Класс салона</span>
+									<select name="ticket-class" id="ticket-class" class="type-1">
+										<option value="1">Lorem</option>
+										<option value="2">Consequatur</option>
+										<option value="3">Officiis</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<span class="label-1">Взрослые</span>
+									<span class="label-2">от 12 лет</span>
+									<input type="number" class="person-counter">
+								</div>
+								<div class="form-group">
+									<span class="label-1">Дети</span>
+									<span class="label-2">до 12 лет</span>
+									<input type="number" class="person-counter">
+								</div>
+								<div class="form-group">
+									<span class="label-1">Новорожденные</span>
+									<span class="label-2">до 2 лет</span>
+									<input type="number" class="person-counter">
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
-						</div>
-						<div class="text-holder">
-							<div class="input-name">Назад</div>
-							<div class="date-holder">
-								<div class="date-day">27</div>
-								<div class="date-wrapper">
-									<div class="date-month-year">октября 2015</div>
-									<div class="date-week">Вторник</div>
-								</div>
+
+					<div class="row">
+
+						<div class="main-input-holder small">
+							<div class="illustration-holder">
+								<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
 							</div>
+							<div class="input-name">У меня есть промокод</div>
+							<div class="input-holder">
+								<input type="text" placeholder="Ввести">
+							</div>
+							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 						</div>
 					</div>
-					<div class="col-md-4 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/person.png" alt="person">
-						</div>
-						<div class="text-holder">
-							<div class="input-name">Класс салона и пассажиры</div>
-							<div class="input-state">3 пассажира, эконом</div>
-						</div>
-						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-						<div class="dropdown-holder persons-dropdown">
-							<!-- dropdown -->
-							<div class="form-group">
-								<span class="label-1">Класс салона</span>
-								<select name="ticket-class" id="ticket-class" class="type-1">
-									<option value="1">Lorem</option>
-									<option value="2">Consequatur</option>
-									<option value="3">Officiis</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<span class="label-1">Взрослые</span>
-								<span class="label-2">от 12 лет</span>
-								<input type="number" class="person-counter">
-							</div>
-							<div class="form-group">
-								<span class="label-1">Дети</span>
-								<span class="label-2">до 12 лет</span>
-								<input type="number" class="person-counter">
-							</div>
-							<div class="form-group">
-								<span class="label-1">Новорожденные</span>
-								<span class="label-2">до 2 лет</span>
-								<input type="number" class="person-counter">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-offset-4 main-input-holder">
-						<div class="illustration-holder">
-							<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
-						</div>
-						<div class="input-name">У меня есть промокод</div>
-						<div class="input-holder">
-							<input type="text" placeholder="Ввести">
-						</div>
-						<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-					</div>
+
 					<button class="type-1 col-md-4 col-offset-4">найти</button>
+
 				</form>
 			</section>
 			<section class="current-sales">
@@ -245,6 +268,13 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- OVERLAYS -->
+		<div class="main-overlay"></div>
+		<div class="grid-overlay"></div>
+
+		<!-- SCRIPTS -->
+		<script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
 	</div>
 </body>
 </html>
