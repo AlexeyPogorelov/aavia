@@ -275,25 +275,33 @@ section.main-form .main-input-holder .date-holder .date-week {
 .sales-items .sales-item {
 	background-color: #fff;
 	color: #fff;
-	position: relative;
 	display: inline-block;
-	width: 220px;
 	margin: 0 28px;
+	position: relative;
 	text-align: left;
+	width: 220px;
 }
 .sales-items .sales-item p {
 	color: #526073;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 14px 20px 26px;
 }
 .sales-items .sale-name {
 	position: absolute;
 	top: 0;
 }
+.sales-items .price-info {
+	position: absolute;
+	right: -10px;
+	top: 60px;
+}
 section.current-sales {
 	margin-top: 55px;
 }
 section.current-sales h4 {
-	text-align: center;
 	margin-bottom: 38px;
+	text-align: center;
 }
 section.current-sales h4 span {
 	position: relative;
