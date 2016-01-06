@@ -130,7 +130,7 @@
 							</div>
 						</div>
 						
-						<div class="main-input-holder small">
+						<div class="main-input-holder middle">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/person.png" alt="person">
 							</div>
@@ -170,19 +170,20 @@
 
 					<div class="row">
 
-						<div class="main-input-holder small">
+						<div class="main-input-holder middle">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
 							</div>
 							<div class="input-name">У меня есть промокод</div>
-							<div class="input-holder">
-								<input type="text" placeholder="Ввести">
+							<div class="promocode-input-holder">
+								<input type="text" placeholder="Ввести" class="promocode-input">
 							</div>
 							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 						</div>
 					</div>
-
-					<button class="type-1 col-md-4 col-offset-4">найти</button>
+					<div class="button-holder">
+						<button class="type-1">найти</button>
+					</div>
 
 				</form>
 			</section>
@@ -270,11 +271,14 @@
 		</footer>
 
 		<!-- OVERLAYS -->
-		<div class="main-overlay"></div>
-		<div class="grid-overlay"></div>
+		<div class="main-overlay hidden"></div>
+		<div class="grid-overlay hidden"></div>
+		<div id="main-overlay" class="overlay-button">O</div>
+		<div id="grid-overlay" class="overlay-button">G</div>
 
 		<!-- SCRIPTS -->
 		<script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+		<script src="js/main.js"></script>
 	</div>
 </body>
 </html>

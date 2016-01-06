@@ -1,6 +1,6 @@
 /* TEMP */
 .grid-overlay {
-	display: none;
+	/* display: none; */
 	background: url('../img/bg/grid.png') 50% 0 repeat-y;
 	bottom: 0;
 	height: 100%;
@@ -14,13 +14,14 @@
 	z-index: 999;
 }
 .main-overlay {
-	display: none;
+	/* display: none; */
 	-webkit-filter: invert(100%);
+	opacity: .5;
+	/* opacity: 1; */
 	background: url('../img/bg/a-avia-index.png') 50% 0 no-repeat;
 	bottom: 0;
-	height: 100%;
+	height: 1200px;
 	left: 0;
-	opacity: .5;
 	pointer-events: none;
 	position: absolute;
 	right: 0;
@@ -28,12 +29,30 @@
 	width: 100%;
 	z-index: 999;
 }
+.overlay-button {
+	background: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	opacity: .2;
+	padding: 10px;
+	z-index: 999;
+}
+.overlay-button:hover {
+	opacity: 1;
+}
+#main-overlay {
+	right: 40px;
+}
+#grid-overlay {}
 
 body {
 	font-family: ProximaNova, sans-serif;
 }
 .page-wrapper {
-	/*background-image: url('../img/bg/main-bg.jpg');*/
+	/* background-image: url('../img/bg/main-bg.jpg'); */
 	/*-webkit-background-size: cover;*/
 	/*background-size: cover;*/
 }
@@ -143,18 +162,24 @@ section.main-form .container > .row {
 section.main-form .main-input-holder {
 	background-color: #ffffff;
 	display: inline-block;
-	/* margin: 20px 10px; */
+	margin: 0 14px 30px;
 	position: relative;
 	height: 60px;
 	/*float: left;*/
+	vertical-align: top;
+	text-align: left;
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 }
 section.main-form .main-input-holder.big {
 	width: 366px;
-	margin: 0 14px;
+	margin: 0 14px 30px;
 }
 section.main-form .main-input-holder.small {
 	width: 206px;
-	margin: 0 34px;
+}
+section.main-form .main-input-holder.middle {
+	width: 286px;
 }
 section.main-form .main-input-holder:before {
 	content: "";
@@ -201,7 +226,8 @@ section.main-form .main-input-holder .input-name {
 	color: #7a0fad;
 	font-size: 14px;
 	font-weight: 300;
-	line-height: 26px;
+	line-height: 16px;
+	margin-top: 8px;
 }
 section.main-form .main-input-holder .canopen-illustration {
 	position: absolute;
@@ -213,9 +239,18 @@ section.main-form .main-input-holder .input-label {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 12px;
+	margin-top: 5px;
 }
 section.main-form .main-input-holder .input-holder input {
 	border: none;
+}
+section.main-form .main-input-holder .promocode-input-holder {position: relative;}
+section.main-form .main-input-holder .promocode-input-holder input.promocode-input {
+	border: none;
+	display: block;
+	position: absolute;
+	left: 50px;
+	padding: 0;
 }
 section.main-form .main-input-holder .date-holder {
 	font-size: 14px;
@@ -234,13 +269,17 @@ section.main-form .main-input-holder .date-holder .date-week {
 	color: #526073;
 }
 
-.sales-items {}
+.sales-items {
+	text-align: center;
+}
 .sales-items .sales-item {
 	background-color: #fff;
 	color: #fff;
 	position: relative;
-	float: left;
-	width: 33.3%;
+	display: inline-block;
+	width: 220px;
+	margin: 0 28px;
+	text-align: left;
 }
 .sales-items .sales-item p {
 	color: #526073;
@@ -249,9 +288,12 @@ section.main-form .main-input-holder .date-holder .date-week {
 	position: absolute;
 	top: 0;
 }
-section.current-sales {}
+section.current-sales {
+	margin-top: 55px;
+}
 section.current-sales h4 {
 	text-align: center;
+	margin-bottom: 38px;
 }
 section.current-sales h4 span {
 	position: relative;

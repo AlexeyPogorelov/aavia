@@ -562,6 +562,9 @@ section:after,
 .modal-footer:after {
   clear: both;
 }
+.button-holder {
+	text-align: center;
+}
 button,
 .btn {
 	border: none;

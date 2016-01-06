@@ -4,4 +4,5 @@ button.type-1 {
     font-size: 16px;
     height: 60px;
     text-transform: uppercase;
+    width: 300px;
 }
