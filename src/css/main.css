@@ -48,6 +48,12 @@
 }
 #grid-overlay {}
 
+/* GLOBAL */
+.arrows-holder-1 {
+	text-align: center;
+	margin-top: 42px;
+	margin-bottom: 6px;
+}
 body {
 	font-family: ProximaNova, sans-serif;
 }
@@ -280,6 +286,8 @@ section.main-form .main-input-holder .date-holder .date-week {
 	position: relative;
 	text-align: left;
 	width: 220px;
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 }
 .sales-items .sales-item p {
 	color: #526073;
@@ -292,9 +300,19 @@ section.main-form .main-input-holder .date-holder .date-week {
 	top: 0;
 }
 .sales-items .price-info {
+	background-repeat: repeat;
+	font-size: 24px;
+	font-weight: 100;
+	padding: 3px 8px;
 	position: absolute;
-	right: -10px;
-	top: 60px;
+	right: -4px;
+	top: 78px;
+}
+.sales-items .price-info.type-1 {
+	background: #7a0fad url('../img/bg/pattern-main.png');
+}
+.sales-items .price-info.type-2 {
+	background: #ff4cc2 url('../img/bg/pattern-main.png');
 }
 section.current-sales {
 	margin-top: 55px;
@@ -323,26 +341,48 @@ section.current-sales h4 span:after {
 	background-position: 110px 0;
 }
 section.information-block-1 {
-	padding-bottom: 78px;
+	padding-bottom: 68px;
+	text-align: center;
+}
+section.information-block-1 .container {
+	max-width: 474px;
 }
 section.information-block-1 h5 {
 	color: black;
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 36px;
-	margin-bottom: 28px;
+	margin-bottom: 14px;
 }
 section.information-block-1 p {
 	color: #526073;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 20px;
-	margin-bottom: 17px;
+	margin-bottom: 9px;
 }
 footer.main-footer {
 	background-color: #211b36;
 	color: #ffffff;
 }
-footer.main-footer a {
+footer.main-footer .copyright-holder {
+	font-size: 14px;
+	text-align: center;
+	line-height: 38px;
+}
+footer.main-footer .payment-systems-holder {
+	margin-left: 80px;
+	margin-top: 6px;
+}
+footer.main-footer .payment-systems-holder a {
+	margin-right: 14px;
+}
+footer.main-footer .about-link-holder {
+	text-align: right;
+	line-height: 38px;
+	padding-right: 78px;
+}
+footer.main-footer .about-link-holder a {
 	color: #c328e7;
+	font-size: 14px;
 }
