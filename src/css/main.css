@@ -51,7 +51,7 @@
 /* GLOBAL */
 .arrows-holder-1 {
 	text-align: center;
-	margin-top: 42px;
+	margin-top: 22px;
 	margin-bottom: 6px;
 }
 body {
@@ -83,6 +83,7 @@ header.main-header {
 header.main-header .main-logo-holder {
 	margin-left: 80px;
 	margin-top: 14px;
+	display: inline-block;
 }
 header.main-header .main-logo-holder img {
 	margin: 0;
@@ -167,6 +168,7 @@ section.main-form .container > .row {
 }
 section.main-form .main-input-holder {
 	background-color: #ffffff;
+	cursor: pointer;
 	display: inline-block;
 	margin: 0 14px 30px;
 	position: relative;
@@ -174,8 +176,8 @@ section.main-form .main-input-holder {
 	/*float: left;*/
 	vertical-align: top;
 	text-align: left;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-	box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12), 0 0px 48px rgba(0,0,0,0.1);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.12), 0 0px 48px rgba(0,0,0,0.1);
 }
 section.main-form .main-input-holder.big {
 	width: 366px;
@@ -235,9 +237,15 @@ section.main-form .main-input-holder .input-name {
 	line-height: 16px;
 	margin-top: 8px;
 }
+section.main-form .main-input-holder .input-state {
+	color: black;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
 section.main-form .main-input-holder .canopen-illustration {
 	position: absolute;
-	right: 2px;
+	right: 1px;
 	bottom: 8px;
 }
 section.main-form .main-input-holder .input-label {
@@ -250,17 +258,45 @@ section.main-form .main-input-holder .input-label {
 section.main-form .main-input-holder .input-holder input {
 	border: none;
 }
-section.main-form .main-input-holder .promocode-input-holder {position: relative;}
+section.main-form .main-input-holder .promocode-input-holder {
+	position: relative;
+}
 section.main-form .main-input-holder .promocode-input-holder input.promocode-input {
 	border: none;
 	display: block;
 	position: absolute;
 	left: 50px;
+	top: 5px;
 	padding: 0;
+}
+section.main-form .main-input-holder .promocode-input-holder input.promocode-input::-webkit-input-placeholder {
+	color: #bdcfe7;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+}
+section.main-form .main-input-holder .promocode-input-holder input.promocode-input::-moz-placeholder {
+	color: #bdcfe7;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+}
+section.main-form .main-input-holder .promocode-input-holder input.promocode-input:-moz-placeholder {
+	color: #bdcfe7;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+}
+section.main-form .main-input-holder .promocode-input-holder input.promocode-input:-ms-input-placeholder {
+	color: #bdcfe7;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
 }
 section.main-form .main-input-holder .date-holder {
 	font-size: 14px;
 	line-height: 14px;
+	margin-left: -1px;
 }
 section.main-form .main-input-holder .date-holder .date-wrapper {
 	overflow: hidden;
@@ -269,10 +305,14 @@ section.main-form .main-input-holder .date-holder .date-day {
 	font-size: 32px;
 	line-height: 32px;
 	float: left;
+	margin-right: 8px;
 }
 section.main-form .main-input-holder .date-holder .date-month-year {}
 section.main-form .main-input-holder .date-holder .date-week {
 	color: #526073;
+}
+section.main-form .main-input-holder.promocode-button-holder .input-name {
+	padding-left: 52px;
 }
 
 .sales-items {
@@ -282,12 +322,21 @@ section.main-form .main-input-holder .date-holder .date-week {
 	background-color: #fff;
 	color: #fff;
 	display: inline-block;
-	margin: 0 28px;
+	margin: 0 28px 20px;
 	position: relative;
 	text-align: left;
 	width: 220px;
 	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 	box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+}
+.sales-items .sales-item .illustration .image-holder:after {
+	background-color: rgba(0, 0, 0, .4);
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 .sales-items .sales-item p {
 	color: #526073;
@@ -298,6 +347,11 @@ section.main-form .main-input-holder .date-holder .date-week {
 .sales-items .sale-name {
 	position: absolute;
 	top: 0;
+	left: 10px;
+	color: white;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 38px;
 }
 .sales-items .price-info {
 	background-repeat: repeat;
@@ -319,7 +373,10 @@ section.current-sales {
 }
 section.current-sales h4 {
 	margin-bottom: 38px;
-	text-align: center;
+	text-align: center;/* Text style for "Действующие ак" */
+	color: black;
+	font-weight: 300;
+	font-size: 32px;
 }
 section.current-sales h4 span {
 	position: relative;
@@ -329,15 +386,16 @@ section.current-sales h4 span:after {
 	background-image: url('../img/icons/wings.png');
 	content: "";
 	position: absolute;
+	top: 10px;
 	height: 48px;
 	width: 110px;
 }
 section.current-sales h4 span:before {
-	left: -160px;
+	left: -116px;
 	background-position: 0 0;
 }
 section.current-sales h4 span:after {
-	right: -160px;
+	right: -116px;
 	background-position: 110px 0;
 }
 section.information-block-1 {
@@ -386,3 +444,56 @@ footer.main-footer .about-link-holder a {
 	color: #c328e7;
 	font-size: 14px;
 }
+
+/* TICKETS-PAGE */
+section.tickets-way {
+	background-color: #37404d;
+	color: white;
+	font-size: 18px;
+}
+section.tickets-way .date-holder {
+	float: right;
+}
+section.tickets-way .date-holder .date-wrapper {
+	overflow: hidden;
+}
+section.tickets-way .date-holder .date-day {
+	line-height: 32px;
+	float: left;
+	margin-right: 8px;
+	font-size: 42px;
+	font-weight: 300;
+}
+section.tickets-way .date-holder .date-month-year {}
+section.tickets-way .date-holder .date-week {
+	color: #bbcde6;
+}
+
+section.tickets-holder {}
+section.tickets-holder .ticket {}
+section.tickets-holder .ticket-header {
+	background: white;
+	-webkit-box-shadow: 0 1px 0 #bbcde6;
+	box-shadow: 0 1px 0 #bbcde6;
+}
+section.tickets-holder .ticket-header .radio.form-group {
+	display: inline-block;
+}
+section.tickets-holder .ticket-header .basic-info {
+	display: inline-block;
+}
+section.tickets-holder .ticket-header .tickets-left {}
+section.tickets-holder .ticket-header .price {
+	background-color: #ff4cc2;
+	color: white;
+}
+section.tickets-holder .ticket-info-group {}
+section.tickets-holder .ticket-footer {}
+section.bottom-tickets-nav {
+	background-color: #37404d;
+	color: white;
+}
+section.bottom-tickets-nav a.back {
+	color: #a1c8fc;
+}
+/* END TICKETS-PAGE */

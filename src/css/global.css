@@ -7,7 +7,7 @@
 }
 body {
 	color: #252525;
-	font-family: 'OpenSans', sans-serif;
+	font-family: 'ProximaNova', sans-serif;
 	font-size: 18px;
 	line-height: 1.5em;
 	overflow-y: scroll;
@@ -142,6 +142,8 @@ textarea:-moz-placeholder {
 }
 /*	END SELECT	*/
 
+/*	INPUT	*/
+
 input {
 	outline-width: 5px;
 	outline-color: transparent;
@@ -254,21 +256,25 @@ input:-ms-input-placeholder {
 .radio input[type="radio"]:checked + label:before {
 	/*background: #eee;*/
 	border-radius: 50%;
-	border: 2px solid #000;
+	border: 2px solid #bbcde6;
 	content: '';
-	left:0; top: 2px;
+	left:0;
+	top: 2px;
 	position: absolute;
-	width: 18px; height: 18px;
+	width: 14px;
+	height: 14px;
 }
 /* checked mark aspect */
 .radio input[type="radio"]:not(:checked) + label:after,
 .radio input[type="radio"]:checked + label:after {
 	content: '';
-	background-color: #000;
+	background-color: #ff4cc2;
 	border-radius: 50%;
 	position: absolute;
-	top: 7px; left: 5px;
-	width: 12px; height: 12px;
+	top: 7px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
 	transition: all .2s;
 }
 /* checked mark aspect changes */
@@ -567,8 +573,9 @@ section:after,
 }
 button,
 .btn {
+	background: none;
 	border: none;
-	transition: all .3s ease;
+	transition: border .3s, background .3s;
 }
 button.focus,
 button.active,
@@ -579,7 +586,7 @@ button:hover,
 .btn:focus,
 .btn:hover {
 	text-decoration: none;
-	transition: all .1s ease;
+	transition: border .1s, background .1s;
 }
 button.invert,
 .btn.invert {
@@ -592,7 +599,7 @@ button.invert:hover,
 .btn.invert:focus,
 .btn.invert:hover {
 	text-decoration: none;
-	transition: all .5s ease;
+	transition: border .5s, background .5s;
 }
 button:active,
 .btn:active,
