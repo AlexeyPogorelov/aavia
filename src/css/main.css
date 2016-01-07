@@ -18,7 +18,7 @@
 	-webkit-filter: invert(100%);
 	opacity: .5;
 	/* opacity: 1; */
-	background: url('../img/bg/a-avia-index.png') 50% 0 no-repeat;
+	background: url('../img/bg/a-avia-inner.png') 50% 0 no-repeat;
 	bottom: 0;
 	height: 1200px;
 	left: 0;
@@ -353,6 +353,9 @@ section.main-form .main-input-holder.promocode-button-holder .input-name {
 	font-weight: 300;
 	line-height: 38px;
 }
+.sales-items .sale-name i {
+	margin: 0 2px;
+}
 .sales-items .price-info {
 	background-repeat: repeat;
 	font-size: 24px;
@@ -451,28 +454,47 @@ section.tickets-way {
 	color: white;
 	font-size: 18px;
 }
+section.tickets-way .container {
+	max-width: 780px;
+	padding-top: 11px;
+	padding-bottom: 14px;
+}
+section.tickets-way .way-header {}
+section.tickets-way .way-header p {
+	line-height: 24px;
+}
 section.tickets-way .date-holder {
 	float: right;
+	font-weight: 300;
 }
 section.tickets-way .date-holder .date-wrapper {
 	overflow: hidden;
+	margin-top: 6px;
 }
 section.tickets-way .date-holder .date-day {
 	line-height: 32px;
 	float: left;
 	margin-right: 8px;
+	margin-top: 13px;
 	font-size: 42px;
 	font-weight: 300;
 }
-section.tickets-way .date-holder .date-month-year {}
+section.tickets-way .date-holder .date-month-year {
+	line-height: 1em;
+	position: relative;
+}
 section.tickets-way .date-holder .date-week {
 	color: #bbcde6;
+	line-height: 1em;
+	margin-top: 3px;
 }
 
 section.tickets-holder {}
-section.tickets-holder .ticket {}
+section.tickets-holder .ticket {
+	margin-top: 30px;
+}
 section.tickets-holder .ticket-header {
-	background: white;
+	background: white url('../img/bg/pattern-3.png');
 	-webkit-box-shadow: 0 1px 0 #bbcde6;
 	box-shadow: 0 1px 0 #bbcde6;
 }
@@ -482,10 +504,21 @@ section.tickets-holder .ticket-header .radio.form-group {
 section.tickets-holder .ticket-header .basic-info {
 	display: inline-block;
 }
-section.tickets-holder .ticket-header .tickets-left {}
+section.tickets-holder .ticket-header .basic-info > span {
+	line-height: 49px;
+}
+section.tickets-holder .ticket-header .tickets-left {
+	color: #7a0fad;
+	font-size: 14px;
+	font-weight: 300;
+	margin-right: 20px;
+}
 section.tickets-holder .ticket-header .price {
 	background-color: #ff4cc2;
-	color: white;
+	color: white;/* Text style for "450$" */
+	font-size: 32px;
+	font-weight: 300;
+	line-height: 49px;
 }
 section.tickets-holder .ticket-info-group {}
 section.tickets-holder .ticket-footer {}
