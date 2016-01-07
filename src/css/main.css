@@ -63,7 +63,7 @@ body {
 	/*background-size: cover;*/
 }
 .content-wrapper {
-	background-image: url('../img/bg/triangles.png');
+	background: url('../img/bg/earch-map.png') 0 80px no-repeat, url('../img/bg/triangles.png');
 	position: relative;
 }
 .content-wrapper > #clouds-bg {
