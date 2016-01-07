@@ -8,129 +8,6 @@
 		width: 940px;
 		margin: 0 auto;
 	}
-	.main-logo-holder {
-		/*padding-right: 70px;*/
-	}
-	.left-sidebar,
-	.left-sidebar-holder {
-		width: 240px;
-	}
-	.content-holder {
-		padding-left: 240px;
-	}
-	.main-slider .slides-container .slide {
-		max-height: 485px;
-	}
-	.lookbook-page .main-slider .slides-container .slide {
-		max-height: initial;
-	}
-	.lookbook-page .main-slider .image-holder {
-		height: 613px;
-	}
-	.subscriber {
-		margin-bottom: 34px;
-	}
-	#best-items {
-		margin-top: 74px;
-	}
-	#best-items .row > div {
-		padding: 0 8px;
-		margin-bottom: 80px;
-	}
-	#banners .row > div {
-		padding: 0 8px 20px 8px;
-		text-align: center;
-	}
-	#banners .image-holder {
-		height: 284px;
-	}
-	#banners .banner:nth-child(1) .image-holder,
-	#banners .banner:nth-child(2) .image-holder {
-		height: 345px;
-	}
-
-	.order-form input[type="text"] {
-		width: 340px;
-	}
-    /*
-	.order-form input[type="text"]#first {
-		width: 340px;
-	}
-	.order-form input[type="text"]#last {
-		width: 400px;
-	}
-	.order-form input[type="text"]#location {
-		width: 390px;
-	}
-	.order-form input[type="text"]#address {
-		width: 460px;
-	}
-	.order-form input[type="text"]#index {
-		width: 190px;
-	}
-	.order-form input[type="text"]#phone {
-		width: 290px;
-	}
-	.order-form input[type="text"]#email {
-		width: 330px;
-	}
-	.order-form input[type="text"]#card-number {
-		width: 390px;
-	}
-	.order-form input[type="text"]#card-date {
-		width: 210px;
-	}
-	.order-form input[type="text"]#card-ccv {
-		width: 90px;
-	}
-	.order-form input[type="text"]#card-name {
-		width: 290px;
-	}
-	*/
-	.blog-page .blog-image {
-		margin-right: 65px;
-		width: 410px;
-	}
-	.blog-full-post .full-image {
-		width: 720px;
-	}
-	.cart .cart-item .item-name {
-		font-size: 28px;
-		width: 410px;
-	}
-	.card-slider {
-		width: 480px;
-	}
-
-    .card-slider .arrow-left-1,
-    .card-slider .arrow-right-1 {
-        margin-top: 227px;
-    }
-	.full-item-description {
-		width: 450px;
-	}
-	.card-slider .slides-container .slide {
-		height: 480px;
-	}
-	.contacts-page .contact-form {
-		margin-left: 140px;
-	}
-	.blog-full-post .blog-full-description {
-		padding-top: 14px;
-		padding-left: 138px;
-	}
-	.cart .cart-item .item-counts {
-		padding-right: 34px;
-	}
-	.cart .cart-item .item-size {
-		padding-right: 28px;
-	}
-	.cart .cart-item .item-price {
-		padding-right: 16px;
-	}
-	.cart .cart-item .item-remove {
-		width: 100%;
-	}
 }
 /*------------------------------------------------------------------------------
 	MEDIUM
@@ -140,9 +17,6 @@
 		width: 940px;
 	}
 	h1 {
-	}
-	#best-items .item:nth-child(1n + 4) {
-		display: none;
 	}
 }
 /*--------------------------------------------------------------------------
@@ -156,211 +30,146 @@
 		border: none;
 	}
 	.animated {
-        -webkit-transform: none;
-        -moz-transform: none;
-        -ms-transform: none;
-        -o-transform: none;
-        transform: none;
-	}
-	.dropdown .dropdown-menu {
-		max-width: 720px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        -o-transform: translateX(-50%);
-        transform: translateX(-50%);
-		/*width: 100%;*/
-	}
-    .dropdown {
-    }
-    .wrapper {
-        overflow: hidden;
-    }
-	.container {
-		width: 720px;
-	}
-    .lightbox {
-        padding: 0;
-        width: 75%;
-    }
-
-    .darken-lightbox .prev-slide, .lightbox-holder .prev-slide {
-        left: 0;
-        margin-top: -20px;
-    }
-    .darken-lightbox .next-slide, .lightbox-holder .next-slide {
-        right: 0;
-        margin-top: -20px;
-    }
-	#footer .container {
-		padding: 0 20px;
-	}
-	.mobile-navbar {
-		display: block;
-	}
-	.left-sidebar {
-		display: none;
-	}
-	.left-sidebar-holder {
-		display: none;
-	}
-	.content-holder {
-		padding-left: 0;
-	}
-	.cart-icon-container {
-		margin-top: -11px;
-		position: fixed;
-		top: 18px !important;
-		right: 12px;
-	}
-	.cart-icon-container .items-counter {
-		display: none;
-	}
-	.cart-icon-container .cart-button svg {
-		height: 28px;
-		width: 33px;
-	}
-	.mobile-menu-holder {
-		display: block;
-	}
-	.ditch-logo {
-		display: none;
-	}
-	.main-slider {
-		margin-top: 7px;
-	}
-	.main-slider .arrow-left-1,
-	.main-slider .arrow-right-1 {
-		margin-top: -39px;
-	}
-	.container.page-content {
-		padding-top: 0;
-	}
-	.controls .page {
-		margin-top: 18px;
-		height: 10px;
-		width: 10px;
-	}
-	#best-items .price {
-		margin-top: 5px;
-	}
-	#banners .image-holder {
-		height: auto;
-	}
-	#banners .banner:nth-child(1) .image-holder,
-	#banners .banner:nth-child(2) .image-holder {
-		height: 243px;
-	}
-	.collection {
-		text-align: center;
-	}
-	.collection-items {
-	}
-	.lookbook-page {
-		padding: 0 20px;
-	}
-	.main-slider .slides-container .slide,
-	.lookbook-page .main-slider .image-holder {
-		max-height: initial;
-		height: initial;
-	}
-	.card-slider {
-		display: block;
-		float: none;
-		max-width: 500px;
-		margin: 0 auto;
-		width: 100%;
-	}
-	.card-slider .slides-container .slide {
-		height: auto;
-		max-height: 400px;
-	}
-	.full-item-description {
-		float: none;
-		margin-top: 20px;
-		padding-left: 0;
-		text-align: center;
-		width: 100%;
-	}
-	.blog-page .blog-post {
-		margin-bottom: 40px;
-		margin-right: 20px;
-		margin-left: 20px;
-	}
-	.blog-page .blog-date {
-		position: static;
-		-webkit-transform: none;
-		-ms-transform: none;
-		-o-transform: none;
-		transform: none;
-	}
-	.blog-page .blog-image,
-	.blog-page .lookbook-description {
-		display: table-row;
-	}
-	.blog-page .blog-image {
-		max-width: 350px;
-		width: 100%;
-	}
-	.blog-page .lookbook-description h3 {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-	.blog-post-page .content-holder {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.blog-full-post .blog-date {
-		position: static;
 		-webkit-transform: none;
 		-moz-transform: none;
 		-ms-transform: none;
 		-o-transform: none;
 		transform: none;
 	}
-	.blog-full-post .full-image {
+	.container {
+		width: 720px;
+	}
+	.dropdown .dropdown-menu {
+		max-width: 720px;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+		/*width: 100%;*/
+	}
+	.dropdown {
+	}
+	.wrapper {
+		overflow: hidden;
+	}
+	.lightbox {
+		padding: 0;
+		width: 75%;
+	}
+
+	footer.main-footer .about-link-holder a,
+	footer.main-footer .about-link-holder,
+	footer.main-footer .payment-systems-holder,
+	header.main-header .header-phone-holder,
+	header.main-header .main-logo-holder {
 		margin-left: 0;
 		margin-right: 0;
-		height: auto;
-		width: 100%;
-	}
-	.blog-full-post .blog-image {
+		padding-left: 20px;
+		padding-right: 20px;
 		text-align: center;
+	}
+	.left-col,
+	.right-col {
+		float: none;
+		text-align: center;
+	}
+	header.main-header .header-phone-holder {
 		margin-bottom: 20px;
 	}
-	.blog-full-post .page {
-		display: inline-block;
-		float: none;
-		margin: 5px !important;
-	}
-	.blog-full-post .blog-full-description {
-		padding-left: 0;
-	}
-	.contact-form {
+	section.tickets-way {
+		padding-left: 20px;
+		padding-right: 20px;
 		text-align: center;
 	}
-	.main-page .breadcrumps-container {
-		padding-left: 20px;
-		padding-right: 20px;
+	section.tickets-way .way-header,
+	section.tickets-way .date-holder {
+		display: block;
+		float: none;
 	}
-	.cart .cart-item .item-name {
-		width: 220px;
+	section.tickets-way .date-holder .date-day {
+		display: inline-block;
+		margin: 10px 0 0;
+		float: none;
 	}
-	.order-page .breadcrumps-container {
+	header.main-header .main-logo-holder {
+		display: block;
+	}
+	footer.main-footer .payment-systems-holder a {
+		margin-left: 7px;
+		margin-right: 7px;
+	}
+
+	/* TICKET */
+
+	section.tickets-holder .ticket {
+		/*line-height: 1em;*/
+	}
+	section.tickets-holder .ticket-info-group .flight {
+		display: block;
+		text-align: center;
+		margin-bottom: 20px;
+		padding-left: 0;
+		width: auto;
+	}
+	section.tickets-holder .ticket-info-group .time-direction {
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		width: auto;
+	}
+	section.tickets-holder .ticket-info-group .time-direction .time-direction-item {
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		margin-bottom: 16px;
+	}
+/*	section.tickets-holder .ticket-info-group .time-direction .time-direction-item.flydown {
+		display: block;
+		text-align: center;
+		margin-bottom: 13px;
+	}*/
+	section.tickets-holder .ticket-info-group .company {
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		width: auto;
+	}
+	section.tickets-holder .ticket-info-group .plane {
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		width: auto;
+	}
+	section.tickets-holder .ticket-info-group .ticket-class {
+		display: block;
+		margin-bottom: 26px;
+		text-align: center;
+		width: auto;
+	}
+	section.tickets-holder .ticket-header {
+		text-align: center;
+	}
+	section.tickets-holder .ticket-header .price {
+		display: block;
+		border-radius: 0;
+	}
+	section.tickets-holder .ticket-header .tickets-left {
+		line-height: 20px;
+		margin-bottom: 20px;
+	}
+	section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label,
+	section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label {
+		margin-left: 0;
+	}
+	section.bottom-tickets-nav button.type-2 {
 		margin-top: 20px;
+		margin-bottom: 20px;
 	}
-	.order-page .page-content.container {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.order-page .order-form input[type="text"] {
-		width: 100% !important;
-	}
-    .about-page .blog-full-description h3,
-    .about-page .blog-full-description p {
-        padding-left: 0;
-    }
+
+	/* END TICKET */
+
 }
 /*
 	MOBILE
@@ -394,167 +203,6 @@
 		-o-animation: none !important;
 		animation: none !important;
 	}
-	#banners .row > div {
-		margin-bottom: 6px;
-	}
-	#best-items {
-		margin-top: 0;
-		padding: 18px;
-		padding-bottom: 0;
-	}
-	#best-items .image-holder {
-		height: auto;
-	}
-	#best-items .prodict-name {
-		margin-top: 20px;
-	}
-	#best-items .row > div {
-		margin-bottom: 24px;
-		padding-top: 6px;
-	}
-	.retailers-page address {
-		border: none;
-		margin-top: 0;
-		padding: 60px 20px;
-		text-align: center;
-	}
-	.retailers-page .contact-item:nth-child(odd),
-	.retailers-page .contact-item:nth-child(even),
-	.retailers-page .contact-item {
-		width: 100%;
-	}
-	.about-page .about-us-holder {
-		margin-top: 10px;
-	}
-	.about-page .blog-full-description {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-    .about-page .blog-full-description h2 {
-        overflow: hidden;
-    }
-    .cart {
-		margin-top: 30px;
-	}
-	.cart .cart-item {
-		margin-bottom: 40px;
-	}
-	.cart .cart-item .right-side,
-	.cart .cart-item .item-remove,
-	.cart .cart-item .item-price,
-	.cart .cart-item .item-size,
-	.cart .cart-item .item-counts,
-	.cart .cart-item .item-name,
-	.cart .cart-item .item-image {
-		display: block;
-		font-size: 22px;
-		padding-left: 0;
-		padding-right: 0;
-		text-align: center;
-		height: auto;
-		margin-bottom: 10px;
-		width: 100%;
-	}
-	.cart .cart-item .item-size select,
-	.cart .cart-item input {
-		display: block;
-		margin: 0 auto;
-		height: 50px;
-		width: 280px;
-	}
-	.cart .cart-item .item-size select {
-		text-align: center;
-	}
-    .cart .cart-item .item-image .image-holder {
-		height: auto;
-		max-height: 200px;
-        width: auto;
-        max-width: 300px;
-        display: inline-block;
-	}
-	.cart .cart-item .item-name {
-		margin-top: 20px;
-		padding-left: 0;
-		font-size: 30px;
-	}
-	.cart .cart-item button.remove-button {
-		color: #fff;
-		background-color: #ee2151;
-		display: block;
-		width: 300px;
-		margin: 0 auto 20px;
-		padding: 5px;
-		font-size: 40px;
-		height: auto;
-	}
-	.basket-page .control-pannel {
-		text-align: center;
-	}
-	.basket-page .control-pannel .total-summ {
-		display: block;
-		margin-bottom: 20px;
-		margin-right: 0;
-	}
-	.basket-page .control-pannel button.type-2 {
-		display: inline-block;
-	}
-	.contacts-page .content-holder {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.contacts-page .info-holder {
-		margin-left: 0;
-	}
-	.contacts-page .contacts-holder textarea,
-	.contacts-page .contacts-holder input {
-		width: 100%;
-	}
-	.faq-page .faq-holder h3,
-	.faq-page .faq-holder p {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.faq-page .faq-holder {
-		margin-top: 30px;
-	}
-	.faq-page .faq-holder h3 {
-		text-align: center;
-	}
-	.order-form .radios-inline .form-group {
-		width: 100%;
-	}
-	.register-page .content-holder {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.register-form {
-		text-align: center;
-	}
-	.register-form input[type="email"],
-	.register-form input[type="password"],
-	.register-form input[type="text"],
-	.register-form input {
-		margin-right: 0;
-		width: 100%;
-	}
-	.login-page .content-holder {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.login-form {
-		text-align: center;
-	}
-	.login-form input[type="email"],
-	.login-form input[type="password"],
-	.login-form input[type="text"],
-	.login-form input {
-		margin-right: 0;
-		width: 100%;
-	}
-    .about-page .blog-social-sharing {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
 }
 /*
 	SMALL

@@ -27,10 +27,10 @@
 					</a>
 				</div>
 				<div class="col-md-4">
-					<div class="my-profile-link-holder">
+					<a href="#" class="my-profile-link-holder">
 						<img src="img/icons/person.png" alt="person"/>
 						<span>Личный кабинет</span>
-					</div>
+					</a>
 				</div>
 				<div class="col-md-4">
 					<div class="header-phone-holder">
@@ -92,7 +92,115 @@
 			<section class="tickets-holder">
 				<div class="container">
 					<div class="ticket">
-						<div class="ticket-header">
+						<label for="radio-2" class="ticket-header">
+							<div class="radio form-group">
+								<input type="radio" name="ticket-true" id="radio-2" />
+								<label for="radio-2"></label>
+							</div>
+							<div class="basic-info">
+								<span>07:00</span>
+								<b>Киев</b>
+								<img src="img/icons/arrow-right-1.svg" alt="arrow"/>
+								<span>07:00</span>
+								<b>Киев</b>
+							</div>
+							<div class="right-col">
+								<span class="tickets-left">Осталось 2 билета</span>
+								<span class="price">450$</span>
+							</div>
+						</label>
+						<div class="ticket-info-group">
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
+						</div>
+						<div class="ticket-info-group">
+							<div class="trip-label">
+								<span>Пересадка 1:45</span>
+							</div>
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
+						</div>
+						<div class="ticket-footer">
+							<span>Общее время в пути: 14:45 <img src="img/icons/arrow-down-1.svg" alt="arrow"/></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tickets-way back">
+				<div class="container">
+					<div class="row">
+						<span>Выберите перелёт</span>
+						<img src="img/icons/way-from-icon.svg" alt="way"/>
+					</div>
+					<div class="row">
+						<div class="left-col way-header">
+							<p>из <b>Киев, Boryspil International (KBP) – Украина</b></p>
+							<p>в <b>Атланта, Hartsfield-Jackson (ATL) GA – США</b></p>
+						</div>
+						<div class="date-holder">
+							<div class="date-day">27</div>
+							<div class="date-wrapper">
+								<div class="date-month-year">октября 2015</div>
+								<div class="date-week">Вторник</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tickets-holder">
+				<div class="container">
+					<div class="ticket">
+						<label for="radio-1" class="ticket-header">
 							<div class="radio form-group">
 								<input type="radio" name="ticket-true" id="radio-1" />
 								<label for="radio-1"></label>
@@ -108,7 +216,7 @@
 								<span class="tickets-left">Осталось 2 билета</span>
 								<span class="price">450$</span>
 							</div>
-						</div>
+						</label>
 						<div class="ticket-info-group">
 							<div class="flight">
 								<p class="label">Рейс</p>
@@ -117,11 +225,11 @@
 							<div class="time-direction">
 								<div class="time-direction-item flyup">
 									<p class="time">07:00</p>
-									<p class="time">Киев, Boryspil InternationalAF 1653</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
 								</div>
 								<div class="time-direction-item flydown">
 									<p class="time">09:25</p>
-									<p class="time">Париж, Аэропорт Шарль-де-Голль</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
 								</div>
 							</div>
 							<div class="company">
@@ -130,7 +238,38 @@
 							</div>
 							<div class="plane">
 								<p class="label">Самолёт</p>
-								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" alt="hint"/></p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
+						</div>
+						<div class="ticket-info-group">
+							<div class="trip-label">
+								<span>Пересадка 1:45</span>
+							</div>
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
 							</div>
 							<div class="ticket-class">
 								<p class="label">Класс</p>
@@ -204,10 +343,10 @@
 		</footer>
 
 		<!-- OVERLAYS -->
-		<div class="main-overlay hidden"></div>
+		<!--div class="main-overlay hidden"></div>
 		<div class="grid-overlay hidden"></div>
 		<div id="main-overlay" class="overlay-button">O</div>
-		<div id="grid-overlay" class="overlay-button">G</div>
+		<div id="grid-overlay" class="overlay-button">G</div -->
 
 		<!-- SCRIPTS -->
 		<script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>

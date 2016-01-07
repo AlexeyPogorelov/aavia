@@ -100,8 +100,10 @@ header.main-header .main-logo-holder span {
 	margin-top: 3px;
 }
 header.main-header .my-profile-link-holder {
+	display: block;
 	margin-top: 13px;
-	margin-left: 114px;
+	/*margin-left: 114px;*/
+	text-align: center;
 }
 header.main-header .my-profile-link-holder img {
 	margin-right: 5px;
@@ -453,6 +455,10 @@ section.tickets-way {
 	background-color: #37404d;
 	color: white;
 	font-size: 18px;
+	font-weight: 100;
+}
+section.tickets-way.back {
+	margin-top: 30px;
 }
 section.tickets-way .container {
 	max-width: 780px;
@@ -482,6 +488,7 @@ section.tickets-way .date-holder .date-day {
 section.tickets-way .date-holder .date-month-year {
 	line-height: 1em;
 	position: relative;
+	white-space: pre;
 }
 section.tickets-way .date-holder .date-week {
 	color: #bbcde6;
@@ -490,13 +497,80 @@ section.tickets-way .date-holder .date-week {
 }
 
 section.tickets-holder {}
+section.tickets-holder .container {
+	max-width: 780px;
+}
 section.tickets-holder .ticket {
+	line-height: 22px;
 	margin-top: 30px;
+	font-size: 14px;
+	font-weight: 700;
+}
+section.tickets-holder .ticket:last-child {
+	margin-bottom: 30px;
+}
+section.tickets-holder .ticket.disabled,
+section.tickets-holder .ticket.muted {
+	opacity: .5;
+}
+section.tickets-holder .ticket .label {
+	color: #526073;
+	font-weight: 300;
+	margin-top: 0;
+}
+section.tickets-holder .ticket .time {
+	font-size: 20px;
+	font-weight: 300;
+	margin-top: 0;
+	position: relative;
+}
+section.tickets-holder .ticket .flyup .time:before {
+	background: url('../img/icons/flyup-icon.svg') 0 0 no-repeat;
+	content: "";
+	position: absolute;
+	left: -20px;
+	top: 7px;
+	height: 10px;
+	width: 12px;
+}
+section.tickets-holder .ticket .flydown .time:before {
+	background: url('../img/icons/flydown-icon.svg') 0 0 no-repeat;
+	content: "";
+	position: absolute;
+	left: -20px;
+	top: 7px;
+	height: 10px;
+	width: 12px;
+}
+section.tickets-holder .ticket > * {
+	box-shadow: 0 1px 0 #bbcde6;
+	-webkit-box-shadow: 0 1px 0 #bbcde6;
 }
 section.tickets-holder .ticket-header {
 	background: white url('../img/bg/pattern-3.png');
-	-webkit-box-shadow: 0 1px 0 #bbcde6;
-	box-shadow: 0 1px 0 #bbcde6;
+	border-radius: 6px;
+	cursor: pointer;
+	display: block;
+	/*overflow: hidden;*/
+}
+section.tickets-holder .hint {
+	margin-top: -2px;
+	margin-left: 4px;
+}
+section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label,
+section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label {
+	margin-left: 18px;
+	padding-left: 26px;
+}
+section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label:before,
+section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label:before {
+	height: 10px;
+	width: 10px;
+}
+section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label:after,
+section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label:after {
+	top: 5px;
+	left: 3px;
 }
 section.tickets-holder .ticket-header .radio.form-group {
 	display: inline-block;
@@ -512,21 +586,137 @@ section.tickets-holder .ticket-header .tickets-left {
 	font-size: 14px;
 	font-weight: 300;
 	margin-right: 20px;
+	vertical-align: top;
+	line-height: 49px;
 }
 section.tickets-holder .ticket-header .price {
-	background-color: #ff4cc2;
-	color: white;/* Text style for "450$" */
+	background: #ff4cc2 url('../img/bg/pattern-2.png');
+	color: white;
 	font-size: 32px;
 	font-weight: 300;
 	line-height: 49px;
+	padding: 0 20px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
-section.tickets-holder .ticket-info-group {}
-section.tickets-holder .ticket-footer {}
+section.tickets-holder .ticket-info-group {
+	background: #f1f5fa url('../img/bg/pattern-3.png') repeat;
+	border-radius: 6px;
+	font-size: 0;
+	margin-top: 1px;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	position: relative;
+}
+section.tickets-holder .ticket-info-group > * {
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: top;
+}
+section.tickets-holder .ticket-info-group p {
+	/*margin-top: 6px;*/
+}
+section.tickets-holder .ticket-info-group .trip-label {
+	color: #526073;
+	font-size: 11px;
+	font-weight: 300;
+	position: absolute;
+	text-align: center;
+	top: -12px;
+	width: 100%;
+}
+section.tickets-holder .ticket-info-group .trip-label span {
+	background: #f1f5fa url('../img/bg/pattern-3.png') repeat;
+	padding: 0 12px;
+}
+section.tickets-holder .ticket-info-group .flight {
+	padding-left: 20px;
+	width: 130px;
+}
+section.tickets-holder .ticket-info-group .time-direction {
+	width: 280px;
+}
+section.tickets-holder .ticket-info-group .time-direction .time-direction-item {
+	margin-bottom: 16px;
+}
+section.tickets-holder .ticket-info-group .time-direction .time-direction-item.flydown {
+	margin-bottom: 13px;
+}
+section.tickets-holder .ticket-info-group .company {
+	width: 140px;
+}
+section.tickets-holder .ticket-info-group .plane {
+	width: 140px;
+}
+section.tickets-holder .ticket-info-group .ticket-class {
+	width: 90px;
+}
+
+section.tickets-holder .ticket-footer {
+	background: white url('../img/bg/pattern-3.png');
+	border-radius: 6px;
+	color: #7a0fad;
+	line-height: 51px;
+	padding-left: 20px;
+	font-weight: 300;
+}
+section.tickets-holder .ticket-footer span img {
+	margin-left: 4px;
+}
 section.bottom-tickets-nav {
 	background-color: #37404d;
 	color: white;
 }
+section.bottom-tickets-nav .container {
+	max-width: 780px;
+}
+section.bottom-tickets-nav .info-holder {
+	text-align: left;
+	margin-left: 26px;
+	vertical-align: middle;
+}
+section.bottom-tickets-nav .info-holder span {
+	display: block;
+	line-height: 1em;
+	font-size: 14px;
+	font-weight: 300;
+}
+section.bottom-tickets-nav .info-holder span.label {
+	color: #bbcde6;
+	margin-bottom: 3px;
+}
+section.bottom-tickets-nav .info-holder span.price {
+}
+section.bottom-tickets-nav .info-holder span.bold {
+	font-weight: 700;
+}
+section.bottom-tickets-nav button.type-2 {
+	background: #ff4cc2;
+	font-size: 20px;
+	line-height: 60px;
+	margin-right: 14px;
+	margin-left: 26px;
+	padding: 0 64px;
+	position: relative;
+	text-transform: uppercase;
+}
+section.bottom-tickets-nav button.type-2:after {
+	background: url('../img/bg/button-after-1.png') 0 0 no-repeat;
+	content: "";
+	position: absolute;
+	right: -13px;
+	height: 60px;
+	width: 14px;
+}
 section.bottom-tickets-nav a.back {
 	color: #a1c8fc;
+	font-size: 14px;
+	line-height: 60px;
+	font-weight: 100;
+}
+section.bottom-tickets-nav a.back img {
+	margin-left: 2px;
+	margin-right: 5px;
+	vertical-align: baseline;
 }
 /* END TICKETS-PAGE */
