@@ -54,8 +54,9 @@
 	margin-top: 22px;
 	margin-bottom: 6px;
 }
-body {
+body, html {
 	font-family: ProximaNova, sans-serif;
+	height: 100%;
 }
 .page-wrapper {
 	/* background-image: url('../img/bg/main-bg.jpg'); */
@@ -64,6 +65,7 @@ body {
 }
 .content-wrapper {
 	background: url('../img/bg/earch-map.png') 0 80px no-repeat, url('../img/bg/triangles.png');
+	min-height: calc(100vh - 100px);
 	position: relative;
 }
 .content-wrapper > #clouds-bg {
@@ -230,7 +232,7 @@ section.main-form .main-input-holder .text-holder {
 	padding-left: 6px;
 }
 section.main-form .main-input-holder.big .text-holder {
-	padding-right: 30px;
+	padding-right: 32px;
 }
 section.main-form .main-input-holder .input-name {
 	color: #7a0fad;
@@ -256,6 +258,13 @@ section.main-form .main-input-holder .input-label {
 	font-weight: 400;
 	line-height: 12px;
 	margin-top: 5px;
+	max-height: 25px;
+	overflow: hidden;
+}
+section.main-form .main-input-holder .input-label.selected {
+	color: #000;
+	-webkit-transition: color .2s;
+	transition: color .2s;
 }
 section.main-form .main-input-holder .input-holder input {
 	border: none;
@@ -316,6 +325,57 @@ section.main-form .main-input-holder .date-holder .date-week {
 section.main-form .main-input-holder.promocode-button-holder .input-name {
 	padding-left: 52px;
 }
+section.main-form .main-input-holder .dropdown {
+	background: #bbcde6;
+	cursor: auto;
+	left: 50%;
+	top: 80px;
+	/*overflow: hidden;*/
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	min-width: 100%;
+	/*max-height: 0;*/
+	z-index: 2;
+	-webkit-transform: translateX(-50%) translateY(-20px);
+	transform: translateX(-50%) translateY(-20px);
+	-webkit-transition: transform .3s, opacity .3s, visibility .3s;
+	transition: transform .3s, opacity .3s, visibility .3s;
+}
+section.main-form .main-input-holder.opened .dropdown {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translateX(-50%) translateY(0);
+	transform: translateX(-50%) translateY(0);
+	-webkit-transition: transform .3s ease-out, opacity .3s;
+	transition: transform .3s ease-out, opacity .3s;
+	z-index: 99;
+}
+section.main-form .main-input-holder .dropdown:before {
+	content: "";
+	background: #bbcde6;
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	height: 20px;
+	width: 20px;
+	z-index: 0;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+section.main-form .main-input-holder .dropdown:after {
+	background: #6d809a;
+	content: "";
+	bottom: 0;
+	height: 1px;
+	position: absolute;
+	width: 100%;
+}
+section.main-form .main-input-holder .dropdown .list-item {
+	border-bottom: 1px solid #b0bed0;
+	cursor: pointer;
+	padding: 6px 20px;
+}
 
 .sales-items {
 	text-align: center;
@@ -375,6 +435,7 @@ section.main-form .main-input-holder.promocode-button-holder .input-name {
 }
 section.current-sales {
 	margin-top: 55px;
+	z-index: 0;
 }
 section.current-sales h4 {
 	margin-bottom: 38px;
@@ -385,6 +446,7 @@ section.current-sales h4 {
 }
 section.current-sales h4 span {
 	position: relative;
+	z-index: 0;
 }
 section.current-sales h4 span:before,
 section.current-sales h4 span:after {
@@ -427,6 +489,8 @@ section.information-block-1 p {
 footer.main-footer {
 	background-color: #211b36;
 	color: #ffffff;
+	height: 40px;
+	overflow: hidden;
 }
 footer.main-footer .copyright-holder {
 	font-size: 14px;

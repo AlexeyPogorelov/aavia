@@ -283,6 +283,7 @@ button.type-1 {
 section.current-sales {
 	-webkit-animation-delay: 1.2s;
 	animation-delay: 1.2s;
+	position: relative;
 }
 
 /* INTRO ANIMATION */

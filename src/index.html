@@ -8,6 +8,7 @@
 	<!--<link rel="stylesheet" href="css/animate.min.css">-->
 	<link rel="stylesheet" href="../libs/normalize/normalize.css">
 	<link rel="stylesheet" href="../libs/font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../libs/jquery-ui/jquery-ui.css">
 	<link rel="stylesheet" href="css/grid.css">
 	<link rel="stylesheet" href="css/global.css">
 	<link rel="stylesheet" href="css/fonts.css">
@@ -68,11 +69,11 @@
 			<div id="clouds-bg"></div>
 
 			<section class="main-form">
-				<form action="#" class="container">
+				<div class="container">
 
 					<div class="row">
 
-						<div class="main-input-holder big">
+						<div class="main-input-holder big" data-link="departurePort">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/pin.png" alt="from">
 							</div>
@@ -82,8 +83,8 @@
 							</div>
 							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
 						</div>
-						
-						<div class="main-input-holder big">
+
+						<div class="main-input-holder big" data-link="arrivalPort">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/pin.png" alt="to">
 							</div>
@@ -97,13 +98,14 @@
 
 					<div class="row">
 
-						<div class="main-input-holder small">
+						<div class="main-input-holder small" data-link="departureDate">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
 							</div>
 							<div class="text-holder">
 							<div class="input-name">Вылет</div>
 								<div class="date-holder">
+									<input type="date" class="hidden" id="fakeDepartureDate">
 									<div class="date-day">19</div>
 									<div class="date-wrapper">
 										<div class="date-month-year">октября 2015</div>
@@ -113,13 +115,14 @@
 							</div>
 						</div>
 						
-						<div class="main-input-holder small">
+						<div class="main-input-holder small" data-link="arrivalDate">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/calendar.png" alt="calendar">
 							</div>
 							<div class="text-holder">
 								<div class="input-name">Назад</div>
 								<div class="date-holder">
+									<input type="date" class="hidden" id="fakeArrivalDate">
 									<div class="date-day">27</div>
 									<div class="date-wrapper">
 										<div class="date-month-year">октября 2015</div>
@@ -129,16 +132,16 @@
 							</div>
 						</div>
 						
-						<div class="main-input-holder middle">
+						<div class="main-input-holder middle" data-link="ticketClass">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/person-2.png" alt="person">
 							</div>
 							<div class="text-holder">
 								<div class="input-name">Класс салона и пассажиры</div>
-								<div class="input-state">3 пассажира, эконом</div>
+								<div class="input-label">3 пассажира, эконом</div>
 							</div>
 							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-							<div class="dropdown-holder persons-dropdown">
+							<div class="dropdown persons-dropdown">
 								<!-- dropdown -->
 								<div class="form-group">
 									<span class="label-1">Класс салона</span>
@@ -169,22 +172,23 @@
 
 					<div class="row">
 
-						<div class="main-input-holder middle promocode-button-holder">
+						<label for="promocode-input" class="main-input-holder middle promocode-button-holder" data-link="discount">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/promocode.png" alt="promocode">
 							</div>
 							<div class="input-name">У меня есть промокод</div>
 							<div class="promocode-input-holder">
-								<input type="text" placeholder="Ввести" class="promocode-input">
+								<input type="text" placeholder="Ввести" class="promocode-input" id="promocode-input">
 							</div>
-						</div>
+						</label>
 					</div>
 					<div class="button-holder">
-						<button class="type-1 intro-animation">найти</button>
+						<button class="type-1 intro-animation" id="submit-main-form">найти</button>
 					</div>
 
-				</form>
+				</div>
 			</section>
+
 			<section class="current-sales intro-animation">
 				<div class="container">
 					<h4>
@@ -228,6 +232,7 @@
 					</div>
 				</div>
 			</section>
+
 			<section class="information-block-1">
 				<div class="container">
 					<h5>Уважаемые клиенты</h5>
@@ -236,7 +241,138 @@
 					<p>Наши цены всегда ниже, чем у конкурентов! Позвоните и убедитесь!</p>
 				</div>
 			</section>
+
 		</div>
+
+		<form action="/session" class="container hiddenn" method="POST" id="form-main-form">
+			<div>
+				<div>
+				</div>
+
+				<label>Откуда</label>
+				<select name="departurePort" id="departurePort">
+					<option value="">Введите аэропорт или город, либо выберите из списка</option>
+					<option value="KBP">Киев, Boryspil International Airport (KBP)</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Куда</label>
+				<select name="arrivalPort" id="arrivalPort">
+					<option value="">Введите аэропорт или город, либо выберите из списка</option>
+					<option value="KBP">Киев, Boryspil International Airport (KBP)</option>
+					<option value="ORD">Чикаго, Иллиноиз, O'Hare International Airport (ORD)</option>
+					<option value="ATL">Atlanta, Georgia, Hartsfield-Jackson Atlanta International Airport (ATL)</option>
+					<option value="DFW">Coppell, Euless, Grapevine, and Irving, Texas, Dallas/Fort Worth International Airport (DFW)</option>
+					<option value="YYZ">Mississauga, Ontario, Toronto Pearson International Airport (YYZ)</option>
+					<option value="MUC">Freising, Bavaria, Munich Airport (MUC)</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Вылет</label>
+				<input type="date" name="departureDate" id="departureDate" value="">
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Назад</label>
+				<input type="date" name="arrivalDate" id="arrivalDate" value="">
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Класс салона</label>
+				<select name="ticketClass" id="ticketClass">
+					<option value="">Выберите класс салона</option>
+					<option value="FFLHECO">Эконом</option>
+					<option value="FFLHPRMECO">Премиум-эконом</option>
+					<option value="FFLHBUSINESS">Бизнес</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Количество взрослых</label>
+				<select name="adultPAXs" id="adultPAXs">
+					<option value="1">Выберите количество взрослых</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Количество детей</label>
+				<select name="childPAXs" id="childPAXs">
+					<option value="">Выберите количество детей</option>
+					<option selected="" value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Количество младенцев</label>
+				<select name="infantPAXs" id="infantPAXs">
+					<option value="">Количество младенцов</option>
+					<option selected="" value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+
+			<div>
+				<div>
+				</div>
+
+				<label>Код скидки</label>
+				<input type="text" name="discount" id="discount" value="">
+			</div>
+
+			<div>
+				<input type="hidden" name="_token" value="hxC1yQOut7yp5YZtoYW8zNPlADjujuMka8GNZHrU">
+			</div>
+
+			<div>
+				<button type="submit">Найти</button>
+			</div>
+		</form>
 
 		<footer class="main-footer">
 			<div class="container">
@@ -277,6 +413,7 @@
 
 		<!-- SCRIPTS -->
 		<script src="../libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+		<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
 		<script src="js/main.js"></script>
 	</div>
 </body>
