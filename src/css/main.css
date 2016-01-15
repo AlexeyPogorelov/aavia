@@ -82,6 +82,8 @@ body, html {
 /* CALENDAR */
 .ui-datepicker {
 	font-size: 14px;
+	-webkit-transform: translate(-59px, 36px);
+	transform: translate(-59px, 36px);
 	width: 220px;
 }
 .ui-widget-content {
@@ -133,12 +135,71 @@ body, html {
 	border: none;
 	cursor: pointer;
 }
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
-	background-position: -49px -191px;
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+	/*background-position: -49px -191px;*/
 }
 .ui-icon-circle-triangle-w {
 	background-position: -80px -192px;
 }
+
+/* SPINNER */
+.ui-spinner,
+.ui-spinner-input {
+	border: none;
+	background: none;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	width: 80px;
+	display: block;
+}
+.ui-spinner-input {
+	padding-left: 20px;
+}
+.ui-spinner-input:focus,
+.ui-spinner-input:active {
+	border: none;
+	outline: none;
+}
+.ui-widget-content {
+	border: none;
+}
+.ui-spinner a.ui-spinner-button {
+	background: rgba(255,255,255,.5);
+	border-radius: 50%;
+	height: 26px;
+	left: 0;
+	right: auto;
+	text-align: center;
+	top: 0;
+	width: 26px;
+	-webkit-transition: background .3s;
+	transition: background .3s;
+}
+.ui-spinner a.ui-spinner-button:hover {
+	background: rgba(255,255,255,1);
+	-webkit-transition: background .3s;
+	transition: background .3s;
+}
+.ui-spinner a.ui-spinner-up {
+	left: 40px;
+}
+.ui-spinner a.ui-spinner-down {}
+/*.ui-spinner .spinner-down-icon:after {
+	background: #ff0000;
+	content: "-";
+	height: 26px;
+	width: 26px;
+	position: static;
+}
+.ui-spinner .spinner-up-icon:after {
+	background: #ff0000;
+	content: "+";
+	height: 26px;
+	width: 26px;
+	position: static;
+}*/
 
 
 header.main-header {
@@ -293,8 +354,6 @@ section.main-form .main-input-holder .illustration-holder .input-illustration {
 	top: 50%;
 	vertical-align: middle;
 	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 section.main-form .main-input-holder .text-holder {
@@ -456,6 +515,14 @@ section.main-form .main-input-holder .dropdown .list-item:hover {
 	background: #e4ebf5;
 	-webkit-transition: background .1s;
 	transition: background .1s;
+}
+section.main-form .main-input-holder .persons-dropdown {}
+section.main-form .main-input-holder .persons-dropdown .label-1 {
+	color: #6d809a;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
 }
 
 .sales-items {

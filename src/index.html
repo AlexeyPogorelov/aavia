@@ -132,7 +132,7 @@
 							</div>
 						</div>
 						
-						<div class="main-input-holder middle" data-link="ticketClass">
+						<div class="main-input-holder middle" data-link="personsInfo">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/person-2.png" alt="person">
 							</div>
@@ -141,32 +141,6 @@
 								<div class="input-label">3 пассажира, эконом</div>
 							</div>
 							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
-							<div class="dropdown persons-dropdown hidden">
-								<!-- dropdown -->
-								<div class="form-group">
-									<span class="label-1">Класс салона</span>
-									<select name="ticket-class" id="ticket-class" class="type-1">
-										<option value="1">Lorem</option>
-										<option value="2">Consequatur</option>
-										<option value="3">Officiis</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<span class="label-1">Взрослые</span>
-									<span class="label-2">от 12 лет</span>
-									<input type="number" class="person-counter">
-								</div>
-								<div class="form-group">
-									<span class="label-1">Дети</span>
-									<span class="label-2">до 12 лет</span>
-									<input type="number" class="person-counter">
-								</div>
-								<div class="form-group">
-									<span class="label-1">Новорожденные</span>
-									<span class="label-2">до 2 лет</span>
-									<input type="number" class="person-counter">
-								</div>
-							</div>
 						</div>
 					</div>
 
@@ -245,9 +219,63 @@
 		</div>
 
 		<form action="/session" class="container hiddenn" method="POST" id="form-main-form">
-			<div>
-				<div>
+			<div class="dropdown persons-dropdown" id="personsInfo">
+				<!-- dropdown -->
+<!-- 				<div class="form-group">
+					<span class="label-1">Класс салона</span>
+					<select name="ticket-class" id="ticket-class" class="type-1">
+						<option value="1">Lorem</option>
+						<option value="2">Consequatur</option>
+						<option value="3">Officiis</option>
+					</select>
 				</div>
+				<div class="form-group">
+					<span class="label-1">Взрослые</span>
+					<span class="label-2">от 12 лет</span>
+					<input type="number" class="person-counter">
+				</div>
+				<div class="form-group">
+					<span class="label-1">Дети</span>
+					<span class="label-2">до 12 лет</span>
+					<input type="number" class="person-counter">
+				</div>
+				<div class="form-group">
+					<span class="label-1">Новорожденные</span>
+					<span class="label-2">до 2 лет</span>
+					<input type="number" class="person-counter">
+				</div> -->
+
+
+				<div class="form-group">
+					<span class="label-1">Класс салона</span>
+					<div class="ticketClass" name="ticketClass" data-link="ticketClass">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<span class="label-1">Количество взрослых</span>
+					<span class="label-2">от 12 лет</span>
+					<input class="ui-spinner" name="adultPAXs" data-link="adultPAXs" value="0" />
+				</div>
+
+				<div class="form-group">
+					<span class="label-1">Количество детей</span>
+					<span class="label-2">до 12 лет</span>
+					<input class="ui-spinner" name="childPAXs" data-link="childPAXs" value="0" />
+				</div>
+
+				<div class="form-group">
+					<span class="label-1">Количество младенцев</span>
+					<span class="label-2">до 2 лет</span>
+					<input class="ui-spinner" name="infantPAXs" data-link="infantPAXs" value="0" />
+				</div>
+
+			</div>
+
+
+
+			<div>
+
 
 				<label>Откуда</label>
 				<select name="departurePort" id="departurePort">
@@ -292,7 +320,16 @@
 				<div>
 				</div>
 
-				<label>Класс салона</label>
+				<label>Код скидки</label>
+				<input type="text" name="discount" id="discount" value="">
+			</div>
+
+			<div>
+				<input type="hidden" name="_token" value="hxC1yQOut7yp5YZtoYW8zNPlADjujuMka8GNZHrU">
+			</div>
+
+			<div class="form-group">
+				<span class="label-1">Класс салона</span>
 				<select name="ticketClass" id="ticketClass">
 					<option value="">Выберите класс салона</option>
 					<option value="FFLHECO">Эконом</option>
@@ -301,73 +338,21 @@
 				</select>
 			</div>
 
-			<div>
-				<div>
-				</div>
-
-				<label>Количество взрослых</label>
-				<select name="adultPAXs" id="adultPAXs">
-					<option value="1">Выберите количество взрослых</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-				</select>
+			<div class="form-group">
+				<span class="label-1">Количество взрослых</span>
+				<input name="adultPAXs" id="adultPAXs" />
 			</div>
 
-			<div>
-				<div>
-				</div>
-
-				<label>Количество детей</label>
-				<select name="childPAXs" id="childPAXs">
-					<option value="">Выберите количество детей</option>
-					<option selected="" value="0">0</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-				</select>
+			<div class="form-group">
+				<span class="label-1">Количество детей</span>
+				<input name="childPAXs" id="childPAXs" />
 			</div>
 
-			<div>
-				<div>
-				</div>
-
-				<label>Количество младенцев</label>
-				<select name="infantPAXs" id="infantPAXs">
-					<option value="">Количество младенцов</option>
-					<option selected="" value="0">0</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-				</select>
+			<div class="form-group">
+				<span class="label-1">Количество младенцев</span>
+				<input name="infantPAXs" id="infantPAXs" />
 			</div>
 
-			<div>
-				<div>
-				</div>
-
-				<label>Код скидки</label>
-				<input type="text" name="discount" id="discount" value="">
-			</div>
-
-			<div>
-				<input type="hidden" name="_token" value="hxC1yQOut7yp5YZtoYW8zNPlADjujuMka8GNZHrU">
-			</div>
 
 			<div>
 				<button type="submit">Найти</button>

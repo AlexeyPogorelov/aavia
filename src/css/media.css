@@ -231,6 +231,13 @@
 		position: static;
 	}
 
+	/* CALENDAR */
+	.ui-datepicker {
+		-webkit-transform: translate(-8px, 19px);
+		transform: translate(-8px, 19px);
+		width: 305px;
+	}
+
 	/* TICKETS */
 	section.tickets-holder .ticket {
 		position: relative;
