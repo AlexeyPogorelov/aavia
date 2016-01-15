@@ -204,6 +204,64 @@
 		-o-animation: none !important;
 		animation: none !important;
 	}
+	section.main-form .main-input-holder.promocode-button-holder .input-name {
+		padding-top: 8px;
+	}
+	button.type-1,
+	section.main-form .main-input-holder.small,
+	section.main-form .main-input-holder.big,
+	section.main-form .main-input-holder {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 290px;
+	}
+	section.information-block-1 .container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	header.main-header .my-profile-link-holder,
+	header.main-header .header-phone-holder,
+	header.main-header .my-profile-link-holder span,
+	header.main-header .main-logo-holder span {
+		display: none;
+	}
+	section.current-sales h4 span:before, section.current-sales h4 span:after {
+		display: none;
+		position: static;
+	}
+
+	/* TICKETS */
+	section.tickets-holder .ticket {
+		position: relative;
+		margin-left: 5px;
+		margin-right: 5px;
+/*		padding-left: 15px;
+		padding-right: 15px;*/
+	}
+	section.tickets-holder .ticket-header .radio.form-group {
+		position: absolute;
+		left: -10px;
+		top: 4px;
+	}
+	section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label:before, section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label:before {
+		height: 17px;
+		width: 17px;
+	}
+	section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label:after, section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label:after {
+		top: 8px;
+		left: 6px;
+	}
+	.radio input[type="radio"]:not(:checked) + label:after, .radio input[type="radio"]:checked + label:after {
+		height: 9px;
+		width: 9px;
+	}
+	section.tickets-holder .ticket-header .basic-info > span {
+		font-weight: 100;
+	}
+	section.tickets-holder .ticket-header {
+		/* text-align: left; */
+	}
 }
 /*
 	SMALL

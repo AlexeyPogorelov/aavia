@@ -65,9 +65,10 @@ $('.main-input-holder').each(function () {
 			}
 		});
 		var $newSelect = $('<div>').addClass('dropdown');
+		var $listHolder = $('<ul>');
 		$realSelect.find('option').each(function (i) {
 			if (i) {
-				var $newOption = $('<div>').addClass('list-item');
+				var $newOption = $('<li>').addClass('list-item');
 				$newOption.html($(this).text());
 				$newOption.attr('data-val', $(this).val()); // TODO can be removed
 				$newOption.on('click', function (e) {
@@ -76,13 +77,15 @@ $('.main-input-holder').each(function () {
 					$self.find('.input-label').addClass('selected').html($(this).html());
 					$self.removeClass('opened');
 				});
-				$newOption.appendTo($newSelect);
+				$newOption.appendTo($listHolder);
 			}
 		});
+		$listHolder.appendTo($newSelect);
 		$newSelect.appendTo($(this));
 	}
 });
-$('#submit-main-form').on('click', function () {
+$('#submit-main-form').on('click', function (e) {
+	e.preventDefault();
 	$('#form-main-form').trigger('submit');
 });
 

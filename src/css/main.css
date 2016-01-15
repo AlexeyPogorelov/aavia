@@ -1,4 +1,4 @@
-/* TEMP */
+ TEMP */
 .grid-overlay {
 	/* display: none; */
 	background: url('../img/bg/grid.png') 50% 0 repeat-y;
@@ -79,6 +79,68 @@ body, html {
 	-webkit-animation-iteration-count: 99;
 	z-index: 0;
 }
+/* CALENDAR */
+.ui-datepicker {
+	font-size: 14px;
+	width: 220px;
+}
+.ui-widget-content {
+	border: none;
+	border-bottom: 1px solid #6d809a;
+}
+.ui-datepicker table {
+	background: #bbcde6;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.ui-datepicker .ui-datepicker-title {
+	font-weight: 300;
+	font-size: 14px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: none;
+	border: none;
+	text-align: center;
+	padding: 0;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+	padding: 0;
+	border-radius: 0;
+}
+.ui-datepicker .ui-datepicker-header {
+	border: none;
+	background: #9caec8;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	background: #ff4cc2;
+	border: none;
+	color: #fff;
+	padding: 0;
+}
+.ui-datepicker td {
+	padding: 0;
+}
+.ui-datepicker th {
+	color: #6d8099;
+}
+.ui-widget-header .ui-state-disabled {
+	opacity: 0;
+	visibility: hidden;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
+	background-position: -49px -191px;
+}
+.ui-icon-circle-triangle-w {
+	background-position: -80px -192px;
+}
+
+
 header.main-header {
 	background-color: #ffa857;
 }
@@ -180,8 +242,16 @@ section.main-form .main-input-holder {
 	/*float: left;*/
 	vertical-align: top;
 	text-align: left;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12), 0 0px 48px rgba(0,0,0,0.1);
-	box-shadow: 0 2px 5px rgba(0,0,0,0.12), 0 0px 48px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0px 18px rgba(0,0,0,0.01);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0px 18px rgba(0,0,0,0.01);
+	-webkit-transition: box-shadow .3s;
+	transition: box-shadow .3s;
+}
+section.main-form .main-input-holder.opened {
+	-webkit-box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0px 48px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0px 48px rgba(0,0,0,0.1);
+	-webkit-transition: box-shadow .3s;
+	transition: box-shadow .3s;
 }
 section.main-form .main-input-holder.big {
 	width: 366px;
@@ -329,12 +399,12 @@ section.main-form .main-input-holder .dropdown {
 	background: #bbcde6;
 	cursor: auto;
 	left: 50%;
-	top: 80px;
+	top: 60px;
 	/*overflow: hidden;*/
 	visibility: hidden;
 	opacity: 0;
 	position: absolute;
-	min-width: 100%;
+	min-width: calc(100% + 14px);
 	/*max-height: 0;*/
 	z-index: 2;
 	-webkit-transform: translateX(-50%) translateY(-20px);
@@ -352,12 +422,13 @@ section.main-form .main-input-holder.opened .dropdown {
 	z-index: 99;
 }
 section.main-form .main-input-holder .dropdown:before {
-	content: "";
 	background: #bbcde6;
+	content: "";
+	display: none;
+	height: 20px;
+	left: 50%;
 	position: absolute;
 	top: -10px;
-	left: 50%;
-	height: 20px;
 	width: 20px;
 	z-index: 0;
 	-webkit-transform: translateX(-50%) rotate(45deg);
@@ -365,8 +436,8 @@ section.main-form .main-input-holder .dropdown:before {
 }
 section.main-form .main-input-holder .dropdown:after {
 	background: #6d809a;
-	content: "";
 	bottom: 0;
+	content: "";
 	height: 1px;
 	position: absolute;
 	width: 100%;
@@ -374,7 +445,17 @@ section.main-form .main-input-holder .dropdown:after {
 section.main-form .main-input-holder .dropdown .list-item {
 	border-bottom: 1px solid #b0bed0;
 	cursor: pointer;
-	padding: 6px 20px;
+	padding: 6px 40px;
+	position: relative;
+	font-size: 16px;
+	font-weight: 200;
+	-webkit-transition: background .3s;
+	transition: background .3s;
+}
+section.main-form .main-input-holder .dropdown .list-item:hover {
+	background: #e4ebf5;
+	-webkit-transition: background .1s;
+	transition: background .1s;
 }
 
 .sales-items {
@@ -394,10 +475,10 @@ section.main-form .main-input-holder .dropdown .list-item {
 .sales-items .sales-item .illustration .image-holder:after {
 	background-color: rgba(0, 0, 0, .4);
 	content: "";
+	height: 100%;
+	left: 0;
 	position: absolute;
 	top: 0;
-	left: 0;
-	height: 100%;
 	width: 100%;
 }
 .sales-items .sales-item p {
@@ -783,4 +864,4 @@ section.bottom-tickets-nav a.back img {
 	margin-right: 5px;
 	vertical-align: baseline;
 }
-/* END TICKETS-PAGE */
+/* END TICKETS-PAGE 
