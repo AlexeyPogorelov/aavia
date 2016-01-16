@@ -1,4 +1,4 @@
- TEMP */
+/* TEMP */
 .grid-overlay {
 	/* display: none; */
 	background: url('../img/bg/grid.png') 50% 0 repeat-y;
@@ -931,4 +931,67 @@ section.bottom-tickets-nav a.back img {
 	margin-right: 5px;
 	vertical-align: baseline;
 }
-/* END TICKETS-PAGE 
+/* END TICKETS-PAGE */
+
+/* PAGE*/
+.page-content {
+	box-shadow: 0 1px 0 #bbcde6;
+	background-color: white;
+	margin-bottom: 90px;
+	margin-top: 50px;
+	padding: 20px 62px 45px;
+	width: 780px;
+}
+.page-content h2 {
+	color: black;
+	font-size: 32px;
+	font-weight: 300;
+	line-height: 36px;
+	margin-top: 25px;
+	margin-bottom: 33px;
+	text-transform: none;
+}
+.page-content h3 {
+	color: black;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 36px;
+	text-transform: none;
+}
+.page-content p {
+	color: #526073;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+	margin-bottom: 16px;
+}
+.page-content .grand {
+	color: #526073;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 30px;
+	margin-bottom: 26px;
+	max-width: 414px;
+}
+.page-content .back {
+	color: #bdcfe7;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	/*margin-bottom: 25px;*/
+}
+.page-content .color {
+	color: #7a0fad;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+	margin: 37px auto 16px;
+	max-width: 440px;
+	text-align: center;
+}
+.page-content .button-holder {
+	margin-top: 32px;
+}
+/* END PAGE*/

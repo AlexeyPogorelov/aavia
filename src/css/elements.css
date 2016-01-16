@@ -1,10 +1,13 @@
+.btn.type-1,
 button.type-1 {
-    background-color: #ff4cc2;
-    color: #ffffff;
-    font-size: 16px;
-    height: 60px;
-    text-transform: uppercase;
-    width: 300px;
-    -webkit-box-shadow: 0 1px 0 #c328e7;
-    box-shadow: 0 1px 0 #c328e7;
+	background-color: #ff4cc2;
+	color: #ffffff;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 60px;
+	height: 60px;
+	text-transform: uppercase;
+	width: 300px;
+	-webkit-box-shadow: 0 1px 0 #c328e7;
+	box-shadow: 0 1px 0 #c328e7;
 }

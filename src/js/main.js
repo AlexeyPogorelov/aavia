@@ -131,40 +131,43 @@ $('#submit-main-form').on('click', function (e) {
 });
 
 // jQuery UI
-$("#fakeDepartureDate").datepicker({
-	dayNames: dayNames,
-	dayNamesMin: dayNamesMin,
-	dayNamesShort: dayNamesShort,
-	monthNames: monthNames,
-	monthNamesShort: monthNamesShort,
-	prevText: "Раньше",
-	nextText: "Позже",
-	showAnim: "slideDown",
-	dateFormat: 'yy-mm-dd',
-	onSelect: function () {
-		$('#departureDate').val(this.value);
-		var newMinDate = new Date(this.value);
-		$('#fakeArrivalDate').datepicker( "option", "minDate", new Date(newMinDate.getFullYear(), newMinDate.getMonth(), newMinDate.getDate() + 1) );
-		fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
-	},
-	minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14)
-});
-$("#fakeArrivalDate").datepicker({
-	dayNames: dayNames,
-	dayNamesMin: dayNamesMin,
-	dayNamesShort: dayNamesShort,
-	monthNames: monthNames,
-	monthNamesShort: monthNamesShort,
-	prevText: "Раньше",
-	nextText: "Позже",
-	showAnim: "slideDown",
-	dateFormat: 'yy-mm-dd',
-	onSelect: function () {
-		$('#arrivalDate').val(this.value);
-		fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
-	},
-	minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 34)
-});
+if ($("#fakeDepartureDate, #fakeArrivalDate").length == 2) {
+	$("#fakeDepartureDate").datepicker({
+		dayNames: dayNames,
+		dayNamesMin: dayNamesMin,
+		dayNamesShort: dayNamesShort,
+		monthNames: monthNames,
+		monthNamesShort: monthNamesShort,
+		prevText: "Раньше",
+		nextText: "Позже",
+		showAnim: "slideDown",
+		dateFormat: 'yy-mm-dd',
+		onSelect: function () {
+			$('#departureDate').val(this.value);
+			var newMinDate = new Date(this.value);
+			$('#fakeArrivalDate').datepicker( "option", "minDate", new Date(newMinDate.getFullYear(), newMinDate.getMonth(), newMinDate.getDate() + 1) );
+			fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
+		},
+		minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14)
+	});
+	$("#fakeArrivalDate").datepicker({
+		dayNames: dayNames,
+		dayNamesMin: dayNamesMin,
+		dayNamesShort: dayNamesShort,
+		monthNames: monthNames,
+		monthNamesShort: monthNamesShort,
+		prevText: "Раньше",
+		nextText: "Позже",
+		showAnim: "slideDown",
+		dateFormat: 'yy-mm-dd',
+		onSelect: function () {
+			$('#arrivalDate').val(this.value);
+			fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
+		},
+		minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 34)
+	});
+}
+
 function convertDate (date) {
 	var day = ("0" + date.getDate()).slice(-2);
 	var month = ("0" + (date.getMonth() + 1)).slice(-2);
