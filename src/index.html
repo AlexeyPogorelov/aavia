@@ -218,60 +218,6 @@
 		</div>
 
 		<form action="/session" class="container hiddenn" method="POST" id="form-main-form">
-			<div class="dropdown persons-dropdown" id="personsInfo">
-				<!-- dropdown -->
-<!-- 				<div class="form-group">
-					<span class="label-1">Класс салона</span>
-					<select name="ticket-class" id="ticket-class" class="type-1">
-						<option value="1">Lorem</option>
-						<option value="2">Consequatur</option>
-						<option value="3">Officiis</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<span class="label-1">Взрослые</span>
-					<span class="label-2">от 12 лет</span>
-					<input type="number" class="person-counter">
-				</div>
-				<div class="form-group">
-					<span class="label-1">Дети</span>
-					<span class="label-2">до 12 лет</span>
-					<input type="number" class="person-counter">
-				</div>
-				<div class="form-group">
-					<span class="label-1">Новорожденные</span>
-					<span class="label-2">до 2 лет</span>
-					<input type="number" class="person-counter">
-				</div> -->
-
-
-				<div class="form-group">
-					<span class="label-1">Класс салона</span>
-					<div class="ticketClass" name="ticketClass" data-link="ticketClass">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<span class="label-1">Количество взрослых</span>
-					<span class="label-2">от 12 лет</span>
-					<input class="ui-spinner" name="adultPAXs" data-link="adultPAXs" value="0" />
-				</div>
-
-				<div class="form-group">
-					<span class="label-1">Количество детей</span>
-					<span class="label-2">до 12 лет</span>
-					<input class="ui-spinner" name="childPAXs" data-link="childPAXs" value="0" />
-				</div>
-
-				<div class="form-group">
-					<span class="label-1">Количество младенцев</span>
-					<span class="label-2">до 2 лет</span>
-					<input class="ui-spinner" name="infantPAXs" data-link="infantPAXs" value="0" />
-				</div>
-
-			</div>
-
-
 
 			<div>
 
@@ -327,8 +273,8 @@
 				<input type="hidden" name="_token" value="hxC1yQOut7yp5YZtoYW8zNPlADjujuMka8GNZHrU">
 			</div>
 
-			<div class="form-group">
-				<span class="label-1">Класс салона</span>
+			<div>
+				<label>Класс салона</label>
 				<select name="ticketClass" id="ticketClass">
 					<option value="">Выберите класс салона</option>
 					<option value="FFLHECO">Эконом</option>
@@ -337,19 +283,25 @@
 				</select>
 			</div>
 
-			<div class="form-group">
-				<span class="label-1">Количество взрослых</span>
+			<div>
+				<label>Количество взрослых</label>
 				<input name="adultPAXs" id="adultPAXs" />
 			</div>
 
-			<div class="form-group">
-				<span class="label-1">Количество детей</span>
+			<div>
+				<div>
+				</div>
+
+				<label>Количество детей</label>
 				<input name="childPAXs" id="childPAXs" />
 			</div>
 
-			<div class="form-group">
-				<span class="label-1">Количество младенцев</span>
-				<input name="infantPAXs" id="infantPAXs" />
+			<div>
+				<div>
+				</div>
+
+				<label>Количество младенцев</label>
+				<input name="infantPAXs" id="infantPAXs">
 			</div>
 
 

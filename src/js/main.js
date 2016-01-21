@@ -12,17 +12,32 @@ var currentDate = new Date(),
 	dayNamesShort = [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" ],
 	monthNames = [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
 	monthNamesAlt = [ "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ],
-	monthNamesShort = [ "Янв", "Фев", "Мар", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек" ];
+	monthNamesShort = [ "Янв", "Фев", "Мар", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+	animationPrefix = (function () {
+		var t,
+		el = document.createElement("fakeelement");
+		var transitions = {
+			"transition": "animationend",
+			"OTransition": "oAnimationEnd",
+			"MozTransition": "animationend",
+			"WebkitTransition": "webkitAnimationEnd"
+		}
+		for (t in transitions){
+			if (el.style[t] !== undefined){
+				return transitions[t];
+			}
+		}
+	})();
 
 // main page
 $('.main-input-holder').each(function (i) {
 	$(this)
-		.one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
+		.one(animationPrefix, function () {
 			$(this).removeClass('scaleYIn');
 		})
 		.addClass('scaleYIn anim-delay-' + (i + 1));
 });
-$('intro-animation').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
+$('intro-animation').one(animationPrefix, function () {
 	$(this).removeClass('scaleYIn');
 });
 
@@ -49,9 +64,10 @@ $('.main-input-holder').each(function () {
 			}
 		});
 
-		$realSelect.on('click', function (e) {
-			e.stopPropagation();
-		});
+		// cl
+		//$realSelect.on('click', function (e) {
+		//	e.stopPropagation();
+		//});
 		$realSelect.find('.ui-spinner').spinner({
 			value: 2,
 			icons: { down: "spinner-down-icon", up: "spinner-up-icon" },
