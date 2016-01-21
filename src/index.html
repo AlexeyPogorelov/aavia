@@ -131,7 +131,7 @@
 							</div>
 						</div>
 						
-						<div class="main-input-holder middle" data-link="personsInfo">
+						<div class="main-input-holder middle" data-link="personsInfo" id="personsInfo">
 							<div class="illustration-holder">
 								<img class="input-illustration" src="img/icons/person-2.png" alt="person">
 							</div>
@@ -140,6 +140,33 @@
 								<div class="input-label">3 пассажира, эконом</div>
 							</div>
 							<img class="canopen-illustration" src="img/icons/canopen.png" alt="open">
+							<div class="dropdown persons-info-dropdown">
+								<div class="ticket-class-holder">
+									<div class="label-1">Класс салона</div>
+									<div class="ticket-class-buttons">
+										<div class="table">
+											<button class="cell" data-value="FFLHECO">Эконом</button>
+											<button class="cell" data-value="FFLHPRMECO">Премиум-эконом</button>
+											<button class="cell" data-value="FFLHBUSINESS">Бизнес</button>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="label-1" for="children">Взрослые</div>
+										<div class="label-2">от 12 лет</div>
+										<input type="number" id="children" class="ui-spinner" value="0" data-link="adultPAXs" />
+									</div>
+									<div class="form-group">
+										<div class="label-1" for="children">Дети</div>
+										<div class="label-2">до 12 лет</div>
+										<input type="number" id="children" class="ui-spinner" value="0" data-link="childPAXs" />
+									</div>
+									<div class="form-group">
+										<div class="label-1" for="baby">Новорожденные</div>
+										<div class="label-2">до 2 лет</div>
+										<input type="number" id="baby" class="ui-spinner" value="0" data-link="infantPAXs" />
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 

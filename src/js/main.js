@@ -21,7 +21,7 @@ var currentDate = new Date(),
 			"OTransition": "oAnimationEnd",
 			"MozTransition": "animationend",
 			"WebkitTransition": "webkitAnimationEnd"
-		}
+		};
 		for (t in transitions){
 			if (el.style[t] !== undefined){
 				return transitions[t];
@@ -62,13 +62,11 @@ $('.main-input-holder').each(function () {
 			if (!flag) {
 				$self.addClass('opened');
 			}
+		}).find('.dropdown').on('click', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
 		});
-
-		// cl
-		//$realSelect.on('click', function (e) {
-		//	e.stopPropagation();
-		//});
-		$realSelect.find('.ui-spinner').spinner({
+		$self.find('.ui-spinner').spinner({
 			value: 2,
 			icons: { down: "spinner-down-icon", up: "spinner-up-icon" },
 			change: function( event, ui ) {
@@ -76,24 +74,29 @@ $('.main-input-holder').each(function () {
 			},
 			min: 0
 		});
-		$buttonsHolder = $('<div>').addClass('buttons-holder');
-		$('#ticketClass').find('option').each(function (i) {
-			if (i) {
-				// TODO realize it
-				var $newOption = $('<div>').addClass('list-item');
-				$newOption.html($(this).text());
-				$newOption.attr('data-val', $(this).val()); // TODO can be removed
-				$newOption.on('click', function (e) {
-					e.stopPropagation();
-					$realSelect.val($(this).data('val'));
-					$self.find('.input-label').addClass('selected').html($(this).html());
-					$self.removeClass('opened');
-				});
-				$newOption.appendTo($buttonsHolder);
-			}
+
+		// $buttonsHolder = $('<div>').addClass('buttons-holder');
+		$self.find('.ticket-class-holder button').on('click', function (e) {
+			e.preventDefault();
+			$('#ticketClass').val($(this).data('value'))
 		});
-		$realSelect.find('.ticketClass').append($buttonsHolder);
-		$realSelect.appendTo($(this));
+		// $('#ticketClass').find('option').each(function (i) {
+		// 	if (i) {
+		// 		// TODO realize it
+		// 		var $newOption = $('<div>').addClass('list-item');
+		// 		$newOption.html($(this).text());
+		// 		$newOption.attr('data-val', $(this).val()); // TODO can be removed
+		// 		$newOption.on('click', function (e) {
+		// 			e.stopPropagation();
+		// 			$realSelect.val($(this).data('val'));
+		// 			$self.find('.input-label').addClass('selected').html($(this).html());
+		// 			$self.removeClass('opened');
+		// 		});
+		// 		$newOption.appendTo($buttonsHolder);
+		// 	}
+		// });
+		// $realSelect.find('.ticketClass').append($buttonsHolder);
+		// $realSelect.appendTo($(this));
 	} else if (elementLink == "discount") {
 		$self.find('input').on('change', function () {
 			$('#discount').val(this.value);

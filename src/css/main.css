@@ -875,6 +875,13 @@ section.tickets-holder .ticket-footer {
 section.tickets-holder .ticket-footer span img {
 	margin-left: 4px;
 }
+section.tickets-holder .persons-info-dropdown {}
+section.tickets-holder .persons-info-dropdown .label-1 {
+	color: #6d809a;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
 section.bottom-tickets-nav {
 	background-color: #37404d;
 	color: white;
@@ -1005,6 +1012,11 @@ section.bottom-tickets-nav a.back img {
 	font-weight: 400;
 	line-height: 20px;
 	/*margin-bottom: 25px;*/
+}
+.page-content .back img {
+	position: relative;
+	top: -1px;
+	margin-right: 3px;
 }
 .page-content .color {
 	color: #7a0fad;
