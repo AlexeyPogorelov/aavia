@@ -516,15 +516,89 @@ section.main-form .main-input-holder .dropdown .list-item:hover {
 	-webkit-transition: background .1s;
 	transition: background .1s;
 }
-section.main-form .main-input-holder .persons-dropdown {}
-section.main-form .main-input-holder .persons-dropdown .label-1 {
+section.main-form .main-input-holder .persons-info-dropdown {
+	padding-bottom: 20px;
+}
+
+section.main-form .main-input-holder .persons-info-dropdown .ui-spinner a.ui-spinner-down {
+	left: 10px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-spinner a.ui-spinner-up {
+	left: 42px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .form-group {
+	position: relative;
+}
+section.main-form .main-input-holder .persons-info-dropdown .label-1 input[type='number'] {
+	width: 40px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-spinner-input {
+	padding: 0;
+	position: relative;
+	top: 4px;
+	margin-left: 76px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .label-1 {
 	color: #6d809a;
 	display: block;
 	font-size: 14px;
 	font-weight: 300;
-	line-height: 36px;
+	line-height: 20px;
+	margin-top: 15px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	/*margin-bottom: 2px;*/
 }
-
+section.main-form .main-input-holder .persons-info-dropdown .label-2 {
+	color: #6d809a;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 68px;
+	position: absolute;
+	right: 48px;
+	top: 0;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-button-text-only .ui-button-text {
+	padding: 0;
+	margin: 0;
+	height: 26px;
+	width: 26px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-state-default .ui-icon {
+	display: block;
+	height: 14px;
+	width: 26px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-state-default .spinner-up-icon {
+	background: url('../img/icons/spinner-plus-spline.svg') no-repeat;
+	background-position: 8px -7px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-state-default .spinner-down-icon {
+	background: url('../img/icons/spinner-plus-spline.svg') no-repeat;
+	background-position: 8px 4px;
+}
+section.main-form .main-input-holder .persons-info-dropdown .ui-state-focus .ui-icon,
+section.main-form .main-input-holder .persons-info-dropdown .ui-state-hover .ui-icon {
+	/*background: url('../img/icons/spinner-plus-spline.svg') no-repeat;*/
+}
+section.main-form .main-input-holder .persons-info-dropdown .ticket-class-buttons {
+	font-size: 0;
+	text-align: center;
+}
+section.main-form .main-input-holder .persons-info-dropdown button {
+	background-color: #fff;
+	color: black;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+	margin: 0 1px;
+	padding: 0 15px;
+}
+section.main-form .main-input-holder .persons-info-dropdown button.active {
+	background-color: #ff4cc2;
+	color: #fff;
+}
 .sales-items {
 	text-align: center;
 }
@@ -751,7 +825,7 @@ section.tickets-holder .ticket .flydown .time:before {
 	position: absolute;
 	left: -20px;
 	top: 7px;
-	height: 10px;
+	height: 11px;
 	width: 12px;
 }
 section.tickets-holder .ticket > * {

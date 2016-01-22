@@ -51,7 +51,7 @@ $('.main-input-holder').each(function () {
 		return;
 	}
 	if (elementLink == "") {
-		// if special dropdown
+	// if special dropdown
 	} else if (elementLink == "personsInfo") {
 		$self.on('click', function () {
 			var flag;
@@ -72,31 +72,17 @@ $('.main-input-holder').each(function () {
 			change: function( event, ui ) {
 				$('#' + $(this).data('link')).val(this.value);
 			},
-			min: 0
+			min: 0,
+			max: 99
 		});
 
 		// $buttonsHolder = $('<div>').addClass('buttons-holder');
 		$self.find('.ticket-class-holder button').on('click', function (e) {
 			e.preventDefault();
-			$('#ticketClass').val($(this).data('value'))
+			$(this).addClass('active').siblings().removeClass('active');
+			$('#ticketClass').val($(this).data('value'));
 		});
-		// $('#ticketClass').find('option').each(function (i) {
-		// 	if (i) {
-		// 		// TODO realize it
-		// 		var $newOption = $('<div>').addClass('list-item');
-		// 		$newOption.html($(this).text());
-		// 		$newOption.attr('data-val', $(this).val()); // TODO can be removed
-		// 		$newOption.on('click', function (e) {
-		// 			e.stopPropagation();
-		// 			$realSelect.val($(this).data('val'));
-		// 			$self.find('.input-label').addClass('selected').html($(this).html());
-		// 			$self.removeClass('opened');
-		// 		});
-		// 		$newOption.appendTo($buttonsHolder);
-		// 	}
-		// });
-		// $realSelect.find('.ticketClass').append($buttonsHolder);
-		// $realSelect.appendTo($(this));
+
 	} else if (elementLink == "discount") {
 		$self.find('input').on('change', function () {
 			$('#discount').val(this.value);
