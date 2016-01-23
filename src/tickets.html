@@ -67,142 +67,246 @@
 
 			<div id="clouds-bg"></div>
 
-			<section class="users-order-form">
-				<form id="passagers" action="/passagers" method="POST">
-					<div>
-						<fieldset>
+			<section class="tickets-way">
+				<div class="container">
+					<div class="row">
+						<span>Выберите перелёт</span>
+						<img src="img/icons/way-to-icon.svg" alt="way"/>
+					</div>
+					<div class="row">
+						<div class="left-col way-header">
+							<p>из <b>Киев, Boryspil International (KBP) – Украина</b></p>
+							<p>в <b>Атланта, Hartsfield-Jackson (ATL) GA – США</b></p>
+						</div>
+						<div class="date-holder">
+							<div class="date-day">27</div>
+							<div class="date-wrapper">
+								<div class="date-month-year">октября 2015</div>
+								<div class="date-week">Вторник</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-								<legend>
-									<div class="label-1">Пассажир 1</div>
-									<div class="label-2">Взрослый</div>
-								</legend>
-								<div>
-									<input type="hidden" class="adultPAXs-0" id="adultPAXs-0-userId" name="passagers[adultPAXs][0][user_id]">
-									<input type="hidden" class="adultPAXs-0" name="passagers[adultPAXs][0][type]" value="adultPAXs">
-
-									<div>
-										<label>Имя</label>
-										<input type="text" class="adultPAXs-0" id="adultPAXs-0-name" name="passagers[adultPAXs][0][name]" value="">
-									</div>
-
-									<div>
-
-										<label>Фамилия</label>
-										<input type="text" class="adultPAXs-0" id="adultPAXs-0-surname" name="passagers[adultPAXs][0][surname]" value="">
-									</div>
-
-									<div>
-
-										<label>Дата рождения</label>
-										<input type="date" class="adultPAXs-0" id="adultPAXs-0-birthday" name="passagers[adultPAXs][0][birthday]" value="">
-									</div>
-
-									<div>
-
-										<span>Пол</span>
-
-										<label for="adultPAXs-0-sex-male">Мужской</label>
-										<input type="radio" class="adultPAXs-0" id="adultPAXs-0-sex-male" name="passagers[adultPAXs][0][sex]" value="male">
-										<label for="adultPAXs-0-sex-female">Женский</label>
-										<input type="radio" class="adultPAXs-0" id="adultPAXs-0-sex-female" name="passagers[adultPAXs][0][sex]" value="female">
-									</div>
-
-									<div>
-
-										<label>Номер паспорта</label>
-										<input type="text" class="adultPAXs-0" id="adultPAXs-0-passport" name="passagers[adultPAXs][0][passport]" value="">
-									</div>
-
-									<div>
-
-										<label>Срок действия паспорта</label>
-										<input type="date" class="adultPAXs-0" id="adultPAXs-0-passportDate" name="passagers[adultPAXs][0][passport_date]" value="">
-									</div>
+			<section class="tickets-holder">
+				<div class="container">
+					<div class="ticket">
+						<label for="radio-2" class="ticket-header">
+							<div class="radio form-group">
+								<input type="radio" name="ticket-true" id="radio-2" />
+								<label for="radio-2"></label>
+							</div>
+							<div class="basic-info">
+								<span>07:00</span>
+								<b>Киев</b>
+								<img src="img/icons/arrow-right-1.svg" alt="arrow"/>
+								<span>07:00</span>
+								<b>Киев</b>
+							</div>
+							<div class="right-col">
+								<span class="tickets-left">Осталось 2 билета</span>
+								<span class="price">450$</span>
+							</div>
+						</label>
+						<div class="ticket-info-group">
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
 								</div>
-							</fieldset>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
 						</div>
-
-						<div>
+						<div class="ticket-info-group">
+							<div class="trip-label">
+								<span>Пересадка 1:45</span>
+							</div>
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
 						</div>
-
-						<div>
+						<div class="ticket-footer">
+							<span>Общее время в пути: 14:45 <img src="img/icons/arrow-down-1.svg" alt="arrow"/></span>
 						</div>
-
-						<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
-					</form>
-
-					<div class="col-md-6">
-						<form action="/auth/authenticate" method="POST">
-							<div class="form-group">
-								<label for="email">
-									Email
-								</label>
-								<input type="email" id="email" name="email">
-							</div>
-
-							<div class="form-group">
-								<label for="password">
-									Password
-								</label>
-								<input type="password" id="password" name="password">
-							</div>
-
-							<div>
-								<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
-							</div>
-
-							<div class="form-group">
-								<input type="submit" value="Войти">
-							</div>
-						</form>
 					</div>
+				</div>
+			</section>
 
-					<div class="col-md-6">
-						<form action="/auth/registration" method="POST">
-							<div class="form-group">
-								<label for="name">
-									Имя
-								</label>
-								<input type="text" id="name" name="name" value="">
-							</div>
-
-							<div class="form-group">
-								<label for="surname">
-									Фамилия
-								</label>
-								<input type="text" id="surname" name="surname" value="">
-							</div>
-
-							<div class="form-group">
-								<label for="phone">
-									Номер телефона
-								</label>
-								<input type="text" id="phone" name="phone" value="">
-							</div>
-
-							<div class="form-group">
-								<label for="email">
-									Email
-								</label>
-								<input type="email" id="email" name="email" value="">
-							</div>
-
-							<div class="form-group">
-								<label for="password">
-									Пароль
-								</label>
-								<input type="password" id="password" name="password">
-							</div>
-
-							<div>
-								<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
-							</div>
-
-							<div class="form-group">
-								<input type="submit" value="Войти">
-							</div>
-						</form>
+			<section class="tickets-way back">
+				<div class="container">
+					<div class="row">
+						<span>Выберите перелёт</span>
+						<img src="img/icons/way-from-icon.svg" alt="way"/>
 					</div>
+					<div class="row">
+						<div class="left-col way-header">
+							<p>из <b>Киев, Boryspil International (KBP) – Украина</b></p>
+							<p>в <b>Атланта, Hartsfield-Jackson (ATL) GA – США</b></p>
+						</div>
+						<div class="date-holder">
+							<div class="date-day">27</div>
+							<div class="date-wrapper">
+								<div class="date-month-year">октября 2015</div>
+								<div class="date-week">Вторник</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tickets-holder">
+				<div class="container">
+					<div class="ticket">
+						<label for="radio-1" class="ticket-header">
+							<div class="radio form-group">
+								<input type="radio" name="ticket-true" id="radio-1" />
+								<label for="radio-1"></label>
+							</div>
+							<div class="basic-info">
+								<span>07:00</span>
+								<b>Киев</b>
+								<img src="img/icons/arrow-right-1.svg" alt="arrow"/>
+								<span>07:00</span>
+								<b>Киев</b>
+							</div>
+							<div class="right-col">
+								<span class="tickets-left">Осталось 2 билета</span>
+								<span class="price">450$</span>
+							</div>
+						</label>
+						<div class="ticket-info-group">
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
+						</div>
+						<div class="ticket-info-group">
+							<div class="trip-label">
+								<span>Пересадка 1:45</span>
+							</div>
+							<div class="flight">
+								<p class="label">Рейс</p>
+								<p>AF 1653</p>
+							</div>
+							<div class="time-direction">
+								<div class="time-direction-item flyup">
+									<p class="time">07:00</p>
+									<p>Киев, Boryspil InternationalAF 1653</p>
+								</div>
+								<div class="time-direction-item flydown">
+									<p class="time">09:25</p>
+									<p>Париж, Аэропорт Шарль-де-Голль</p>
+								</div>
+							</div>
+							<div class="company">
+								<p class="label">Авиокомпания</p>
+								<p>Air France</p>
+							</div>
+							<div class="plane">
+								<p class="label">Самолёт</p>
+								<p>Airbus A319 <img src="img/icons/hint-icon-1.svg" class="hint" alt="hint"/></p>
+							</div>
+							<div class="ticket-class">
+								<p class="label">Класс</p>
+								<p>Эконом</p>
+							</div>
+						</div>
+						<div class="ticket-footer">
+							<span>Общее время в пути: 14:45 <img src="img/icons/arrow-down-1.svg" alt="arrow"/></span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bottom-tickets-nav">
+				<div class="container">
+					<div class="left-col">
+						<a href="#" class="back">
+							<img src="img/icons/arrow-left-1.svg" alt="arrow"/>
+							<span>Изменить настройки</span>
+						</a>
+					</div>
+					<div class="right-col">
+					<span class="info-holder">
+						<span class="label">Вылет</span>
+						<span class="price">250$</span>
+					</span>
+					<span class="info-holder">
+						<span class="label">Назад</span>
+						<span class="price">350$</span>
+					</span>
+					<span class="info-holder">
+						<span class="label">Итого</span>
+						<span class="bold">600$</span>
+					</span>
+						<button class="type-2">Далее</button>
+					</div>
+				</div>
 			</section>
 
 		</div>

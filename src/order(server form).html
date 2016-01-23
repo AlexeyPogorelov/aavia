@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A-AVIA</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/elements.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+	<div class="page-wrapper">
+		<header class="main-header">
+			<div class="container">
+				<div class="col-md-4">
+					<a href="#" class="main-logo-holder">
+						<img src="img/icons/main-logo.png" alt="logo"/>
+						<span>Самые дешевые авиабилеты</span>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="my-profile-link-holder">
+						<img src="img/icons/person.png" alt="person"/>
+						<span>Личный кабинет</span>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<div class="header-phone-holder">
+						<ul class="operators-list">
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/life.png" alt="operator" class="life">
+									<span class="operator-prefix">063</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/mts.png" alt="operator" class="mts">
+									<span class="operator-prefix">095</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/kyivstar.png" alt="operator" class="kyivstar">
+									<span class="operator-prefix">096</span>
+								</div>
+							</li>
+						</ul>
+						<span class="phone-number">
+							<span>724-04-04</span>
+							<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="content-wrapper">
+
+			<div id="clouds-bg"></div>
+
+			<section class="users-order-form">
+				<form id="passagers" action="/passagers" method="POST">
+					<div>
+						<fieldset>
+
+								<legend>
+									<div class="label-1">Пассажир 1</div>
+									<div class="label-2">Взрослый</div>
+								</legend>
+								<div>
+									<input type="hidden" class="adultPAXs-0" id="adultPAXs-0-userId" name="passagers[adultPAXs][0][user_id]">
+									<input type="hidden" class="adultPAXs-0" name="passagers[adultPAXs][0][type]" value="adultPAXs">
+
+									<div>
+										<label>Имя</label>
+										<input type="text" class="adultPAXs-0" id="adultPAXs-0-name" name="passagers[adultPAXs][0][name]" value="">
+									</div>
+
+									<div>
+
+										<label>Фамилия</label>
+										<input type="text" class="adultPAXs-0" id="adultPAXs-0-surname" name="passagers[adultPAXs][0][surname]" value="">
+									</div>
+
+									<div>
+
+										<label>Дата рождения</label>
+										<input type="date" class="adultPAXs-0" id="adultPAXs-0-birthday" name="passagers[adultPAXs][0][birthday]" value="">
+									</div>
+
+									<div>
+
+										<span>Пол</span>
+
+										<label for="adultPAXs-0-sex-male">Мужской</label>
+										<input type="radio" class="adultPAXs-0" id="adultPAXs-0-sex-male" name="passagers[adultPAXs][0][sex]" value="male">
+										<label for="adultPAXs-0-sex-female">Женский</label>
+										<input type="radio" class="adultPAXs-0" id="adultPAXs-0-sex-female" name="passagers[adultPAXs][0][sex]" value="female">
+									</div>
+
+									<div>
+
+										<label>Номер паспорта</label>
+										<input type="text" class="adultPAXs-0" id="adultPAXs-0-passport" name="passagers[adultPAXs][0][passport]" value="">
+									</div>
+
+									<div>
+
+										<label>Срок действия паспорта</label>
+										<input type="date" class="adultPAXs-0" id="adultPAXs-0-passportDate" name="passagers[adultPAXs][0][passport_date]" value="">
+									</div>
+								</div>
+							</fieldset>
+						</div>
+
+						<div>
+						</div>
+
+						<div>
+						</div>
+
+						<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
+					</form>
+
+					<div class="col-md-6">
+						<form action="/auth/authenticate" method="POST">
+							<div class="form-group">
+								<label for="email">
+									Email
+								</label>
+								<input type="email" id="email" name="email">
+							</div>
+
+							<div class="form-group">
+								<label for="password">
+									Password
+								</label>
+								<input type="password" id="password" name="password">
+							</div>
+
+							<div>
+								<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
+							</div>
+
+							<div class="form-group">
+								<input type="submit" value="Войти">
+							</div>
+						</form>
+					</div>
+
+					<div class="col-md-6">
+						<form action="/auth/registration" method="POST">
+							<div class="form-group">
+								<label for="name">
+									Имя
+								</label>
+								<input type="text" id="name" name="name" value="">
+							</div>
+
+							<div class="form-group">
+								<label for="surname">
+									Фамилия
+								</label>
+								<input type="text" id="surname" name="surname" value="">
+							</div>
+
+							<div class="form-group">
+								<label for="phone">
+									Номер телефона
+								</label>
+								<input type="text" id="phone" name="phone" value="">
+							</div>
+
+							<div class="form-group">
+								<label for="email">
+									Email
+								</label>
+								<input type="email" id="email" name="email" value="">
+							</div>
+
+							<div class="form-group">
+								<label for="password">
+									Пароль
+								</label>
+								<input type="password" id="password" name="password">
+							</div>
+
+							<div>
+								<input type="hidden" name="_token" value="BcyCoTplkFH2tej1fCMcbwsb2p39luHo3D8bhCL2">
+							</div>
+
+							<div class="form-group">
+								<input type="submit" value="Войти">
+							</div>
+						</form>
+					</div>
+			</section>
+
+			<section class="bottom-tickets-nav">
+				<div class="container">
+					<div class="left-col">
+						<a href="#" class="back">
+							<img src="img/icons/arrow-left-1.svg" alt="arrow"/>
+							<span>Изменить настройки</span>
+						</a>
+					</div>
+					<div class="right-col">
+					<span class="info-holder">
+						<span class="label">Вылет</span>
+						<span class="price">250$</span>
+					</span>
+					<span class="info-holder">
+						<span class="label">Назад</span>
+						<span class="price">350$</span>
+					</span>
+					<span class="info-holder">
+						<span class="label">Итого</span>
+						<span class="bold">600$</span>
+					</span>
+						<button class="type-2">Далее</button>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<footer class="main-footer">
+			<div class="container">
+				<div class="col-md-4">
+					<div class="payment-systems-holder">
+						<a href="#" tabindex="-1">
+							<img src="img/icons/visa.png" alt="visa">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/mastercard.png" alt="mastercard">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/platon.png" alt="platon">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="copyright-holder">
+						<span>© ООО «Альфа-Авиа» 2015</span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="about-link-holder">
+						<a href="info.html">
+							<i class="fa fa-question-circle"></i>
+							<span>Как это работает</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- OVERLAYS -->
+		<!--div class="main-overlay hidden"></div>
+		<div class="grid-overlay hidden"></div>
+		<div id="main-overlay" class="overlay-button">O</div>
+		<div id="grid-overlay" class="overlay-button">G</div -->
+
+		<!-- SCRIPTS -->
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+		<script src="js/main.js"></script>
+	</div>
+</body>
+</html>

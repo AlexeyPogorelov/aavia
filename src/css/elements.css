@@ -11,3 +11,71 @@ button.type-1 {
 	-webkit-box-shadow: 0 1px 0 #c328e7;
 	box-shadow: 0 1px 0 #c328e7;
 }
+
+/* RADIO */
+
+/* Base for label styling */
+.radio input[type="radio"]:not(:checked),
+.radio input[type="radio"]:checked {
+	left: -9999px;
+	position: absolute;
+}
+.radio input[type="radio"]:not(:checked) + label,
+.radio input[type="radio"]:checked + label {
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+}
+
+/* checkbox aspect */
+.radio input[type="radio"]:not(:checked) + label:before,
+.radio input[type="radio"]:checked + label:before {
+	background: #eee;
+	border-radius: 50%;
+	content: '';
+	left:0; top: 2px;
+	position: absolute;
+	width: 20px; height: 20px;
+}
+/* checked mark aspect */
+.radio input[type="radio"]:not(:checked) + label:after,
+.radio input[type="radio"]:checked + label:after {
+	content: '';
+	background-color: #000;
+	border-radius: 50%;
+	position: absolute;
+	top: 8px; left: 6px;
+	width: 10px; height: 10px;
+	transition: all .2s;
+}
+/* checked mark aspect changes */
+.radio input[type="radio"]:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+.radio input[type="radio"]:checked + label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+/* disabled checkbox */
+.radio input[type="radio"]:disabled:not(:checked) + label:before,
+.radio input[type="radio"]:disabled:checked + label:before {
+	box-shadow: none;
+	border-color: #bbb;
+	background-color: #ddd;
+}
+.radio input[type="radio"]:disabled:checked + label:after {
+	color: #999;
+}
+.radio input[type="radio"]:disabled + label {
+	color: #aaa;
+}
+/* accessibility */
+.radio input[type="radio"]:checked:focus + label:before,
+.radio input[type="radio"]:not(:checked):focus + label:before {
+	border: 1px solid #eee;
+}
+.radio input[type="radio"]:checked:focus + label:after,
+.radio input[type="radio"]:not(:checked):focus + label:after {
+}
+/* END RADIO */
