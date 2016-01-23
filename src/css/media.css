@@ -25,10 +25,10 @@
 --------------------------------------------------------------------------*/
 @media screen and (max-width: 1000px) {
 	body::-webkit-scrollbar {
-		width: 0;
-		height: 0;
 		background-color: #fff;
 		border: none;
+		height: 0;
+		width: 0;
 	}
 	.animated {
 		-webkit-transform: none;

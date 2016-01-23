@@ -32,12 +32,12 @@
 .overlay-button {
 	background: #fff;
 	border-radius: 4px;
-	cursor: pointer;
-	position: fixed;
 	bottom: 0;
-	right: 0;
+	cursor: pointer;
 	opacity: .2;
 	padding: 10px;
+	position: fixed;
+	right: 0;
 	z-index: 999;
 }
 .overlay-button:hover {
@@ -50,9 +50,9 @@
 
 /* GLOBAL */
 .arrows-holder-1 {
-	text-align: center;
-	margin-top: 22px;
 	margin-bottom: 6px;
+	margin-top: 22px;
+	text-align: center;
 }
 body, html {
 	font-family: ProximaNova, sans-serif;
@@ -93,8 +93,8 @@ body, html {
 .ui-datepicker table {
 	background: #bbcde6;
 	border: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 .ui-datepicker .ui-datepicker-title {
 	font-weight: 300;
@@ -103,12 +103,12 @@ body, html {
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
 	background: none;
 	border: none;
-	text-align: center;
 	padding: 0;
+	text-align: center;
 }
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-	padding: 0;
 	border-radius: 0;
+	padding: 0;
 }
 .ui-datepicker .ui-datepicker-header {
 	border: none;
@@ -146,13 +146,13 @@ body, html {
 /* SPINNER */
 .ui-spinner,
 .ui-spinner-input {
-	border: none;
 	background: none;
+	border: none;
+	display: block;
 	margin: 0;
 	overflow: visible;
 	padding: 0;
 	width: 80px;
-	display: block;
 }
 .ui-spinner-input {
 	padding-left: 20px;
@@ -216,11 +216,10 @@ header.main-header .main-logo-holder img {
 }
 header.main-header .main-logo-holder span {
 	color: #b26c2b;
+	display: block;
 	font-size: 11px;
 	font-weight: 400;
-	margin: 0;
 	line-height: 0;
-	display: block;
 	margin-left: 46px;
 	margin-top: 3px;
 }
@@ -251,9 +250,9 @@ header.main-header .header-phone-holder .phone-number {
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 20px;
+	margin-top: 20px;
 	text-transform: uppercase;
 	vertical-align: top;
-	margin-top: 20px;
 }
 header.main-header .header-phone-holder .call-back {
 	color: #b26c2b;
@@ -289,8 +288,9 @@ header.main-header .header-phone-holder .call-back {
 }
 section.main-form {
 	padding-top: 50px;
+	text-align: center;
 }
-section.main-form .container > .row {
+section.main-form .container >a .row {
 	text-align: center;
 }
 section.main-form .main-input-holder {
@@ -315,8 +315,8 @@ section.main-form .main-input-holder.opened {
 	transition: box-shadow .3s;
 }
 section.main-form .main-input-holder.big {
-	width: 366px;
 	margin: 0 14px 30px;
+	width: 366px;
 }
 section.main-form .main-input-holder.small {
 	width: 206px;
@@ -1111,21 +1111,46 @@ section.bottom-tickets-nav a.back img {
 /* END PAGE */
 
 /* ORDER */
+.info-block {
+	background-color: #37404d;
+}
+.info-block h2 {
+	color: white;
+	font-size: 32px;
+	font-weight: 100;
+	line-height: 36px;
+	margin-top: 28px;
+}
+.info-block p {
+	color: white;
+	font-size: 18px;
+	font-weight: 100;
+	line-height: 36px;
+	margin-bottom: 20px;
+}
 .order-form {
 	background-color: #5f6671;
 }
+.order-form .labels-group,
+.order-form .label-image {
+	display: inline-block;
+}
 .order-form .label-1 {
 	color: white;
+	display: block;
 	font-size: 18px;
 	font-weight: 700;
-	line-height: 36px;
+	line-height: 18px;
 }
 .order-form .label-2 {
 	color: #bbcde6;
+	display: block;
 	font-size: 14px;
 	font-weight: 300;
-	line-height: 36px;
+	line-height: 22px;
 }
 .order-form .user-block {}
-.order-form {}
+.order-form .form-group .radio {
+	display: inline-block;
+}
 /* END ORDER */

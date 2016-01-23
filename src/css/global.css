@@ -152,8 +152,8 @@ input {
 	transition: outline-color .4s;
 }
 input:focus {
-	border: 1px solid #000;
-	transition: border .4s;
+	/* border: 1px solid #000; */
+	/* transition: border .4s; */
 }
 input::-webkit-input-placeholder {
 }
