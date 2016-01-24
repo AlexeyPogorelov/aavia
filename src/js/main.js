@@ -184,3 +184,11 @@ function fillDateBlock ($self, date) {
 	$self.find('.date-month-year').html(monthNamesAlt[date.getMonth()].toLowerCase() + ' ' + date.getFullYear());
 	$self.find('.date-week').html(dayNames[date.getDay()]);
 }
+
+
+// order page
+$("#mobile-number").intlTelInput({
+	autoHideDialCode: true,
+	preferredCountries: ['ua']
+});
+	// preferredCountries: ['ua', 'ru', 'us', 'pl']

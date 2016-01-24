@@ -962,6 +962,9 @@ section.tickets-holder .persons-info-dropdown .label-1 {
 section.bottom-tickets-nav {
 	background-color: #37404d;
 	color: white;
+	margin-top: 30px;
+/*	position: absolute;
+	bottom: 0;*/
 }
 section.bottom-tickets-nav .container {
 	max-width: 780px;
@@ -1111,6 +1114,9 @@ section.bottom-tickets-nav a.back img {
 /* END PAGE */
 
 /* ORDER */
+.content-wrapper.order-page {
+	background: #5f6671;
+}
 .info-block {
 	background-color: #37404d;
 }
@@ -1131,26 +1137,157 @@ section.bottom-tickets-nav a.back img {
 .order-form {
 	background-color: #5f6671;
 }
+.order-form .forms-row {
+	display: block;
+	margin-bottom: 10px;
+}
+.order-form input {
+	background-color: #bfc2c6;
+	border: none;
+	height: 40px;
+	width: 220px;
+	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
+	-webkit-transition: background .3s, box-shadow .3s;
+	transition: background .3s, box-shadow .3s;
+}
+.order-form input:focus {
+	background: #fff;
+	box-shadow: 0 10px 32px -8px rgba(0,0,0,0.5);
+	-webkit-transition: background .1s, box-shadow .2s;
+	transition: background .1s, box-shadow .2s;
+}
+.order-form select {
+	background: #bfc2c6 url('../img/icons/select-arrows.svg') no-repeat;
+	background-position: right 12px top 16px;
+	border: none;
+	height: 40px;
+	width: 70px;
+}
+.order-form select:focus {
+	outline: none;
+}
+.order-form .radio.form-group {
+	margin-right: 0;
+}
+.order-form .radio input[type="radio"]:not(:checked) + label,
+.order-form .radio input[type="radio"]:checked + label {
+	background-color: #bfc2c6;
+	color: #000;
+	display: block;
+	font-size: 15px;
+	padding-left: 0;
+	position: relative;
+	line-height: 40px;
+	text-align: center;
+	text-indent: -1px;
+	height: 40px;
+	width: 40px;
+	z-index: 1;
+}
+.order-form .radio input[type="radio"]:checked + label {
+	background-color: #ff4cc2;
+	color: #fff;
+}
+.order-form .radio input[type="radio"]:not(:checked) + label:before,
+.order-form .radio input[type="radio"]:checked + label:before {
+	background: none;
+	border: none;
+	border-radius: 0;
+	height: 40px;
+	width: 40px;
+}
+.order-form .radio input[type="radio"]:not(:checked) + label:after,
+.order-form .radio input[type="radio"]:checked + label:after {
+	display: none;
+}
 .order-form .labels-group,
 .order-form .label-image {
 	display: inline-block;
+}
+.order-form .label-image {
+	vertical-align: top;
+	margin-right: 10px;
+	margin-bottom: 14px;
 }
 .order-form .label-1 {
 	color: white;
 	display: block;
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 300;
 	line-height: 18px;
+}
+.order-form a.label-2 {
+	display: inline-block;
+	position: relative;
+	top: -3px;
+	font-size: 14px;
+	line-height: 14px;
+}
+.order-form a.label-2:after {
+	border: 1px dashed #bbcde6;
+	content: "";
+	display: block;
 }
 .order-form .label-2 {
 	color: #bbcde6;
 	display: block;
 	font-size: 14px;
 	font-weight: 300;
-	line-height: 22px;
+	line-height: 14px;
+	margin-bottom: 4px;
 }
-.order-form .user-block {}
+.order-form .special-label-1 {
+	position: absolute;
+	left: 260px;
+	top: 34px;
+	width: 494px;
+}
+.order-form .special-label-1:before {
+	background: #bbcde6;
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: -20px;
+	height: 1px;
+	width: 12px;
+}
+.order-form .user-block {
+	border-bottom: 1px solid #37404d;
+	padding: 30px 0;
+}
+.order-form .form-group {
+	display: inline-block;
+	margin-right: 20px;
+	position: relative;
+	vertical-align: top;
+}
+.order-form .form-group.pull-right {
+	margin-right: 0;
+}
 .order-form .form-group .radio {
 	display: inline-block;
+}
+.order-form .mobile-phone {}
+.order-form .mobile-phone .intl-tel-input {
+	/*margin-top: 18px;*/
+/*	position: absolute;
+	float: left;*/
+}
+.order-form .mobile-phone .intl-tel-input .selected-flag .iti-arrow {
+	border: none;
+	background: url('../img/icons/select-arrows.svg') no-repeat;
+	margin-top: -5px;
+	right: -2px;
+	height: 11px;
+	width: 6px;
+}
+.order-form .mobile-phone .intl-tel-input .country-name {
+	display: none;
+}
+.order-form .mobile-phone input {
+	padding-left: 54px;
+}
+.order-form .autorization-block {
+	margin-top: 30px;
 }
 /* END ORDER */

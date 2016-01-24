@@ -13,6 +13,7 @@
     "normalize-css": "normalize.css#~3.0.3",
     "jquery-ui": "~1.11.4",
     "font-awesome": "~4.5.0",
-    "animate.css": "animate-css#~3.5.1"
+    "animate.css": "animate-css#~3.5.1",
+    "intl-tel-input": "~7.1.1"
   }
 }
