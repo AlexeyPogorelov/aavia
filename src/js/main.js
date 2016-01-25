@@ -184,13 +184,29 @@ function fillDateBlock ($self, date) {
 	$self.find('.date-month-year').html(monthNamesAlt[date.getMonth()].toLowerCase() + ' ' + date.getFullYear());
 	$self.find('.date-week').html(dayNames[date.getDay()]);
 }
+function selectDateToInput ($input) {
+	var fieldDate = [];
+	$input.siblings('select').each(function (i) {
+		if (i == 2) {
+			fieldDate.push($(this).val());
+		} else {
+			fieldDate.push(("0" + $(this).val()).slice(-2));
+		}
+	});
+	fieldDate.reverse();
+	if (fieldDate[0]) {}
+	return fieldDate[0] + '-' + fieldDate[1] + '-' + fieldDate[2];
+}
 
 
 // order page
-$("#mobile-number").intlTelInput({
-	autoHideDialCode: true,
-	preferredCountries: ['ua']
-});
+if ($("#mobile-number").length > 0) {
+	// TODO move it on other .js file
+	$("#mobile-number").intlTelInput({
+		autoHideDialCode: true,
+		preferredCountries: ['ua']
+	});
+}
 	// preferredCountries: ['ua', 'ru', 'us', 'pl']
 
 $('a.tab-switcher').on('click', function (e) {
@@ -218,18 +234,23 @@ $('.order-form').find('form.container').on('submit', function (e) {
 		}
 	};
 	$(this).find('input, .validate').each(function () {
-		var valType = $(this).data('validate');
+		var $self = $(this),
+			valType = $self.data('validate'),
+			now = new Date();
 		if (valType == "name") {
 			//
 		} else if (valType == "empty") {
 			//
+		} else if (valType == "date-full") {
+			$self.val(selectDateToInput ($self));
+			if (new Date($self.val()) < new Date(now.getFullYear() - 18, now.getMonth(), now.getDate())) {
+				alert(1);
+			}
 		} else if (valType == "date-passport") {
-			var fieldDate = [];
-			$(this).siblings('select').each(function (i) {
-				fieldDate.push($(this).val());
-			});
-			fieldDate.reverse();
-			return new Date(fieldDate.toString());
+			$self.val(selectDateToInput ($self));
+			if (new Date($self.val()) < new Date(now.getFullYear() - 10, now.getMonth(), now.getDate())) {
+				alert(1);
+			}
 		}
 		console.log(valType);
 	});

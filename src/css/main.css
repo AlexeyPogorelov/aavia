@@ -975,8 +975,8 @@ section.bottom-tickets-nav {
 	background-color: #37404d;
 	color: white;
 	margin-top: 110px;
-/*	position: absolute;
-	bottom: 0;*/
+	/*position: absolute;*/
+	/*bottom: 0;*/
 }
 section.bottom-tickets-nav .container {
 	max-width: 780px;
