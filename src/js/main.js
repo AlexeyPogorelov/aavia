@@ -220,6 +220,9 @@ $('.bottom-tickets-nav').find('button.type-2').on('click', function () {
 	$(this).closest('.page-wrapper').find('form').trigger('submit');
 });
 
+$('.order-form').find('form.container').find('select').one('change', function () {
+	$(this).find('option').eq(0).remove();
+})
 $('.order-form').find('form.container').on('submit', function (e) {
 	e.preventDefault();
 	var renderMessage, valid;
@@ -251,6 +254,8 @@ $('.order-form').find('form.container').on('submit', function (e) {
 			if (new Date($self.val()) < new Date(now.getFullYear() - 10, now.getMonth(), now.getDate())) {
 				alert(1);
 			}
+		} else if (valType == "date-child") {
+		} else if (valType == "date-baby") {
 		}
 		console.log(valType);
 	});
