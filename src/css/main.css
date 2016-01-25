@@ -238,7 +238,19 @@ header.main-header .my-profile-link-holder span {
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
+	position: relative;
 	text-transform: uppercase;
+}
+header.main-header .my-profile-link-holder.active span:after {
+	background-color: #cd2c45;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: -4px;
+	height: 6px;
+	width: 6px;
 }
 header.main-header .header-phone-holder {
 	margin-left: 74px;
@@ -962,7 +974,7 @@ section.tickets-holder .persons-info-dropdown .label-1 {
 section.bottom-tickets-nav {
 	background-color: #37404d;
 	color: white;
-	margin-top: 30px;
+	margin-top: 110px;
 /*	position: absolute;
 	bottom: 0;*/
 }
@@ -1120,22 +1132,30 @@ section.bottom-tickets-nav a.back img {
 .info-block {
 	background-color: #37404d;
 }
+.info-block .container {
+	width: 780px;
+}
 .info-block h2 {
 	color: white;
 	font-size: 32px;
 	font-weight: 100;
 	line-height: 36px;
-	margin-top: 28px;
+	margin-top: 24px;
+	margin-bottom: 0;
 }
 .info-block p {
 	color: white;
 	font-size: 18px;
 	font-weight: 100;
-	line-height: 36px;
+	line-height: 20px;
+	margin-top: 0;
 	margin-bottom: 20px;
 }
 .order-form {
 	background-color: #5f6671;
+}
+.order-form .container {
+	width: 780px;
 }
 .order-form .forms-row {
 	display: block;
@@ -1144,9 +1164,15 @@ section.bottom-tickets-nav a.back img {
 .order-form input {
 	background-color: #bfc2c6;
 	border: none;
+	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
 	height: 40px;
 	width: 220px;
-	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
+
+	color: black;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 40px;
+
 	-webkit-transition: background .3s, box-shadow .3s;
 	transition: background .3s, box-shadow .3s;
 }
@@ -1156,12 +1182,42 @@ section.bottom-tickets-nav a.back img {
 	-webkit-transition: background .1s, box-shadow .2s;
 	transition: background .1s, box-shadow .2s;
 }
+.order-form input::-webkit-input-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.order-form input:-moz-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.order-form input::-moz-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.order-form input:-ms-input-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
 .order-form select {
 	background: #bfc2c6 url('../img/icons/select-arrows.svg') no-repeat;
 	background-position: right 12px top 16px;
 	border: none;
 	height: 40px;
 	width: 70px;
+
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 40px;
+	padding-left: 6px;
 }
 .order-form select:focus {
 	outline: none;
@@ -1205,9 +1261,9 @@ section.bottom-tickets-nav a.back img {
 	display: inline-block;
 }
 .order-form .label-image {
-	vertical-align: top;
-	margin-right: 10px;
 	margin-bottom: 14px;
+	margin-right: 10px;
+	vertical-align: top;
 }
 .order-form .label-1 {
 	color: white;
@@ -1218,15 +1274,20 @@ section.bottom-tickets-nav a.back img {
 }
 .order-form a.label-2 {
 	display: inline-block;
-	position: relative;
-	top: -3px;
 	font-size: 14px;
 	line-height: 14px;
+	margin-top: 3px;
+	position: relative;
+	top: -3px;
+	vertical-align: top;
 }
 .order-form a.label-2:after {
 	border: 1px dashed #bbcde6;
 	content: "";
 	display: block;
+}
+.order-form a.label-2.active {
+	display: none;
 }
 .order-form .label-2 {
 	color: #bbcde6;
@@ -1239,7 +1300,7 @@ section.bottom-tickets-nav a.back img {
 .order-form .special-label-1 {
 	position: absolute;
 	left: 260px;
-	top: 34px;
+	top: 32px;
 	width: 494px;
 }
 .order-form .special-label-1:before {
@@ -1289,5 +1350,8 @@ section.bottom-tickets-nav a.back img {
 }
 .order-form .autorization-block {
 	margin-top: 30px;
+}
+.order-form .autorization-block .forms-holder {
+	min-height: 200px;
 }
 /* END ORDER */

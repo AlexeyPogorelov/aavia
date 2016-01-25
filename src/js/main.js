@@ -192,3 +192,45 @@ $("#mobile-number").intlTelInput({
 	preferredCountries: ['ua']
 });
 	// preferredCountries: ['ua', 'ru', 'us', 'pl']
+
+$('a.tab-switcher').on('click', function (e) {
+	e.preventDefault();
+	$(this).addClass('active').siblings('.tab-switcher').removeClass('active');
+	$($(this).attr('href')).addClass('hidden').siblings().removeClass('hidden');
+	// console.log($($(this).attr('href')));
+})
+
+$('.bottom-tickets-nav').find('button.type-2').on('click', function () {
+	$(this).closest('.page-wrapper').find('form').trigger('submit');
+});
+
+$('.order-form').find('form.container').on('submit', function (e) {
+	e.preventDefault();
+	var renderMessage, valid;
+	renderMessage = {
+		nameError: function () {
+			return 'Введите Ваше имя';
+		}
+	};
+	valid = {
+		name: function (data) {
+			//
+		}
+	};
+	$(this).find('input, .validate').each(function () {
+		var valType = $(this).data('validate');
+		if (valType == "name") {
+			//
+		} else if (valType == "empty") {
+			//
+		} else if (valType == "date-passport") {
+			var fieldDate = [];
+			$(this).siblings('select').each(function (i) {
+				fieldDate.push($(this).val());
+			});
+			fieldDate.reverse();
+			return new Date(fieldDate.toString());
+		}
+		console.log(valType);
+	});
+});
