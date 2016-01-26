@@ -234,8 +234,8 @@ $('#grid-overlay').on('click', function () {
 		var state = {};
 		$('.ticket-header').on('click', function () {
 			if ($(this).data('way') == "forward") {
-				state.forward = true,
-				speed = 800;
+				state.forward = true;
+				var speed = 800;
 				if (state.back) {
 					$("html, body").stop().animate({
 						scrollTop: $('.bottom-tickets-nav').offset().top
@@ -246,8 +246,8 @@ $('#grid-overlay').on('click', function () {
 					}, speed, 'swing');
 				}
 			} else if ($(this).data('way') == "back") {
-				state.back = true,
-					speed = 1200;
+				state.back = true;
+				var speed = 1200;
 				if (state.forward) {
 					$("html, body").stop().animate({
 						scrollTop: $('.bottom-tickets-nav').offset().top

@@ -63,8 +63,6 @@
 		width: 75%;
 	}
 
-	footer.main-footer .about-link-holder a,
-	footer.main-footer .about-link-holder,
 	footer.main-footer .payment-systems-holder,
 	header.main-header .header-phone-holder,
 	header.main-header .main-logo-holder {
@@ -109,12 +107,33 @@
 		margin: 10px 0 0;
 		float: none;
 	}
+	header.main-header .main-logo-holder img {
+		width: 158px;
+	}
 	header.main-header .main-logo-holder {
+		/*display: block;*/
+		text-align: left;
+		vertical-align: top;
+	}
+	header.main-header .mobile-icon {
+		color: #b26c2b;
+		display: inline-block !important;
+		text-transform: uppercase;
+		font-size: 9px;
+		font-weight: 400;
+	}
+	header.main-header .mobile-icon > span {
 		display: block;
+		text-align: center;
+	}
+	header.main-header .mobile-icon {
 	}
 	footer.main-footer .payment-systems-holder a {
 		margin-left: 7px;
 		margin-right: 7px;
+	}
+	section.bottom-tickets-nav a.back {
+		padding-left: 22px;
 	}
 
 	/* TICKET */
@@ -245,6 +264,9 @@
 		margin-left: auto;
 		margin-right: auto;
 		width: 290px;
+	}
+	.btn.type-1, button.type-1 {
+		width: 302px;
 	}
 	section.information-block-1 .container {
 		padding-left: 15px;
