@@ -71,3 +71,37 @@ button.type-1 {
 .radio input[type="radio"]:not(:checked):focus + label:after {
 }
 /* END RADIO */
+
+
+/* TOOLTIP */
+.tooltip {
+	position: absolute;
+	display: inline-block;
+	margin: -7px 0 0;
+	opacity: 1;
+}
+.tooltip .tooltip-inner {
+	max-width: 200px;
+	padding: 3px 8px;
+	color: #fff;
+	text-align: center;
+	background: #ff4cc2 url('../img/bg/pattern-2.png');
+	border-radius: 4px;
+}
+.tooltip .tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	top: 100%;
+	left: -4px;
+	margin-top: -3px;
+	margin-left: -2px;
+	border-width: 5px 5px 5px 0;
+	border-right-color: #ff4cc2;
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+/* END TOOLTIP */
+

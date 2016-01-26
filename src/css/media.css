@@ -50,6 +50,9 @@
 		transform: translateX(-50%);
 		/*width: 100%;*/
 	}
+	.content-wrapper > #clouds-bg {
+		display: none;
+	}
 	.dropdown {
 	}
 	.wrapper {
@@ -76,6 +79,9 @@
 		float: none;
 		text-align: center;
 	}
+	header.main-header {
+		padding-bottom: 10px;
+	}
 	header.main-header .header-phone-holder {
 		margin-bottom: 20px;
 	}
@@ -83,11 +89,20 @@
 		padding-left: 20px;
 		padding-right: 20px;
 		text-align: center;
+		overflow: hidden;
 	}
 	section.tickets-way .way-header,
 	section.tickets-way .date-holder {
 		display: block;
 		float: none;
+		white-space: normal;
+	}
+	section.tickets-way .way-header p {
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	section.tickets-way .date-holder {
+		display: none;
 	}
 	section.tickets-way .date-holder .date-day {
 		display: inline-block;
@@ -107,58 +122,17 @@
 	section.tickets-holder .ticket {
 		/*line-height: 1em;*/
 	}
+
 	section.tickets-holder .ticket-info-group .flight {
 		display: block;
-		text-align: center;
+		text-align: left;
 		margin-bottom: 20px;
 		padding-left: 0;
 		width: auto;
 	}
-	section.tickets-holder .ticket-info-group .time-direction {
-		display: block;
-		margin-bottom: 20px;
-		text-align: center;
-		width: auto;
-	}
-	section.tickets-holder .ticket-info-group .time-direction .time-direction-item {
-		display: block;
-		margin-bottom: 20px;
-		text-align: center;
-		margin-bottom: 16px;
-	}
-/*	section.tickets-holder .ticket-info-group .time-direction .time-direction-item.flydown {
-		display: block;
-		text-align: center;
-		margin-bottom: 13px;
-	}*/
-	section.tickets-holder .ticket-info-group .company {
-		display: block;
-		margin-bottom: 20px;
-		text-align: center;
-		width: auto;
-	}
-	section.tickets-holder .ticket-info-group .plane {
-		display: block;
-		margin-bottom: 20px;
-		text-align: center;
-		width: auto;
-	}
-	section.tickets-holder .ticket-info-group .ticket-class {
-		display: block;
-		margin-bottom: 26px;
-		text-align: center;
-		width: auto;
-	}
-	section.tickets-holder .ticket-header {
-		text-align: center;
-	}
 	section.tickets-holder .ticket-header .price {
 		display: block;
 		border-radius: 0;
-	}
-	section.tickets-holder .ticket-header .tickets-left {
-		line-height: 20px;
-		margin-bottom: 20px;
 	}
 	section.tickets-holder .ticket-header .radio input[type="radio"]:not(:checked) + label,
 	section.tickets-holder .ticket-header .radio input[type="radio"]:checked + label {
@@ -167,6 +141,62 @@
 	section.bottom-tickets-nav button.type-2 {
 		margin-top: 20px;
 		margin-bottom: 20px;
+	}
+	section.tickets-holder .ticket-header {
+		text-align: left;
+	}
+
+	section.tickets-holder .ticket-footer {
+		cursor: pointer;
+		padding-left: 0;
+		text-align: center;
+	}
+	section.tickets-holder .ticket-footer span {
+		display: none;
+	}
+	section.tickets-holder .ticket-footer img {
+		display: inline-block;
+		width: 14px;
+	}
+	section.tickets-holder .ticket-header .basic-info {
+		padding-left: 20px;
+	}
+	section.tickets-holder .ticket-header .tickets-left {
+		display: none;
+		line-height: 20px;
+		margin-bottom: 20px;
+	}
+	section.tickets-holder .ticket-info-group {
+		overflow: hidden;
+		height: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		-webkit-transition: height .3s, padding .3s;
+		transition: height .3s, padding .3s;
+	}
+	section.tickets-holder .ticket.opened .ticket-info-group {
+		overflow: visible;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		-webkit-transition: height .3s, padding .3s;
+		transition: height .3s, padding .3s;
+	}
+	section.tickets-holder .ticket.opened .ticket-footer img {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	section.tickets-holder .ticket-info-group .flight,
+	section.tickets-holder .ticket-info-group .time-direction,
+	section.tickets-holder .ticket-info-group .time-direction .time-direction-item,
+	section.tickets-holder .ticket-info-group .company,
+	section.tickets-holder .ticket-info-group .plane,
+	section.tickets-holder .ticket-info-group .ticket-class {
+		display: block;
+		text-align: left;
+		margin-bottom: 20px;
+		padding-left: 20px;
+		width: auto;
 	}
 
 	/* END TICKET */

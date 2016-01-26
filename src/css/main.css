@@ -855,6 +855,7 @@ section.tickets-holder .ticket-header {
 	/*overflow: hidden;*/
 }
 section.tickets-holder .hint {
+	cursor: pointer;
 	margin-top: -2px;
 	margin-left: 4px;
 }
@@ -961,7 +962,8 @@ section.tickets-holder .ticket-footer {
 	padding-left: 20px;
 	font-weight: 300;
 }
-section.tickets-holder .ticket-footer span img {
+section.tickets-holder .ticket-footer img {
+	display: none;
 	margin-left: 4px;
 }
 section.tickets-holder .persons-info-dropdown {}
