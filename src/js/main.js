@@ -261,7 +261,7 @@ $('#grid-overlay').on('click', function () {
 			// console.log(state);
 		});
 	})();
-	$('.order-form').find('form.container').on('submit', function (e) {
+	$('.order-form').find('form.container').on('change', function (e) {
 		e.preventDefault();
 		var renderMessage, valid;
 		renderMessage = {
@@ -271,7 +271,7 @@ $('#grid-overlay').on('click', function () {
 		};
 		valid = {
 			name: function (data) {
-				//
+				return data;
 			}
 		};
 		$(this).find('input, .validate').each(function () {
@@ -284,18 +284,26 @@ $('#grid-overlay').on('click', function () {
 				//
 			} else if (valType == "date-full") {
 				$self.val(selectDateToInput ($self));
-				if (new Date($self.val()) < new Date(now.getFullYear() - 18, now.getMonth(), now.getDate())) {
+				if (new Date($self.val()) < new Date(now.getFullYear() - 12, now.getMonth(), now.getDate())) {
 					alert(1);
 				}
 			} else if (valType == "date-passport") {
 				$self.val(selectDateToInput ($self));
 				if (new Date($self.val()) < new Date(now.getFullYear() - 10, now.getMonth(), now.getDate())) {
-					alert(1);
+					alert(2);
 				}
 			} else if (valType == "date-child") {
+				$self.val(selectDateToInput ($self));
+				if (new Date($self.val()) < new Date(now.getFullYear() - 12, now.getMonth(), now.getDate())) {
+					alert(3);
+				}
 			} else if (valType == "date-baby") {
+				$self.val(selectDateToInput ($self));
+				if (new Date($self.val()) < new Date(now.getFullYear() - 2, now.getMonth(), now.getDate())) {
+					alert(4);
+				}
 			}
-			console.log(valType);
+			// console.log(valType);
 		});
 	});
 
