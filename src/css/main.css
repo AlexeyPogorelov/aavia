@@ -1163,6 +1163,26 @@ section.bottom-tickets-nav a.back img {
 	display: block;
 	margin-bottom: 10px;
 }
+.order-form .form-group.error {}
+.order-form .form-group.error select,
+.order-form .form-group.error input {
+	background-color: #b34755;
+	color: white;
+	-webkit-transition: background .3s, color .3s;
+	transition: background .3s, color .3s;
+}
+.order-form .form-group .error {
+	color: #BFC2C6;
+	font-size: 14px;
+	animation: scaleYIn .3s;
+}
+.order-form .form-group .error-abs {
+	color: #BFC2C6;
+	font-size: 14px;
+	position: absolute;
+	white-space: nowrap;
+	animation: scaleYIn .3s;
+}
 .order-form input {
 	background-color: #bfc2c6;
 	border: none;

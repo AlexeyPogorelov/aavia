@@ -276,7 +276,7 @@
 										<option value="1902">1902</option>
 										<option value="1901">1901</option>
 									</select>
-									<input type="date" name="#" id="#" class="hidden" data-validate="date-full">
+									<input type="date" name="#" id="#" class="hidden" data-validate="date-full" tabindex="-1">
 								</div>
 								<div class="form-group">
 									<div class="label-2">Пол</div>
@@ -368,7 +368,7 @@
 										<option value="1993">1993</option>
 										<option value="1992">1992</option>
 									</select>
-									<input type="date" name="#" id="#" class="hidden" data-validate="date-passport">
+									<input type="date" name="#" id="#" class="hidden" data-validate="date-passport" tabindex="-1">
 								</div>
 							</div>
 						</div>
@@ -402,9 +402,8 @@
 								<div class="field">
 									<div class="country-phone">
 										<div class="form-group mobile-phone">
-											<!-- <div class="label-2">Номер телефона</div> -->
 											<label for="#" class="label-2">Номер телефона</label>
-											<input name="mobile-number" id="mobile-number" type="tel" />
+											<input name="mobile-number" id="mobile-number" type="tel" data-validate="phone" />
 										</div>
 									</div>
 								</div>
@@ -414,7 +413,7 @@
 							<div class="forms-row">
 								<div class="form-group">
 									<label for="#" class="label-2">Email</label>
-									<input name="#" id="#" type="text" />
+									<input name="#" id="#" type="text" data-validate="email" />
 								</div>
 							</div>
 							<div class="forms-row">
