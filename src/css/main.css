@@ -1383,3 +1383,72 @@ section.bottom-tickets-nav a.back img {
 	min-height: 200px;
 }
 /* END ORDER */
+
+/* settings-page */
+.settings-page {
+	/*background-color: #5f6671;*/
+	padding-top: 40px;
+}
+.settings-page .form-group {}
+.settings-page .form-group input,
+.settings-page .form-group label {
+	display: inline-block;
+	margin: 4px 0;
+}
+.settings-page .form-group label {
+	text-align: right;
+	padding: 0 8px;
+	width: 49%;
+}
+.settings-page .form-group input {
+	width: 300px;
+}
+.settings-page .form-group button.type-1 {
+	margin-top: 40px;
+}
+.settings-page input {
+	background-color: #bfc2c6;
+	border: none;
+	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
+	height: 40px;
+	width: 220px;
+
+	color: black;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 40px;
+
+	-webkit-transition: background .3s, box-shadow .3s;
+	transition: background .3s, box-shadow .3s;
+}
+.settings-page input:focus {
+	background: #fff;
+	box-shadow: 0 10px 32px -8px rgba(0,0,0,0.5);
+	-webkit-transition: background .1s, box-shadow .2s;
+	transition: background .1s, box-shadow .2s;
+}
+.settings-page input::-webkit-input-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.settings-page input:-moz-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.settings-page input::-moz-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+.settings-page input:-ms-input-placeholder {
+	color: #737477;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 36px;
+}
+/* END settings-page */
