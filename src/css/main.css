@@ -1163,6 +1163,12 @@ section.bottom-tickets-nav a.back img {
 	display: block;
 	margin-bottom: 10px;
 }
+.order-form .forms-row:before,
+.order-form .forms-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .order-form .form-group.error {}
 .order-form .form-group.error select,
 .order-form .form-group.error input {

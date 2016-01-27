@@ -270,73 +270,86 @@ $('#grid-overlay').on('click', function () {
 		};
 		regularExp = {
 			name: function (data) {
-				var exp = /[а-яА-Яa-zA-Z]+/;
+				var exp = /^[а-яА-Яa-zA-Z]+$/;
 				return exp.test(data);
 			},
 			email: function (data) {
-				var exp = /[a-zA-Z._-]+@[a-zA-Z_-]+\.[a-zA-Z._-]+/;
+				var exp = /^[0-9a-zA-Z._-]+@[0-9a-zA-Z_-]+\.[a-zA-Z._-]+/;
 				return exp.test(data);
 			},
 			empty: function (data) {
 				return data.replace(/\s+/g, '');
 			},
 			phone: function (data) {
-				var exp = /[\(\)0-9\-\s\+]+/;
+				var exp = /^[\(\)0-9\-\s\+]{8,}/;
 				return exp.test(data);
 			}
 		};
 		renderMessage = {
-			empty: function ($el, valid, type) {
+			empty: function ($el, valid, e) {
 				var $container = $el.parent();
 				if (valid) {
 					$container.removeClass('error');
 					$container.find('.error').remove();
-				} else if ($container.find('.error').length || type != 'submit') {
+				} else if ($container.find('.error').length && e.type != 'submit') {
 					return;
-				} else {
+				} else if ($container.find('.error').length) {
+					$container.addClass('error');
+				} else if (e.type == 'submit') {
 					$container.addClass('error');
 					$container.append('<div class="error">Заполните поле</div>');
 				}
 			},
-			nameError: function ($el, valid, type) {
+			nameError: function ($el, valid, e) {
 				var $container = $el.parent();
 				if (valid) {
 					$container.removeClass('error');
 					$container.find('.error').remove();
-				} else if ($container.find('.error').length || type != 'submit') {
-					return;
-				} else {
-					$container.addClass('error');
+				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
 					$container.append('<div class="error">Введите настрояшие данные</div>');
+				} else if ($container.find('.error').length && e.type != 'submit') {
+					return
+				} else if ($container.find('.error').length) {
+					$container.addClass('error');
+				} else if (e.type == 'submit') {
+					$container.addClass('error');
+					$container.append('<div class="error">Заполните поле</div>');
 				}
 			},
-			phone: function ($el, valid, type) {
+			phone: function ($el, valid, e) {
+				var $container = $el.closest('.form-group');
+				if (valid) {
+					$container.removeClass('error');
+					$container.find('.error-abs').remove();
+				} else if (e.target == $el.get(0) && !$container.find('.error-abs').length) {
+					$container.append('<div class="error-abs">Например: (099)999-99-99</div>');
+				} else if ($container.find('.error-abs').length && e.type != 'submit') {
+					return;
+				} else if ($container.find('.error-abs').length) {
+					$container.addClass('error');
+				} else if (e.type == 'submit') {
+					$container.addClass('error');
+					$container.append('<div class="error-abs">Например: (099)999-99-99</div>');
+				}
+			},
+			email: function ($el, valid, e) {
 				// TODO realize it
 				var $container = $el.parent();
 				if (valid) {
 					$container.removeClass('error');
 					$container.find('.error').remove();
-				} else if ($container.find('.error').length || type != 'submit') {
-					return;
-				} else {
+				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
+					$container.append('<div class="error">Введите email</div>');
+				} else if ($container.find('.error').length && e.type != 'submit') {
+					return
+				} else if ($container.find('.error').length) {
 					$container.addClass('error');
-					$container.append('<div class="error">Например: 999-99-99</div>');
+				} else if (e.type == 'submit') {
+					$container.addClass('error');
+					$container.append('<div class="error">Введите email</div>');
 				}
 			},
-			email: function ($el, valid, type) {
-				// TODO realize it
-				var $container = $el.parent();
-				if (valid) {
-					$container.removeClass('error');
-					$container.find('.error').remove();
-				} else if ($container.find('.error').length || type != 'submit') {
-					return;
-				} else {
-					$container.addClass('error');
-					$container.append('<div class="error">Например: 999-99-99</div>');
-				}
-			},
-			birthDate: function ($el, valid, type) {
+			birthDate: function ($el, valid, e) {
 				var $container = $el.parent(),
 					empty;
 				$container.find('select').each(function () {
@@ -347,19 +360,19 @@ $('#grid-overlay').on('click', function () {
 				if (valid) {
 					$container.removeClass('error');
 					$container.find('.error-abs').remove();
-				} else if ($container.find('.error-abs').length || (empty && type != "submit")) {
+				} else if ($container.find('.error-abs').length || (empty && e.type != "submit")) {
 					return;
-				} else if (!empty && type != "submit") {
+				} else if (!empty && e.type != "submit") {
 					$container.addClass('error');
 					$container.append('<div class="error-abs">Дата рождения не соответствует типу билета</div>');
-				} else if (type == "submit") {
+				} else if (e.type == "submit") {
 					$container.addClass('error');
 					$container.append('<div class="error-abs">Введите дату рождения</div>');
 				} else {
 					$container.append('<div class="error-abs">Введите дату рождения</div>');
 				}
 			},
-			passportExpire: function ($el, valid, type) {
+			passportExpire: function ($el, valid, e) {
 				var $container = $el.parent(),
 					empty;
 				$container.find('select').each(function () {
@@ -368,14 +381,14 @@ $('#grid-overlay').on('click', function () {
 					}
 				});
 				if (valid) {
-					$container.removeClass('error-abs');
+					$container.removeClass('error');
 					$container.find('.error-abs').remove();
-				} else if ($container.find('.error').length || (empty && type != "submit")) {
+				} else if ($container.find('.error-abs').length || (empty && e.type != "submit")) {
 					return;
-				} else if (!empty && type != "submit") {
+				} else if (!empty && e.type != "submit") {
 					$container.addClass('error');
 					$container.append('<div class="error-abs">Ваш паспорт недействителен</div>');
-				} else if (type == "submit") {
+				} else if (e.type == "submit") {
 					$container.addClass('error');
 					$container.append('<div class="error-abs">Введите дату выдачи</div>');
 				} else {
@@ -386,69 +399,81 @@ $('#grid-overlay').on('click', function () {
 		$('.order-form').find('form.container').on('change submit', function (e) {
 			e.preventDefault();
 			var status = 0;
-			$(this).find('input, .validate').each(function () {
+			$(this).find('input').each(function () {
 				var $self = $(this),
 					valType = $self.data('validate'),
 					now = new Date();
 				if (valType) status++;
 				if (valType == "name") {
 					if (regularExp.name($self.val())) {
-						renderMessage.nameError($self, true, e.type);
+						renderMessage.nameError($self, true, e);
 						status--;
 					} else {
-						renderMessage.nameError($self, false, e.type);
+						renderMessage.nameError($self, false, e);
 					}
 				} else if (valType == "empty") {
 					if (regularExp.empty($self.val())) {
-						renderMessage.empty($self, true, e.type);
+						renderMessage.empty($self, true, e);
 						status--;
 					} else {
-						renderMessage.empty($self, false, e.type);
+						renderMessage.empty($self, false, e);
 					}
 				} else if (valType == "phone") {
 					if (regularExp.phone($self.val())) {
-						renderMessage.phone($self, true, e.type);
+						renderMessage.phone($self, true, e);
 						status--;
 					} else {
-						renderMessage.phone($self, false, e.type);
+						renderMessage.phone($self, false, e);
 					}
 				} else if (valType == "email") {
 					if (regularExp.email($self.val())) {
-						renderMessage.email($self, true, e.type);
+						renderMessage.email($self, true, e);
 						status--;
 					} else {
-						renderMessage.email($self, false, e.type);
+						renderMessage.email($self, false, e);
 					}
 				} else if (valType == "date-passport") {
 					$self.val( selectDateToInput ($self) );
 					if (new Date($self.val()) > new Date(now.getFullYear() - settings.passportYears, now.getMonth(), now.getDate())) {
-						renderMessage.passportExpire($self, true, e.type);
+						renderMessage.passportExpire($self, true, e);
 						status--;
 					} else {
-						renderMessage.passportExpire($self, false, e.type);
+						renderMessage.passportExpire($self, false, e);
 					}
 				} else if (valType == "date-full") {
 					$self.val( selectDateToInput ($self) );
 					if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e.type);
+						renderMessage.birthDate($self, true, e);
 						status--;
 					} else {
-						renderMessage.birthDate($self, false, e.type);
+						renderMessage.birthDate($self, false, e);
 					}
 				} else if (valType == "date-child") {
 					$self.val( selectDateToInput ($self) );
-					if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e.type);
+					var tempDate = new Date($self.val())
+					if (tempDate > new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate()) && tempDate < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+						renderMessage.birthDate($self, true, e);
 						status--;
+					} else {
+						renderMessage.birthDate($self, false, e);
 					}
 				} else if (valType == "date-baby") {
 					$self.val( selectDateToInput ($self) );
-					if (new Date($self.val()) < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e.type);
+					if (new Date($self.val()) > new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+						renderMessage.birthDate($self, true, e);
 						status--;
+					} else {
+						renderMessage.birthDate($self, false, e);
 					}
+				} else if (valType == "novalidate") {
+					//
+				} else {
+					// console.log($self);
+					// console.log(valType);
+					// status--;
 				}
 			});
+			console.log(status);
 			if (e.type == 'submit' && status == 0) {
 				alert('YESSS!')
 			}
