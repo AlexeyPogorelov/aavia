@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-	<div class="content-wrapper order-page">
+	<div class="content-wrapper private-page">
 
 	<div class="page-wrapper">
 		<header class="main-header">
@@ -69,40 +69,63 @@
 			<!-- TODO add container and page class -->
 			<div class="container settings-page">
 				<form action="/account/settings" method="POST">
-					<div class="form-group">
-						<label>Имя:</label>
-						<input type="text" name="name" value="Alexey">
-					</div>
+					<!-- TODO add header -->
+					<h1 class="label-2">Личный кабинет</h1>
+					
+					<!-- TODO form-block for separete page to sections -->
+					<div class="form-block">
+						<div class="labels-holder">
+							<div class="labels-group">
+								<div class="label-1">Изменить контактные данные</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Имя:</label>
+							<input type="text" name="name" value="Alexey">
+						</div>
 
-					<div class="form-group">
-						<label>Фамилия:</label>
-						<input type="text" name="surname" value="Pogorelov">
-					</div>
+					<!-- TODO add class pull-right for right blocks -->
+						<div class="form-group pull-right">
+							<label>Фамилия:</label>
+							<input type="text" name="surname" value="Pogorelov">
+						</div>
 
 					<!-- TODO add class form-group for all form-groups -->
-					<div class="form-group">
-						<label>Email:</label>
-						<input type="text" name="email" value="alexey.intertech@gmail.com">
+						<div class="form-group">
+							<label>Email:</label>
+							<input type="text" name="email" value="alexey.intertech@gmail.com">
+						</div>
+
+						<div class="form-group">
+							<label>Номер телефона:</label>
+							<input type="text" name="phone" value="0638561317">
+						</div>
+
 					</div>
 
-					<div class="form-group">
-						<label>Номер телефона:</label>
-						<input type="text" name="phone" value="0638561317">
-					</div>
+					<!-- TODO add class password-block for password block -->
+					<div class="form-block password-block">
+						<div class="labels-holder">
+							<div class="labels-group">
+								<div class="label-1">Изменить пароль</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Старый пароль:</label>
+						<!-- TODO change input type to text ! -->
+							<input type="text" name="old_password">
+						</div>
 
-					<div class="form-group">
-						<label>Старый пароль:</label>
-						<input type="password" name="old_password">
-					</div>
+						<div class="form-group">
+							<label>Новый пароль:</label>
+							<input type="password" name="password">
+						</div>
 
-					<div class="form-group">
-						<label>Новый пароль:</label>
-						<input type="password" name="password">
-					</div>
-
-					<div class="form-group">
-						<label>Подтверждение нового пароля:</label>
-						<input type="password" name="password_confirmation">
+					<!-- TODO add class pull-right for right blocks -->
+						<div class="form-group pull-right">
+							<label>Подтверждение нового пароля:</label>
+							<input type="password" name="password_confirmation">
+						</div>
 					</div>
 
 					<div>

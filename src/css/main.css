@@ -315,14 +315,14 @@ section.main-form .main-input-holder {
 	/*float: left;*/
 	vertical-align: top;
 	text-align: left;
-	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0px 18px rgba(0,0,0,0.01);
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0px 18px rgba(0,0,0,0.01);
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0 18px rgba(0,0,0,0.01);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 0 18px rgba(0,0,0,0.01);
 	-webkit-transition: box-shadow .3s;
 	transition: box-shadow .3s;
 }
 section.main-form .main-input-holder.opened {
-	-webkit-box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0px 48px rgba(0,0,0,0.1);
-	box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0px 48px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0 48px rgba(0,0,0,0.1);
+	box-shadow: 0 4px 9px rgba(0,0,0,0.22), 0 0 48px rgba(0,0,0,0.1);
 	-webkit-transition: box-shadow .3s;
 	transition: box-shadow .3s;
 }
@@ -1192,7 +1192,7 @@ section.bottom-tickets-nav a.back img {
 .order-form input {
 	background-color: #bfc2c6;
 	border: none;
-	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
+	box-shadow: 0 0 4px -14px rgba(0,0,0,0.9);
 	height: 40px;
 	width: 220px;
 
@@ -1384,32 +1384,60 @@ section.bottom-tickets-nav a.back img {
 }
 /* END ORDER */
 
-/* settings-page */
-.settings-page {
-	/*background-color: #5f6671;*/
+/* PRIVATE-PAGE */
+.private-page {
+	background: #5f6671;
+	color: #fff;
+}
+.private-page .content-wrapper .container {
+	padding: 0 80px;
+}
+.private-page .content-wrapper {
+	background: none;
 	padding-top: 40px;
 }
-.settings-page .form-group {}
-.settings-page .form-group input,
-.settings-page .form-group label {
+/* END PRIVATE-PAGE */
+
+/* SETTINGS-PAGE */
+.private-page .form-block {
+	border-bottom: 1px solid #37404d;
+	padding: 30px 0;
+}
+.private-page .form-group {
+	display: inline-block;
+	margin-bottom: 14px;
+	margin-right: 20px;
+}
+
+.private-page .form-group.pull-right {
+	margin-right: 0;
+}
+.private-page .form-group input,
+.private-page .form-group label {
 	display: inline-block;
 	margin: 4px 0;
 }
-.settings-page .form-group label {
-	text-align: right;
-	padding: 0 8px;
-	width: 49%;
+.private-page .form-group label {
+	color: #bbcde6;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 14px;
+	margin-bottom: 4px;
 }
-.settings-page .form-group input {
-	width: 300px;
+.private-page .button-holder {
+	display: block;
+	margin: 0;
+	text-align: center;
 }
-.settings-page .form-group button.type-1 {
-	margin-top: 40px;
+.private-page .form-group button.type-1 {
+	display: inline-block;
+	margin: 40px 0;
 }
-.settings-page input {
+.private-page input {
 	background-color: #bfc2c6;
 	border: none;
-	box-shadow: 0 0px 4px -14px rgba(0,0,0,0.9);
+	box-shadow: 0 0 4px -14px rgba(0,0,0,0.9);
 	height: 40px;
 	width: 220px;
 
@@ -1421,34 +1449,59 @@ section.bottom-tickets-nav a.back img {
 	-webkit-transition: background .3s, box-shadow .3s;
 	transition: background .3s, box-shadow .3s;
 }
-.settings-page input:focus {
+.private-page input:focus {
 	background: #fff;
 	box-shadow: 0 10px 32px -8px rgba(0,0,0,0.5);
 	-webkit-transition: background .1s, box-shadow .2s;
 	transition: background .1s, box-shadow .2s;
 }
-.settings-page input::-webkit-input-placeholder {
+.private-page input::-webkit-input-placeholder {
 	color: #737477;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
 }
-.settings-page input:-moz-placeholder {
+.private-page input:-moz-placeholder {
 	color: #737477;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
 }
-.settings-page input::-moz-placeholder {
+.private-page input::-moz-placeholder {
 	color: #737477;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
 }
-.settings-page input:-ms-input-placeholder {
+.private-page input:-ms-input-placeholder {
 	color: #737477;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
 }
-/* END settings-page */
+.private-page .label-1 {
+	color: white;
+	display: block;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 18px;
+	margin-bottom: 20px;
+}
+.private-page a.label-2 {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 14px;
+	margin-top: 3px;
+	position: relative;
+	top: -3px;
+	vertical-align: top;
+}
+.private-page a.label-2:after {
+	border: 1px dashed #bbcde6;
+	content: "";
+	display: block;
+}
+.private-page a.label-2.active {
+	display: none;
+}
+/* END SETTINGS-PAGE */

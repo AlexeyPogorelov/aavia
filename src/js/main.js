@@ -306,7 +306,7 @@ $('#grid-overlay').on('click', function () {
 					$container.removeClass('error');
 					$container.find('.error').remove();
 				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
-					$container.append('<div class="error">Введите настрояшие данные</div>');
+					$container.append('<div class="error">Введите настояшие данные</div>');
 				} else if ($container.find('.error').length && e.type != 'submit') {
 					return
 				} else if ($container.find('.error').length) {
