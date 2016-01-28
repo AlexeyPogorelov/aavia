@@ -1396,6 +1396,27 @@ section.bottom-tickets-nav a.back img {
 	background: none;
 	padding-top: 40px;
 }
+.private-navigation {}
+.private-navigation li {
+	display: inline-block;
+	color: #ffffff;
+}
+.private-navigation li a {
+	color: #bbcde6;
+	display: inline-block;
+	margin-right: 40px;
+}
+.private-navigation li a img,
+.private-navigation li a span {
+	vertical-align: middle;
+}
+.private-navigation li a img {
+	margin-right: 6px;
+	width: 20px;
+}
+.private-navigation li a span {
+	font-size: 18px;
+}
 /* END PRIVATE-PAGE */
 
 /* SETTINGS-PAGE */
@@ -1505,3 +1526,50 @@ section.bottom-tickets-nav a.back img {
 	display: none;
 }
 /* END SETTINGS-PAGE */
+
+/* ORDERS-TABLE */
+.orders-table {
+	margin-top: 40px;
+	width: 100%;
+}
+.orders-table td {
+	border: 1px solid #bbcde6;
+	font-size: 16px;
+	padding: 10px 20px;
+}
+.orders-table td h5 {
+	color: #FF54C4;
+	font-size: 16px;
+	text-align: center;
+}
+/*.orders-table {}*/
+/* END ORDERS-TABLE */
+
+/* PAYMENT-WAY */
+.payment-way {
+	display: table;
+	margin-top: 40px;
+	width: 100%;
+}
+.payment-way li {
+	display: table-cell;
+	font-size: 0;
+	width: 32%;
+}
+.payment-way li a {
+}
+.payment-way li a span {
+	color: #bbcde6;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+}
+.payment-way li a img {
+	display: block;
+	margin: auto;
+	height: 136px;
+}
+/* END PAYMENT-WAY */
+
+/* ... */
+/* END ... */

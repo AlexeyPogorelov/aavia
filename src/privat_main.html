@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-	<div class="page-wrapper">
+<div class="content-wrapper private-page">
 		<header class="main-header">
 			<div class="container">
 				<div class="col-md-4">
@@ -64,59 +64,78 @@
 		</header>
 
 		<div class="content-wrapper">
-			<div>
+			<div class="container settings-page">
 				<div>
 					<div class="alert alert-success">Вы успешно авторизированны</div>
 				</div>
 
-				<ul>
-
+				<ul class="private-navigation">
+					<!-- TODO add icons to links and wrap names to spans -->
 					<li>
-						<a href="/account/sessions">Покупки</a>
+						<a href="/account/sessions">
+							<img src="img/icons/pn-list.svg" alt="menu-item">
+							<span>Покупки</span>
+						</a>
 					</li>
 
 					<li>
-						<a href="/account/orders">Оплаты</a>
+						<a href="/account/orders">
+							<img src="img/icons/pn-credit-card.svg" alt="menu-item">
+							<span>Оплаты</span>
+						</a>
 					</li>
 
 					<li>
-						<a href="/account/friends">Друзья</a>
+						<a href="/account/friends">
+							<img src="img/icons/pn-users.svg" alt="menu-item">
+							<span>Друзья</span>
+						</a>
 					</li>
 
 					<li>
-						<a href="/account/settings">Настройки</a>
+						<a href="/account/settings">
+							<img src="img/icons/pn-wrench.svg" alt="menu-item">
+							<span>Настройки</span>
+						</a>
 					</li>
 
 					<li>
-						<a href="/account/logout">Выйти</a>
+						<a href="/account/logout">
+							<img src="img/icons/pn-exit.svg" alt="menu-item">
+							<span>Выйти</span>
+						</a>
 					</li>
+					
 				</ul>
-			</div>
 
-			<div>
 				<div>
-					<table class="table">
-						<tbody><tr>
-							<td>
-								Город отправления
-							</td>
+					<div>
+						<!-- TODO add class to specific table -->
+						<table class="table orders-table">
+							<tbody>
+								<tr>
+									<td>
+										Город отправления
+									</td>
 
-							<td>
-								Город прибытия
-							</td>
+									<td>
+										Город прибытия
+									</td>
 
-							<td>
-								Номер очереди
-							</td>
-						</tr>
+									<td>
+										Номер очереди
+									</td>
+								</tr>
 
-						<tr>
-							<td colspan="3">
-								<h5>В данный момент нет ни одной записи</h5>
-							</td>
-						</tr>
-						</tbody></table>
+								<tr>
+									<td colspan="3">
+										<h5>В данный момент нет ни одной записи</h5>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 
+					</div>
 				</div>
 			</div>
 		</div>

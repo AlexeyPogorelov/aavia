@@ -362,6 +362,27 @@ input[type='number'] {
 .white {
 	color: #fff;
 }
+
+.alert {
+	background: #c328e7;
+	border-radius: 2px;
+	position: fixed;
+	padding: 10px 20px;
+	top: 94px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+
+	-webkit-animation: fadeOutUp1 .3s;
+	animation: fadeOutUp1 .3s;
+
+	-webkit-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
 /*	LIGHTBOX	*/
 
 .lightbox-holder::-webkit-scrollbar {

@@ -17,139 +17,163 @@
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-	<div class="page-wrapper">
-		<header class="main-header">
-			<div class="container">
-				<div class="col-md-4">
-					<a href="#" class="main-logo-holder">
-						<img src="img/icons/main-logo.png" alt="logo"/>
-						<span>Самые дешевые авиабилеты</span>
-					</a>
-				</div>
-				<div class="col-md-4">
-					<a href="#" class="my-profile-link-holder">
-						<img src="img/icons/person.png" alt="person"/>
-						<span>Личный кабинет</span>
-					</a>
-				</div>
-				<div class="col-md-4">
-					<div class="header-phone-holder">
-						<ul class="operators-list">
-							<li>
-								<div class="operator-icon">
-									<img src="img/icons/life.png" alt="operator" class="life">
-									<span class="operator-prefix">063</span>
-								</div>
-							</li>
-							<li>
-								<div class="operator-icon">
-									<img src="img/icons/mts.png" alt="operator" class="mts">
-									<span class="operator-prefix">095</span>
-								</div>
-							</li>
-							<li>
-								<div class="operator-icon">
-									<img src="img/icons/kyivstar.png" alt="operator" class="kyivstar">
-									<span class="operator-prefix">096</span>
-								</div>
-							</li>
-						</ul>
+<div class="content-wrapper private-page">
+	<header class="main-header">
+		<div class="container">
+			<div class="col-md-4">
+				<a href="#" class="main-logo-holder">
+					<img src="img/icons/main-logo.png" alt="logo"/>
+					<span>Самые дешевые авиабилеты</span>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="#" class="my-profile-link-holder">
+					<img src="img/icons/person.png" alt="person"/>
+					<span>Личный кабинет</span>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<div class="header-phone-holder">
+					<ul class="operators-list">
+						<li>
+							<div class="operator-icon">
+								<img src="img/icons/life.png" alt="operator" class="life">
+								<span class="operator-prefix">063</span>
+							</div>
+						</li>
+						<li>
+							<div class="operator-icon">
+								<img src="img/icons/mts.png" alt="operator" class="mts">
+								<span class="operator-prefix">095</span>
+							</div>
+						</li>
+						<li>
+							<div class="operator-icon">
+								<img src="img/icons/kyivstar.png" alt="operator" class="kyivstar">
+								<span class="operator-prefix">096</span>
+							</div>
+						</li>
+					</ul>
 						<span class="phone-number">
 							<span>724-04-04</span>
 							<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
 						</span>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<div class="content-wrapper">
-			<div>
-				<div>
-				</div>
-
-				<ul>
-
-					<li>
-						<a href="/account/sessions">Покупки</a>
-					</li>
-
-					<li>
-						<a href="/account/orders">Оплаты</a>
-					</li>
-
-					<li>
-						<a href="/account/friends">Друзья</a>
-					</li>
-
-					<li>
-						<a href="/account/settings">Настройки</a>
-					</li>
-
-					<li>
-						<a href="/account/logout">Выйти</a>
-					</li>
-				</ul>
-			</div>
-
-			<div>
-				<div>
-					<ul>
-						<li>
-							<a href="/account/orders/platon">Platon</a>
-						</li>
-						<li>
-							<a href="/account/orders/cashless">Наличка</a>
-						</li>
-						<li>
-							<a href="">Безнал</a>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
+	</header>
 
-		<footer class="main-footer">
-			<div class="container">
-				<div class="col-md-4">
-					<div class="payment-systems-holder">
-						<a href="#" tabindex="-1">
-							<img src="img/icons/visa.png" alt="visa">
-						</a>
-						<a href="#" tabindex="-1">
-							<img src="img/icons/mastercard.png" alt="mastercard">
-						</a>
-						<a href="#" tabindex="-1">
-							<img src="img/icons/platon.png" alt="platon">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="copyright-holder">
-						<span>© ООО «Альфа-Авиа» 2015</span>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="about-link-holder">
-						<a href="info.html">
-							<i class="fa fa-question-circle"></i>
-							<span>Как это работает</span>
-						</a>
-					</div>
+	<div class="content-wrapper">
+		<div class="container settings-page">
+			<div>
+				<div class="alert alert-success">Вы успешно авторизированны</div>
+			</div>
+
+			<ul class="private-navigation">
+				<!-- TODO add icons to links and wrap names to spans -->
+				<li>
+					<a href="/account/sessions">
+						<img src="img/icons/pn-list.svg" alt="menu-item">
+						<span>Покупки</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/account/orders">
+						<img src="img/icons/pn-credit-card.svg" alt="menu-item">
+						<span>Оплаты</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/account/friends">
+						<img src="img/icons/pn-users.svg" alt="menu-item">
+						<span>Друзья</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/account/settings">
+						<img src="img/icons/pn-wrench.svg" alt="menu-item">
+						<span>Настройки</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="/account/logout">
+						<img src="img/icons/pn-exit.svg" alt="menu-item">
+						<span>Выйти</span>
+					</a>
+				</li>
+
+			</ul>
+			<!-- TODO add class payment way and images ti links. Wrap text to SPAN! -->
+			<ul class="payment-way">
+				<li>
+					<a href="/account/orders/platon">
+						<img src="img/icons/paysys-platon.png" alt="platon">
+						<span>Platon</span>
+					</a>
+				</li>
+				<li>
+					<a href="/account/orders/cashless">
+						<img src="img/icons/paysys-cash.png" alt="platon">
+						<span>Наличка</span>
+					</a>
+				</li>
+				<li>
+					<!-- TODO don't forget realize it -->
+					<a href="#">
+						<img src="img/icons/paysys-credit-card.svg" alt="platon">
+						<span>Безнал</span>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+	<footer class="main-footer">
+		<div class="container">
+			<div class="col-md-4">
+				<div class="payment-systems-holder">
+					<a href="#" tabindex="-1">
+						<img src="img/icons/visa.png" alt="visa">
+					</a>
+					<a href="#" tabindex="-1">
+						<img src="img/icons/mastercard.png" alt="mastercard">
+					</a>
+					<a href="#" tabindex="-1">
+						<img src="img/icons/platon.png" alt="platon">
+					</a>
 				</div>
 			</div>
-		</footer>
+			<div class="col-md-4">
+				<div class="copyright-holder">
+					<span>© ООО «Альфа-Авиа» 2015</span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="about-link-holder">
+					<a href="info.html">
+						<i class="fa fa-question-circle"></i>
+						<span>Как это работает</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-		<!-- OVERLAYS -->
-		<!-- div class="main-overlay hidden"></div>
-		<div class="grid-overlay hidden"></div>
-		<div id="main-overlay" class="overlay-button">O</div>
-		<div id="grid-overlay" class="overlay-button">G</div -->
+	<!-- OVERLAYS -->
+	<!-- div class="main-overlay hidden"></div>
+    <div class="grid-overlay hidden"></div>
+    <div id="main-overlay" class="overlay-button">O</div>
+    <div id="grid-overlay" class="overlay-button">G</div -->
 
-		<!-- SCRIPTS -->
-		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
-		<script src="js/main.js"></script>
-	</div>
+	<!-- SCRIPTS -->
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+</div>
 </body>
 </html>
