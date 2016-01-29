@@ -57,14 +57,14 @@ $('#grid-overlay').on('click', function () {
 		// if special dropdown
 		} else if (elementLink == "personsInfo") {
 			$self.on('click', function () {
-				var flag;
-				if ($(this).hasClass('opened')) {
-					flag = true;
-				}
-				$('.main-input-holder').removeClass('opened');
-				if (!flag) {
-					$self.addClass('opened');
-				}
+				$self.toggleClass('opened');
+				setTimeout(function () {
+					if ($self.hasClass('opened')) {
+						$('body').one('click', function () {
+							$self.removeClass('opened');
+						});
+					}
+				}, 1);
 			}).find('.dropdown').on('click', function (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -93,31 +93,44 @@ $('#grid-overlay').on('click', function () {
 		} else if (elementLink == "departureDate") {
 			fillDateBlock($self, currentDate);
 			$self.on('click', function () {
-				$('#fakeDepartureDate').datepicker("show");
-				$('.main-input-holder').removeClass('opened');
+				if (!$self.hasClass('opened')) {
+					$('#fakeDepartureDate').datepicker("show");
+					$self.addClass('opened');
+					setTimeout(function () {
+						if ($self.hasClass('opened')) {
+							$('body').one('click', function () {
+								$self.removeClass('opened');
+							});
+						}
+					}, 1);
+				}
+				//$('.main-input-holder').removeClass('opened');
 			});
 		} else if (elementLink == "arrivalDate") {
 			fillDateBlock($self, currentDate);
 			$self.on('click', function () {
-				$('#fakeArrivalDate').datepicker("show");
-				$('.main-input-holder').removeClass('opened');
+				if (!$self.hasClass('opened')) {
+					$('#fakeArrivalDate').datepicker("show");
+					$self.addClass('opened');
+					setTimeout(function () {
+						if ($self.hasClass('opened')) {
+							$('body').one('click', function () {
+								$self.removeClass('opened');
+							});
+						}
+					}, 1);
+				}
+				//$('.main-input-holder').removeClass('opened');
 			});
 		} else {
 			$self.on('click', function (e) {
-				//var flag;
-				//if ($(this).hasClass('opened')) {
-				//	flag = true;
-				//}
-				//$('.main-input-holder').removeClass('opened');
-				//if (!flag) {
-				//	$self.addClass('opened');
-				//}
-				e.stopPropagation();
-				$self.addClass('opened');
+				$self.toggleClass('opened');
 				setTimeout(function () {
-					$('body').one('click', function () {
-						$self.removeClass('opened');
-					});
+					if ($self.hasClass('opened')) {
+						$('body').one('click', function () {
+							$self.removeClass('opened');
+						});
+					}
 				}, 1);
 			});
 			var $newSelect = $('<div>').addClass('dropdown');
@@ -128,7 +141,6 @@ $('#grid-overlay').on('click', function () {
 					$newOption.html($(this).text());
 					$newOption.attr('data-val', $(this).val()); // TODO can be removed
 					$newOption.on('click', function (e) {
-						e.stopPropagation();
 						$realSelect.val($(this).data('val'));
 						$self.find('.input-label').addClass('selected').html($(this).html());
 						$self.removeClass('opened');
