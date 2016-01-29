@@ -94,6 +94,7 @@
 		display: block;
 		float: none;
 		white-space: normal;
+		max-width: initial;
 	}
 	section.tickets-way .way-header p {
 		margin-bottom: 10px;

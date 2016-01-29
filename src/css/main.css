@@ -766,7 +766,9 @@ section.tickets-way .container {
 	padding-top: 11px;
 	padding-bottom: 14px;
 }
-section.tickets-way .way-header {}
+section.tickets-way .way-header {
+	max-width: 610px;
+}
 section.tickets-way .way-header p {
 	line-height: 24px;
 }

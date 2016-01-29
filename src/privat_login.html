@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A-AVIA</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet" href="../bower_components/normalize-css/normalize.css">
+	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="css/grid.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/animation.css">
+	<link rel="stylesheet" href="css/elements.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+<div class="content-wrapper private-page">
+		<header class="main-header">
+			<div class="container">
+				<div class="col-md-4">
+					<a href="#" class="main-logo-holder">
+						<img src="img/icons/main-logo.png" alt="logo"/>
+						<span>Самые дешевые авиабилеты</span>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="#" class="my-profile-link-holder">
+						<img src="img/icons/person.png" alt="person"/>
+						<span>Личный кабинет</span>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<div class="header-phone-holder">
+						<ul class="operators-list">
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/life.png" alt="operator" class="life">
+									<span class="operator-prefix">063</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/mts.png" alt="operator" class="mts">
+									<span class="operator-prefix">095</span>
+								</div>
+							</li>
+							<li>
+								<div class="operator-icon">
+									<img src="img/icons/kyivstar.png" alt="operator" class="kyivstar">
+									<span class="operator-prefix">096</span>
+								</div>
+							</li>
+						</ul>
+						<span class="phone-number">
+							<span>724-04-04</span>
+							<a href="#" class="call-back" tabindex="-1">Обратный звонок</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="content-wrapper">
+
+			<!-- TODO add class for login page -->
+			<div class="container login-page">
+
+				<div class="alert alert-warning">
+					<span>Вы не авторизированы!</span>
+				</div>
+
+				<div>
+					<form action="/auth/authenticate" method="POST">
+						<div class="forms-row">
+							<!-- TODO move three form groups to single row -->
+							<div class="form-group">
+								<label for="#" class="label-2">Email</label>
+								<input name="email" id="#" type="text">
+							</div>
+							<div class="form-group">
+								<label for="#" class="label-2">Пароль</label>
+								<input name="password" id="#" type="password">
+							</div>
+							<div class="form-group">
+								<button type="submit" value="Войти" class="type-2">Войти</button>
+							</div>
+						</div>
+
+						<div>
+							<input type="hidden" name="_token" value="KnKc04UbnJszb3P2KkpGNZoUvr8tS4xKrIzpqxQM">
+						</div>
+
+					</form>
+
+					<div>
+						<!-- TODO add class to register link (type-2 class to register link) -->
+						<a href="/auth/registration" class="type-2">Регистрация</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<footer class="main-footer">
+			<div class="container">
+				<div class="col-md-4">
+					<div class="payment-systems-holder">
+						<a href="#" tabindex="-1">
+							<img src="img/icons/visa.png" alt="visa">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/mastercard.png" alt="mastercard">
+						</a>
+						<a href="#" tabindex="-1">
+							<img src="img/icons/platon.png" alt="platon">
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="copyright-holder">
+						<span>© ООО «Альфа-Авиа» 2015</span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="about-link-holder">
+						<a href="info.html">
+							<i class="fa fa-question-circle"></i>
+							<span>Как это работает</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- OVERLAYS -->
+		<!-- div class="main-overlay hidden"></div>
+		<div class="grid-overlay hidden"></div>
+		<div id="main-overlay" class="overlay-button">O</div>
+		<div id="grid-overlay" class="overlay-button">G</div -->
+
+		<!-- SCRIPTS -->
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+		<script src="js/main.js"></script>
+	</div>
+</body>
+</html>

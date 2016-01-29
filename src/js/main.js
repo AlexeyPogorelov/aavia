@@ -5,7 +5,7 @@ $('#main-overlay').on('click', function () {
 $('#grid-overlay').on('click', function () {
 	$('.grid-overlay').toggleClass('hidden');
 });
-(function () {
++function () {
 	// global
 	var currentDate = new Date(),
 		dayNames = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" ],
@@ -103,15 +103,22 @@ $('#grid-overlay').on('click', function () {
 				$('.main-input-holder').removeClass('opened');
 			});
 		} else {
-			$self.on('click', function () {
-				var flag;
-				if ($(this).hasClass('opened')) {
-					flag = true;
-				}
-				$('.main-input-holder').removeClass('opened');
-				if (!flag) {
-					$self.addClass('opened');
-				}
+			$self.on('click', function (e) {
+				//var flag;
+				//if ($(this).hasClass('opened')) {
+				//	flag = true;
+				//}
+				//$('.main-input-holder').removeClass('opened');
+				//if (!flag) {
+				//	$self.addClass('opened');
+				//}
+				e.stopPropagation();
+				$self.addClass('opened');
+				setTimeout(function () {
+					$('body').one('click', function () {
+						$self.removeClass('opened');
+					});
+				}, 1);
 			});
 			var $newSelect = $('<div>').addClass('dropdown');
 			var $listHolder = $('<ul>');
@@ -230,11 +237,11 @@ $('#grid-overlay').on('click', function () {
 	$('.order-form').find('form.container').find('select').one('change', function () {
 		$(this).find('option').eq(0).remove();
 	});
-	(function () {
+	+function () {
 		var state = {};
 		$('.ticket-header').on('click', function () {
 			if ($(this).data('way') == "forward") {
-				state.forward = true;
+				state.forward = parseInt( $(this).data('price') );
 				var speed = 800;
 				if (state.back) {
 					$("html, body").stop().animate({
@@ -246,7 +253,7 @@ $('#grid-overlay').on('click', function () {
 					}, speed, 'swing');
 				}
 			} else if ($(this).data('way') == "back") {
-				state.back = true;
+				state.back = parseInt( $(this).data('price') );
 				var speed = 1200;
 				if (state.forward) {
 					$("html, body").stop().animate({
@@ -258,11 +265,25 @@ $('#grid-overlay').on('click', function () {
 					}, speed, 'swing');
 				}
 			}
+			if (state.back) {
+				$('#arrival-area-info').find('.price').text(state.back + ' $');
+			}
+			if (state.forward) {
+				$('#departure-area-info').find('.price').text(state.forward + ' $');
+			}
+			if (state.back && state.forward) {
+				$('#result-area').find('.bold').text(state.back + state.forward + ' $');
+			}
+			$('html, body').one('mousewheel DOMMouseScroll touchstart', function () {
+				$(this).stop(true, true);
+				// bodyOverflow.unfixBody();
+			});
 			// console.log(state);
 		});
-	})();
+
+	}();
 	+function () {
-		var renderMessage, valid, settings;
+		var renderMessage, valid, settings, notValid;
 		settings = {
 			'passportYears': 10,
 			'halfYears': 12,
@@ -270,7 +291,7 @@ $('#grid-overlay').on('click', function () {
 		};
 		regularExp = {
 			name: function (data) {
-				var exp = /^[а-яА-Яa-zA-Z]+$/;
+				var exp = /^[а-яА-Яa-zA-Z\-]+$/;
 				return exp.test(data);
 			},
 			email: function (data) {
@@ -292,7 +313,7 @@ $('#grid-overlay').on('click', function () {
 					$container.removeClass('error');
 					$container.find('.error').remove();
 				} else if ($container.find('.error').length && e.type != 'submit') {
-					return;
+					return false;
 				} else if ($container.find('.error').length) {
 					$container.addClass('error');
 				} else if (e.type == 'submit') {
@@ -308,7 +329,7 @@ $('#grid-overlay').on('click', function () {
 				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
 					$container.append('<div class="error">Введите настояшие данные</div>');
 				} else if ($container.find('.error').length && e.type != 'submit') {
-					return
+					return;
 				} else if ($container.find('.error').length) {
 					$container.addClass('error');
 				} else if (e.type == 'submit') {
@@ -341,7 +362,7 @@ $('#grid-overlay').on('click', function () {
 				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
 					$container.append('<div class="error">Введите email</div>');
 				} else if ($container.find('.error').length && e.type != 'submit') {
-					return
+					return;
 				} else if ($container.find('.error').length) {
 					$container.addClass('error');
 				} else if (e.type == 'submit') {
@@ -397,85 +418,89 @@ $('#grid-overlay').on('click', function () {
 			}
 		};
 		$('.order-form').find('form.container').on('change submit', function (e) {
-			e.preventDefault();
-			var status = 0;
-			$(this).find('input').each(function () {
-				var $self = $(this),
-					valType = $self.data('validate'),
-					now = new Date();
-				if (valType) status++;
-				if (valType == "name") {
-					if (regularExp.name($self.val())) {
-						renderMessage.nameError($self, true, e);
-						status--;
+			if (notValid) {
+				e.preventDefault();
+			} else {
+				var status = 0;
+				$(this).find('input').each(function () {
+					var $self = $(this),
+						valType = $self.data('validate'),
+						now = new Date();
+					if (valType) status++;
+					if (valType == "name") {
+						if (regularExp.name($self.val())) {
+							renderMessage.nameError($self, true, e);
+							status--;
+						} else {
+							renderMessage.nameError($self, false, e);
+						}
+					} else if (valType == "empty") {
+						if (regularExp.empty($self.val())) {
+							renderMessage.empty($self, true, e);
+							status--;
+						} else {
+							renderMessage.empty($self, false, e);
+						}
+					} else if (valType == "phone") {
+						if (regularExp.phone($self.val())) {
+							renderMessage.phone($self, true, e);
+							status--;
+						} else {
+							renderMessage.phone($self, false, e);
+						}
+					} else if (valType == "email") {
+						if (regularExp.email($self.val())) {
+							renderMessage.email($self, true, e);
+							status--;
+						} else {
+							renderMessage.email($self, false, e);
+						}
+					} else if (valType == "date-passport") {
+						$self.val( selectDateToInput ($self) );
+						if (new Date($self.val()) > new Date(now.getFullYear() - settings.passportYears, now.getMonth(), now.getDate())) {
+							renderMessage.passportExpire($self, true, e);
+							status--;
+						} else {
+							renderMessage.passportExpire($self, false, e);
+						}
+					} else if (valType == "date-full") {
+						$self.val( selectDateToInput ($self) );
+						if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
+							renderMessage.birthDate($self, true, e);
+							status--;
+						} else {
+							renderMessage.birthDate($self, false, e);
+						}
+					} else if (valType == "date-child") {
+						$self.val( selectDateToInput ($self) );
+						var tempDate = new Date($self.val())
+						if (tempDate > new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate()) && tempDate < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+							renderMessage.birthDate($self, true, e);
+							status--;
+						} else {
+							renderMessage.birthDate($self, false, e);
+						}
+					} else if (valType == "date-baby") {
+						$self.val( selectDateToInput ($self) );
+						if (new Date($self.val()) > new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+							renderMessage.birthDate($self, true, e);
+							status--;
+						} else {
+							renderMessage.birthDate($self, false, e);
+						}
+					} else if (valType == "novalidate") {
+						//
 					} else {
-						renderMessage.nameError($self, false, e);
+						// console.log($self);
+						// console.log(valType);
+						// status--;
 					}
-				} else if (valType == "empty") {
-					if (regularExp.empty($self.val())) {
-						renderMessage.empty($self, true, e);
-						status--;
-					} else {
-						renderMessage.empty($self, false, e);
-					}
-				} else if (valType == "phone") {
-					if (regularExp.phone($self.val())) {
-						renderMessage.phone($self, true, e);
-						status--;
-					} else {
-						renderMessage.phone($self, false, e);
-					}
-				} else if (valType == "email") {
-					if (regularExp.email($self.val())) {
-						renderMessage.email($self, true, e);
-						status--;
-					} else {
-						renderMessage.email($self, false, e);
-					}
-				} else if (valType == "date-passport") {
-					$self.val( selectDateToInput ($self) );
-					if (new Date($self.val()) > new Date(now.getFullYear() - settings.passportYears, now.getMonth(), now.getDate())) {
-						renderMessage.passportExpire($self, true, e);
-						status--;
-					} else {
-						renderMessage.passportExpire($self, false, e);
-					}
-				} else if (valType == "date-full") {
-					$self.val( selectDateToInput ($self) );
-					if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e);
-						status--;
-					} else {
-						renderMessage.birthDate($self, false, e);
-					}
-				} else if (valType == "date-child") {
-					$self.val( selectDateToInput ($self) );
-					var tempDate = new Date($self.val())
-					if (tempDate > new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate()) && tempDate < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e);
-						status--;
-					} else {
-						renderMessage.birthDate($self, false, e);
-					}
-				} else if (valType == "date-baby") {
-					$self.val( selectDateToInput ($self) );
-					if (new Date($self.val()) > new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
-						renderMessage.birthDate($self, true, e);
-						status--;
-					} else {
-						renderMessage.birthDate($self, false, e);
-					}
-				} else if (valType == "novalidate") {
-					//
-				} else {
-					// console.log($self);
-					// console.log(valType);
-					// status--;
-				}
-			});
+				});
+			}
 			console.log(status);
 			if (e.type == 'submit' && status == 0) {
-				alert('YESSS!')
+				notValid = true;
+				$(this).trigger('submit');
 			}
 		});
 	}();
@@ -997,4 +1022,4 @@ $('#grid-overlay').on('click', function () {
 
 	$('.hint').tooltip();
 
-})();
+}();

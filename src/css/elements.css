@@ -11,7 +11,33 @@ button.type-1 {
 	-webkit-box-shadow: 0 1px 0 #c328e7;
 	box-shadow: 0 1px 0 #c328e7;
 }
-
+.btn.type-2,
+button.type-2 {
+	background-color: #ff4cc2;
+	height: 40px;
+	text-transform: uppercase;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 14px;
+	margin-top: 10px;
+	margin-bottom: 4px;
+	width: 220px;
+	-webkit-box-shadow: 0 1px 0 #c328e7;
+	box-shadow: 0 1px 0 #c328e7;
+}
+a.type-2 {
+	color: #BFC2C6;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 16px;
+}
+a.type-2:after {
+	border: 1px dashed #bbcde6;
+	content: "";
+	display: block;
+}
 /* RADIO
 .radio input[type="radio"]:not(:checked),
 .radio input[type="radio"]:checked {
