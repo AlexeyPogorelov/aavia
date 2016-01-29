@@ -29,26 +29,88 @@ $('#grid-overlay').on('click', function () {
 				}
 			}
 		})(),
+		bodyOverflow = {
+			fixBody: function () {
+				$('body').width($('body').width())
+					.addClass('fixed');
+			},
+			unfixBody: function () {
+				$('body').removeClass('fixed').css({
+					'width': 'auto'
+				});
+			},
+			resize: function () {
+				this.unfixBody();
+			}.bind(this)
+		},
+		modalWindow = {
+			open: function ($el) {
+				if ($el) {
+					var trg = $el.data('target') || $el.attr('href');
+					$(trg).addClass('opened');
+					bodyOverflow.fixBody();
+				}
+			},
+			close: function ($el) {
+				if ($el && animationPrefix) { // add && on old sevices
+					var dt = $el.data('dismiss'),
+						$trg = dt ? $(dt) : $el.closest('.opened');
+					$trg.one(animationPrefix, function () {
+						bodyOverflow.unfixBody();
+						$trg.removeClass('opened clothing');
+					});
+					$trg.addClass('clothing');
+				} else if ($el) {
+					var dt = $el.data('dismiss'),
+						$trg = dt ? $(dt) : $el.closest('.opened');
+					bodyOverflow.unfixBody();
+					$trg.removeClass('opened clothing');
+				}
+			}
+		},
 		winHeight = $(window).height(),
 		winWidth = $(window).width();
 
+	// MODAL windows
+	$('.modal-open').on('click', function (e) {
+		e.preventDefault();
+		modalWindow.open( $(this) );
+	})
+	$('.modal-close').on('click', function (e) {
+		e.preventDefault();
+		modalWindow.close( $(this) );
+	})
+	$('.modal').on('click', function (e) {
+		e.preventDefault();
+		if (e.target == this) {
+			modalWindow.close( $(this) );
+		}
+	})
+
 	// main page
-	$('.main-input-holder').each(function (i) {
-		$(this)
-			.one(animationPrefix, function () {
-				$(this).removeClass('scaleYIn');
-			})
-			.addClass('scaleYIn anim-delay-' + (i + 1));
-	});
+	//$('.main-input-holder').each(function (i) {
+	//	$(this)
+	//		.one(animationPrefix, function () {
+	//			$(this).removeClass('scaleYIn');
+	//		})
+	//		.addClass('scaleYIn anim-delay-' + (i + 1));
+	//});
 	$('intro-animation').one(animationPrefix, function () {
 		$(this).removeClass('scaleYIn');
 	});
 
 	// select > blocks
-	$('.main-input-holder').each(function () {
+	$('.main-input-holder').each(function (i) {
 		var $self = $(this);
 		var elementLink = $self.data('link'),
 			$realSelect = $('#' + $(this).data('link'));
+
+		// remove animation classes
+		$self.one(animationPrefix, function () {
+				$(this).removeClass('scaleYIn');
+			})
+			.addClass('scaleYIn anim-delay-' + (i + 1));
+
 		// console.log(elementLink);
 		if (!$realSelect.length) {
 			return;
@@ -97,11 +159,11 @@ $('#grid-overlay').on('click', function () {
 					$('#fakeDepartureDate').datepicker("show");
 					$self.addClass('opened');
 					setTimeout(function () {
-						if ($self.hasClass('opened')) {
+						// if ($self.hasClass('opened')) {
 							$('body').one('click', function () {
 								$self.removeClass('opened');
 							});
-						}
+						// }
 					}, 1);
 				}
 				//$('.main-input-holder').removeClass('opened');
@@ -113,11 +175,11 @@ $('#grid-overlay').on('click', function () {
 					$('#fakeArrivalDate').datepicker("show");
 					$self.addClass('opened');
 					setTimeout(function () {
-						if ($self.hasClass('opened')) {
+						// if ($self.hasClass('opened')) {
 							$('body').one('click', function () {
 								$self.removeClass('opened');
 							});
-						}
+						// }
 					}, 1);
 				}
 				//$('.main-input-holder').removeClass('opened');
@@ -174,6 +236,7 @@ $('#grid-overlay').on('click', function () {
 				var newMinDate = new Date(this.value);
 				$('#fakeArrivalDate').datepicker( "option", "minDate", new Date(newMinDate.getFullYear(), newMinDate.getMonth(), newMinDate.getDate() + 1) );
 				fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
+				$('.main-input-holder').removeClass('opened');
 			},
 			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14)
 		});
@@ -190,6 +253,7 @@ $('#grid-overlay').on('click', function () {
 			onSelect: function () {
 				$('#arrivalDate').val(this.value);
 				fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
+				$('.main-input-holder').removeClass('opened');
 			},
 			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 34)
 		});

@@ -170,20 +170,39 @@
 
 @-webkit-keyframes lightbox-holder-open {
 	from {
-		background-color: rgba(238, 33, 81, .0);
+		background-color: rgba(0, 0, 0, .0);
 	}
 
 	100% {
-		background-color: rgba(238, 33, 81, .6);
+		background-color: rgba(0, 0, 0, .6);
 	}
 }
 @keyframes lightbox-holder-open {
 	from {
-		background-color: rgba(238, 33, 81, .0);
+		background-color: rgba(0, 0, 0, .0);
 	}
 
 	100% {
-		background-color: rgba(238, 33, 81, .6);
+		background-color: rgba(0, 0, 0, .6);
+	}
+}
+
+@-webkit-keyframes lightbox-holder-close {
+	from {
+		background-color: rgba(0, 0, 0, .6);
+	}
+
+	100% {
+		background-color: rgba(0, 0, 0, 0);
+	}
+}
+@keyframes lightbox-holder-close {
+	from {
+		background-color: rgba(0, 0, 0, .6);
+	}
+
+	100% {
+		background-color: rgba(0, 0, 0, 0);
 	}
 }
 

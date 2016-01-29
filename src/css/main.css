@@ -1573,5 +1573,80 @@ section.bottom-tickets-nav a.back img {
 }
 /* END PAYMENT-WAY */
 
+/* CALLBACK MODAL */
+.callback-modal {}
+.callback-modal h4 {
+	color: black;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 20px;
+	margin-top: 26px;
+	margin-bottom: 6px;
+	padding: 0 20px;
+}
+.callback-modal label {
+	color: #000;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 8px;
+	margin-bottom: 4px;
+	text-align: left;
+}
+.callback-modal textarea,
+.callback-modal input {
+	background: #ffdcbc;
+	border: none;
+	display: block;
+	margin: 0;
+	height: 40px;
+	width: 100%;
+}
+.callback-modal textarea {
+	height: 90px;
+}
+.callback-modal .form-group {
+	margin-bottom: 15px;
+	padding: 0 20px;
+}
+.callback-modal p {
+	color: #b26c2b;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 15px;
+}
+.callback-modal .modal-close {
+	color: #6d809a;
+	font-size: 36px;
+	right: 24px;
+	top: 0;
+	line-height: 14px;
+	height: 14px;
+	width: 14px;
+}
+.callback-modal button.type-4 {
+	background-color: #bbcde6;
+	border: none;
+	color: black;
+	display: block;
+	font-size: 16px;
+	font-weight: 300;
+	height: 60px;
+	margin: 0;
+	line-height: 36px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.callback-modal .modal-dialog {
+	background-color: #ffa857;
+	box-shadow: 0 16px 32px rgba(55, 64, 77, 0.4);
+	text-align: center;
+	width: 380px;
+}
+/* END CALLBACK MODAL */
+
 /* ... */
 /* END ... */

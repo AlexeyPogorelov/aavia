@@ -24,10 +24,10 @@ body {
 .lightbox-cell::-webkit-scrollbar,
 .dropdown::-webkit-scrollbar,
 .mobile-navbar-holder::-webkit-scrollbar {
-	width: 6px;
-    height: 0;
 	background-color: #fff;
 	border: none;
+	height: 0;
+	width: 6px;
 }
 .lightbox-cell::-webkit-scrollbar-thumb,
 .dropdown::-webkit-scrollbar-thumb,
@@ -49,7 +49,7 @@ a {
 	text-decoration: none;
 }
 img {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 li {
 	list-style: none;
@@ -59,9 +59,9 @@ h1 {
 	color: #bbcde6;
 	font-size: 40px;
 	letter-spacing: 1.1px;
-	word-spacing: 1px;
 	margin: 33px 0;
 	text-transform: uppercase;
+	word-spacing: 1px;
 }
 h1.center {
 	text-align: center;
@@ -87,7 +87,7 @@ h4 {
 	font-size: 25px;
 }
 h5 {
-    font-weight: 400;
+	font-weight: 400;
 }
 hr {
 	border: 0;
@@ -99,12 +99,12 @@ hr {
 /*	SELECT	*/
 select {
 	/*background-image: url('../img/icons/drop-down-icon.png');*/
-	background-position: right center;
 	background-position-x: calc(100% - 20px);
+	background-position: right center;
 	background-repeat: no-repeat;
 	border: 1px solid #fff;
-	outline-color: #080808;
 	height: 48px;
+	outline-color: #080808;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
@@ -193,18 +193,18 @@ input:-ms-input-placeholder {
 /* checked mark aspect */
 .checkbox input[type="checkbox"]:not(:checked) + label:after,
 .checkbox input[type="checkbox"]:checked + label:after {
-    border: 2px solid #000;
-    border-left-color: transparent;
-    border-top-color: transparent;
+	border-left-color: transparent;
+	border-top-color: transparent;
+	border: 2px solid #000;
+	color: #000;
 	content: '';
-    color: #000;
+	font-size: 18px;
+	height: 10px;
+	left: 7px;
 	position: absolute;
-    top: 2px;
-    left: 7px;
-    font-size: 18px;
-    transition: all .2s;
-    height: 10px;
-    width: 3px;
+	top: 2px;
+	transition: all .2s;
+	width: 3px;
 }
 /* checked mark aspect changes */
 .checkbox input[type="checkbox"]:not(:checked) + label:after {
@@ -310,7 +310,7 @@ input:-ms-input-placeholder {
 /*	INPUT FILE	*/
 .input-file {
 	cursor: pointer;
-    position: relative;
+	position: relative;
 }
 .input-file label {
 	cursor: pointer;
@@ -318,13 +318,13 @@ input:-ms-input-placeholder {
 	transition: all .4s;
 }
 .input-file input {
-    position: absolute;
+	position: absolute;
 	pointer-events: none;
-    display: inline-block;
-    left: 0;
-    top: 0;
-    opacity: 0.01;
-    cursor: pointer;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	opacity: 0.01;
+	cursor: pointer;
 }
 .input-file input:hover + label,
 .input-file input:focus + label {
@@ -533,6 +533,58 @@ ul.nav.navbar-nav li a.carret:hover:after,
 	/*transition-delay: 1s;*/
 	z-index: 2;
 }
+
+/* MODAL */
+.modal {
+	/*background: rgba(0,0,0,0);*/
+	background: rgba(0,0,0,.6);
+	cursor: pointer;
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	-webkit-animation: lightbox-holder-open .3s ease-out;
+	animation: lightbox-holder-open .3s ease-out;
+
+}
+.modal .modal-dialog {
+	background: #fff;
+	cursor: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-animation: fadeScaleIn1 .3s ease-out;
+	animation: fadeScaleIn1 .3s ease-out;
+}
+.modal .modal-content {
+	outline: 0;
+	position: relative;
+}
+.modal .modal-close {
+	position: absolute;
+	right: 0;
+	top: -4px;
+}
+.modal.opened {
+	display: block;
+	visibility: visible;
+}
+.modal.clothing {
+	-webkit-animation: lightbox-holder-close .3s ease-out;
+	animation: lightbox-holder-close .3s ease-out;
+}
+.modal.clothing .modal-dialog {
+	-webkit-animation: fadeScaleOut1 .3s ease-out;
+	animation: fadeScaleOut1 .3s ease-out;
+}
+/* END MODAL */
 
 .clearfix:before,
 .clearfix:after,
