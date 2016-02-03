@@ -51,6 +51,21 @@ $('#grid-overlay').on('click', function () {
 					bodyOverflow.fixBody();
 				}
 			},
+			send: function ($el) {
+				//TODO need write some script on submit
+				var data = {}
+
+				$.ajax({
+					url: '/call-me',
+					method: 'POST',
+					data: data,
+					success: function (response) {
+						if (response.status == 201) {
+							//TODO response
+						}
+					}
+				});
+			},
 			close: function ($el) {
 				if ($el && animationPrefix) { // add && on old sevices
 					var dt = $el.data('dismiss'),
@@ -72,20 +87,33 @@ $('#grid-overlay').on('click', function () {
 		winWidth = $(window).width();
 
 	// MODAL windows
+	$(window).on('keyup', function (e) {
+		// esc pressed
+		if (e.keyCode == '27') {
+			modalWindow.close($('.modal.opened'));
+		}
+	});
 	$('.modal-open').on('click', function (e) {
 		e.preventDefault();
 		modalWindow.open( $(this) );
-	})
+	});
 	$('.modal-close').on('click', function (e) {
 		e.preventDefault();
 		modalWindow.close( $(this) );
-	})
+	});
 	$('.modal').on('click', function (e) {
 		e.preventDefault();
 		if (e.target == this) {
 			modalWindow.close( $(this) );
 		}
-	})
+	});
+
+	$('.modal-content').on('submit', function (e) {
+		e.preventDefault();
+		alert(1);
+
+		//modalWindow.close( $(this));
+	});
 
 	// main page
 	//$('.main-input-holder').each(function (i) {

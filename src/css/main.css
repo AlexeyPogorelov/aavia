@@ -276,6 +276,16 @@ header.main-header .header-phone-holder .call-back {
 	text-transform: none;
 	text-decoration: underline;
 }
+header.main-header .mobile-icon {
+	display: none;
+	color: #b26c2b;
+	position: relative;
+	bottom: -5px;
+	text-transform: uppercase;
+	font-size: 9px;
+	font-weight: 400;
+	margin-right: 10px;
+}
 .operators-list {
 	display: inline-block;
 	height: 58px;
@@ -621,6 +631,7 @@ section.main-form .main-input-holder .persons-info-dropdown button.active {
 	margin: 0 28px 20px;
 	position: relative;
 	text-align: left;
+	vertical-align: top;
 	width: 220px;
 	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 	box-shadow: 0 2px 5px rgba(0,0,0,0.12);

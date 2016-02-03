@@ -77,12 +77,6 @@
 		float: none;
 		text-align: center;
 	}
-	header.main-header {
-		padding-bottom: 10px;
-	}
-	header.main-header .header-phone-holder {
-		margin-bottom: 20px;
-	}
 	section.tickets-way {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -116,18 +110,9 @@
 		text-align: left;
 		vertical-align: top;
 	}
-	header.main-header .mobile-icon {
-		color: #b26c2b;
-		display: inline-block !important;
-		text-transform: uppercase;
-		font-size: 9px;
-		font-weight: 400;
-	}
 	header.main-header .mobile-icon > span {
 		display: block;
 		text-align: center;
-	}
-	header.main-header .mobile-icon {
 	}
 	footer.main-footer .payment-systems-holder a {
 		margin-left: 7px;
@@ -273,11 +258,21 @@
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+
+	header.main-header {
+		/*padding-bottom: 10px;*/
+	}
+	header.main-header .header-phone-holder {
+		margin-bottom: 20px;
+	}
 	header.main-header .my-profile-link-holder,
 	header.main-header .header-phone-holder,
 	header.main-header .my-profile-link-holder span,
 	header.main-header .main-logo-holder span {
 		display: none;
+	}
+	header.main-header .mobile-icon {
+		display: inline-block;
 	}
 	section.current-sales h4 span:before, section.current-sales h4 span:after {
 		display: none;
