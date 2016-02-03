@@ -21,6 +21,7 @@ gulp.task('browser-sync', function() {
 gulp.task('browser-reload', function() {
 	// console.log('test');
 	reload();
+	// stream({injectChanges: true});
 	// gulp.dest('dist/css')
 	// 	.pipe(reload({stream:true}));
 });
