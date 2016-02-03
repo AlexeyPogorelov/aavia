@@ -1,4 +1,8 @@
 /* TEMP */
+body {
+	/*padding-top: 60px;*/
+	/*display: none;*/
+}
 .grid-overlay {
 	/* display: none; */
 	background: url('../img/bg/grid.png') 50% 0 repeat-y;
