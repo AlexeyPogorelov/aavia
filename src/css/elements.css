@@ -11,6 +11,7 @@ button.type-1 {
 	-webkit-box-shadow: 0 1px 0 #c328e7;
 	box-shadow: 0 1px 0 #c328e7;
 }
+
 .btn.type-3,
 button.type-3 {
 	background-color: #ff4cc2;
@@ -42,6 +43,14 @@ a.type-2:after {
 .red h2,
 .red {
 	color: #ff4cc2;
+}
+.green h2,
+.green {
+	color: #00E660;
+}
+.blue h2,
+.blue {
+	color: #bbcde6;
 }
 
 /* RADIO

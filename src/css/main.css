@@ -1423,6 +1423,17 @@ section.bottom-tickets-nav a.back img {
 	color: #ffffff;
 	margin-bottom: 10px;
 }
+.private-navigation li.active {
+	background-color: #cd2c45;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: -4px;
+	height: 6px;
+	width: 6px;
+}
 .private-navigation li a {
 	color: #bbcde6;
 	display: inline-block;
@@ -1552,15 +1563,24 @@ section.bottom-tickets-nav a.back img {
 /* ORDERS-TABLE */
 .orders-table {
 	margin-top: 40px;
+	margin-bottom: 40px;
 	width: 100%;
+}
+.orders-table tr:first-child {
+	background: rgba(0,0,0,.3);
 }
 .orders-table td {
 	border: 1px solid #bbcde6;
 	font-size: 16px;
 	padding: 10px 20px;
 }
-.orders-table td h5 {
-	color: #FF54C4;
+.orders-table td a {
+	text-decoration: underline;
+	color: #fff;
+}
+.orders-table td {
+	color: #ff54c4;
+	color: #fff;
 	font-size: 16px;
 	text-align: center;
 }
@@ -1570,8 +1590,11 @@ section.bottom-tickets-nav a.back img {
 /* PAYMENT-WAY */
 .payment-way {
 	display: table;
-	margin-top: 120px;
+	margin-top: 60px;
 	width: 100%;
+}
+.private-page .content-wrapper .payment-way {
+	padding: 40px 0;
 }
 .payment-way li {
 	display: table-cell;
@@ -1679,18 +1702,39 @@ section.bottom-tickets-nav a.back img {
 	margin-bottom: 40px;
 }
 .privat-tickets-page .ticket > * {
+	color: #252525;
 	box-shadow: none !important;
 }
 .privat-tickets-page .ticket .ticket-header {
 	cursor: default;
 }
+.privat-tickets-page .ticket .ticket-footer {
+	margin-top: 1px;
+}
+.privat-tickets-page .tickets-way .container,
+.privat-tickets-page .content-wrapper .container,
+.privat-tickets-page section.tickets-holder .container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.privat-tickets-page .private-page .content-wrapper .private-navigation.container {
+	padding: 0 80px;
+}
 .privat-tickets-page .tickets-way {
+	padding-top: 20px;
+	padding-bottom: 20px;
 	/*margin-top: 40px;*/
 }
-section.tickets-holder .ticket-info-group {
+.privat-tickets-page .tickets-way.blue,
+.privat-tickets-page .tickets-way.green,
+.privat-tickets-page .tickets-way.red {
+	padding-bottom: 0;
+}
+.privat-tickets-page section.tickets-holder .ticket-info-group {
 	height: auto !important;
 }
-section.tickets-holder .ticket-info-group .trip-label span {
+.privat-tickets-page section.tickets-holder .ticket-info-group .trip-label span {
 	background: #000;
 	color: #fff;
 	display: none;
@@ -1708,15 +1752,32 @@ section.tickets-holder .ticket-info-group .trip-label span {
 	border-bottom: 1px solid #211B36;
 	padding-bottom: 20px;
 }
+.info-block-2 .row > p {
+	padding: 10px 20px;
+}
+.info-block-2 .row > p:nth-child(odd) {
+	background: rgba(0, 0, 0, 0.3);
+}
+.info-block-2 .row > p:nth-child(even) {
+	background: rgba(0, 0, 0, 0.1);
+}
 .info-block-2 .row .key {
 	display: inline-block;
 	color: #bbcde6;
-	min-width: 100px;
+	min-width: 200px;
 	padding-right: 20px;
-	text-align: right;
+	text-align: left;
 }
 .info-block-2 .row .val {
 	display: inline-block;
+}
+.select-payment-item {}
+.select-payment-item select {
+	margin-top: 40px;
+	width: 100%;
+}
+.select-payment-item button {
+	margin: 40px 0;
 }
 /* END PRIVAT TICKETS PAGE */
 
