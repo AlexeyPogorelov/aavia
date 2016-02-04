@@ -32,11 +32,16 @@ a.type-2 {
 	display: inline-block;
 	font-size: 14px;
 	line-height: 16px;
+	margin-right: 14px;
 }
 a.type-2:after {
 	border: 1px dashed #bbcde6;
 	content: "";
 	display: block;
+}
+.red h2,
+.red {
+	color: #ff4cc2;
 }
 
 /* RADIO

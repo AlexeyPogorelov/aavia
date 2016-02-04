@@ -280,6 +280,9 @@ header.main-header .header-phone-holder .call-back {
 	text-transform: none;
 	text-decoration: underline;
 }
+header.main-header .mobile-icons-holder {
+	float: right;
+}
 header.main-header .mobile-icon {
 	display: none;
 	color: #b26c2b;
@@ -782,7 +785,7 @@ section.tickets-way .container {
 	padding-bottom: 14px;
 }
 section.tickets-way .way-header {
-	max-width: 610px;
+	max-width: 600px;
 }
 section.tickets-way .way-header p {
 	line-height: 24px;
@@ -1055,8 +1058,7 @@ section.bottom-tickets-nav a.back img {
 .page-content {
 	box-shadow: 0 1px 0 #bbcde6;
 	background-color: white;
-	margin-bottom: 90px;
-	margin-top: 50px;
+	margin: 50px auto 90px;
 	padding: 14px 62px 45px;
 	width: 780px;
 }
@@ -1414,11 +1416,12 @@ section.bottom-tickets-nav a.back img {
 	padding-top: 40px;
 }
 .private-navigation {
-	background-color: #37404d;
+	/*background-color: #37404d;*/
 }
 .private-navigation li {
 	display: inline-block;
 	color: #ffffff;
+	margin-bottom: 10px;
 }
 .private-navigation li a {
 	color: #bbcde6;
@@ -1567,7 +1570,7 @@ section.bottom-tickets-nav a.back img {
 /* PAYMENT-WAY */
 .payment-way {
 	display: table;
-	margin-top: 40px;
+	margin-top: 120px;
 	width: 100%;
 }
 .payment-way li {
@@ -1586,7 +1589,8 @@ section.bottom-tickets-nav a.back img {
 .payment-way li a img {
 	display: block;
 	margin: auto;
-	height: 136px;
+	height: 84px;
+	margin-bottom: 20px;
 }
 /* END PAYMENT-WAY */
 
@@ -1667,13 +1671,21 @@ section.bottom-tickets-nav a.back img {
 
 /* PRIVAT TICKETS PAGE */
 .privat-tickets-page {
-	background: #37404d;
+	background: #5f6671;
+	padding-top: 40px;
+}
+.privat-tickets-page .private-navigation {
+	padding: 0 80px;
+	margin-bottom: 40px;
 }
 .privat-tickets-page .ticket > * {
 	box-shadow: none !important;
 }
 .privat-tickets-page .ticket .ticket-header {
 	cursor: default;
+}
+.privat-tickets-page .tickets-way {
+	/*margin-top: 40px;*/
 }
 section.tickets-holder .ticket-info-group {
 	height: auto !important;
@@ -1682,6 +1694,12 @@ section.tickets-holder .ticket-info-group .trip-label span {
 	background: #000;
 	color: #fff;
 	display: none;
+}
+.info-block-1 {}
+.info-block-1 .info-holder {
+	display: inline-block;
+	height: 45px;
+	margin-top: 15px;
 }
 .info-block-2 {
 	color: #fff;
