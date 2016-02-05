@@ -34,7 +34,7 @@ body {
 	z-index: 999;
 }
 .overlay-button {
-	background: #fff;
+	background: rgba(255,255,255,.4);
 	border-radius: 4px;
 	bottom: 0;
 	cursor: pointer;

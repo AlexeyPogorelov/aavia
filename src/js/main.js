@@ -14,6 +14,7 @@ $('#grid-overlay').on('click', function () {
 		monthNames = [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
 		monthNamesAlt = [ "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ],
 		monthNamesShort = [ "Янв", "Фев", "Мар", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+		passagRus = ['пассажир', 'пассажира', 'пассажира', 'пассажира'],
 		animationPrefix = (function () {
 			var t,
 			el = document.createElement("fakeelement");
@@ -146,6 +147,37 @@ $('#grid-overlay').on('click', function () {
 		if (elementLink == "") {
 		// if special dropdown
 		} else if (elementLink == "personsInfo") {
+			function getUsers () {
+				var type1 = $('#adultPAXs').val() || 0,
+					type2 = $('#childPAXs').val() || 0,
+					type3 = $('#infantPAXs').val() || 0;
+				// console.log(parseInt(type1) + parseInt(type2) + parseInt(type3))
+				return parseInt(type1) + parseInt(type2) + parseInt(type3)
+			}
+			function getTicketClass () {
+				var $active = $self.find('button.active'),
+					text = $active.text(),
+					value = $active.data('value'),
+					result;
+					return text.toLowerCase() + ' класс'
+			}
+			function fillLabel () {
+				var users = getUsers(),
+					usersText,
+					text;
+				if (!users) {
+					usersText = ' пассажиров'
+				} else if (users == 1) {
+					usersText = ' пассажир'
+				} else if (users < 5) {
+					usersText = ' пассажирa'
+				} else {
+					usersText = ' пассажиров'
+				}
+				text = users + usersText + ', ' + getTicketClass();
+				return text
+				// 
+			}
 			$self.on('click', function () {
 				$self.toggleClass('opened');
 				setTimeout(function () {
@@ -164,6 +196,7 @@ $('#grid-overlay').on('click', function () {
 				icons: { down: "spinner-down-icon", up: "spinner-up-icon" },
 				change: function( event, ui ) {
 					$('#' + $(this).data('link')).val(this.value);
+					$self.find('.text-holder').find('.input-label').html(fillLabel ());
 				},
 				min: 0,
 				max: 99
@@ -174,6 +207,7 @@ $('#grid-overlay').on('click', function () {
 				e.preventDefault();
 				$(this).addClass('active').siblings().removeClass('active');
 				$('#ticketClass').val($(this).data('value'));
+				$self.find('.text-holder').find('.input-label').html(fillLabel ());
 			});
 
 		} else if (elementLink == "discount") {
