@@ -151,7 +151,6 @@ $('#grid-overlay').on('click', function () {
 				var type1 = $('#adultPAXs').val() || 0,
 					type2 = $('#childPAXs').val() || 0,
 					type3 = $('#infantPAXs').val() || 0;
-				// console.log(parseInt(type1) + parseInt(type2) + parseInt(type3))
 				return parseInt(type1) + parseInt(type2) + parseInt(type3)
 			}
 			function getTicketClass () {

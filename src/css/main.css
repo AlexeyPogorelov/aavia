@@ -205,6 +205,23 @@ body, html {
 	position: static;
 }*/
 
+.preloader {}
+.preloader .spinner svg {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	-webkit-transform: translate(-50%, -89%);
+	transform: translate(-50%, -89%);
+}
+.preloader .current-sales {
+	background: #fff url('../img/bg/main-bg.jpg');
+	opacity: 1;
+	animation: none;
+	-webkit-transform: none;
+	transform: none;
+	padding: 60px 20px;
+	margin-bottom: -100px;
+}
 
 header.main-header {
 	background-color: #ffa857;

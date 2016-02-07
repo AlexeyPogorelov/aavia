@@ -59,6 +59,7 @@ h1 {
 	color: #bbcde6;
 	font-size: 40px;
 	letter-spacing: 1.1px;
+	line-height: 1;
 	margin: 33px 0;
 	text-transform: uppercase;
 	word-spacing: 1px;
@@ -439,6 +440,10 @@ input[type='number'] {
 	animation: fadeScaleOut1 ease-out .3s;
 	-webkit-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
+}
+.table-holder {
+	overflow: auto;
+	max-width: 100%;
 }
 .preloader {
 	z-index: 999;
