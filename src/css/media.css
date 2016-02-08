@@ -1,4 +1,4 @@
-
+/*Так уж вышло, что чтоб уместить всю информацию красиво, нужно сделать все без отступов...*/
 /*
 	LARGE
 */
@@ -86,6 +86,9 @@
 	.order-form .form-group {
 		display: block;
 		margin: 10px 0 14px;
+	}
+	.order-form .form-group.pull-right {
+		float: none;
 	}
 	footer.main-footer .payment-systems-holder,
 	header.main-header .header-phone-holder,
@@ -412,6 +415,9 @@
 	.container,
 	.mobile-header-holder {
 		width: 100%;
+	}
+	h1 {
+		font-size: 32px;
 	}
 	.private-page .content-wrapper .container {
 		padding: 0 50px;

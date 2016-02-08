@@ -250,12 +250,30 @@ header.main-header .my-profile-link-holder {
 	/*margin-left: 114px;*/
 	text-align: center;
 }
+header.main-header .my-profile-link-holder span:after {
+	content: '';
+	background: #b26c2b;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	height: 2px;
+	width: 100%;
+	-webkit-transform: opacity .3s;
+	transform: opacity .3s;
+}
+header.main-header .my-profile-link-holder span:hover:after {
+	opacity: 1;
+	-webkit-transform: opacity .3s;
+	transform: opacity .3s;
+}
 header.main-header .my-profile-link-holder img {
 	margin-right: 5px;
 	margin-top: -2px;
 }
 header.main-header .my-profile-link-holder span {
 	color: black;
+	position: relative;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 36px;
