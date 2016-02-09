@@ -1834,7 +1834,18 @@ section.bottom-tickets-nav a.back img {
 }
 /* END 404 */
 
-
+/* MAIL-SENT */
+.mail-sent {
+	
+}
+.mail-sent .container {
+	padding-top: 200px;
+}
+.mail-sent .container p {
+	font-size: 28px;
+	line-height: 1.5em;
+}
+/* END MAIL-SENT */
 
 /* ... */
 /* END ... */

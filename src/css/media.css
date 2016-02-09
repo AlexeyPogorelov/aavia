@@ -34,6 +34,9 @@
 		-webkit-transform: none;
 		transform: none;
 	}
+	h1 {
+		font-size: 25px;
+	}
 	.container {
 		width: 720px;
 	}
@@ -407,6 +410,21 @@
 	section.tickets-holder .ticket-header {
 		/* text-align: left; */
 	}
+
+	/* MAIL-SENT */
+	.mail-sent {
+		
+	}
+	.mail-sent .container {
+		padding-top: 20px;
+	}
+	.mail-sent .container p {
+		font-size: 28px;
+		line-height: 1.5em;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	/* END MAIL-SENT */
 }
 /*
 	SMALL
