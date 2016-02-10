@@ -9,8 +9,8 @@ $('#grid-overlay').on('click', function () {
 	// global
 	var currentDate = new Date(),
 		dayNames = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" ],
-		dayNamesMin = [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" ],
-		dayNamesShort = [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" ],
+		dayNamesMin = [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
+		dayNamesShort = [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
 		monthNames = [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
 		monthNamesAlt = [ "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ],
 		monthNamesShort = [ "Янв", "Фев", "Мар", "Апр", "Май", "Июнь", "Июль", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
@@ -288,6 +288,7 @@ $('#grid-overlay').on('click', function () {
 			dayNamesShort: dayNamesShort,
 			monthNames: monthNames,
 			monthNamesShort: monthNamesShort,
+			firstDay: 1,
 			prevText: "Раньше",
 			nextText: "Позже",
 			showAnim: "slideDown",
@@ -297,9 +298,10 @@ $('#grid-overlay').on('click', function () {
 				var newMinDate = new Date(this.value);
 				$('#fakeArrivalDate').datepicker( "option", "minDate", new Date(newMinDate.getFullYear(), newMinDate.getMonth(), newMinDate.getDate() + 1) );
 				fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
+				// fillDateBlock($("#fakeArrivalDate").closest('.main-input-holder'), new Date(this.value));
 				$('.main-input-holder').removeClass('opened');
 			},
-			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 14)
+			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 7)
 		});
 		$("#fakeArrivalDate").datepicker({
 			dayNames: dayNames,
@@ -307,6 +309,7 @@ $('#grid-overlay').on('click', function () {
 			dayNamesShort: dayNamesShort,
 			monthNames: monthNames,
 			monthNamesShort: monthNamesShort,
+			firstDay: 1,
 			prevText: "Раньше",
 			nextText: "Позже",
 			showAnim: "slideDown",
@@ -316,7 +319,7 @@ $('#grid-overlay').on('click', function () {
 				fillDateBlock($(this).closest('.main-input-holder'), new Date(this.value));
 				$('.main-input-holder').removeClass('opened');
 			},
-			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 34)
+			minDate: new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + 8)
 		});
 	}
 
@@ -464,7 +467,7 @@ $('#grid-overlay').on('click', function () {
 					$container.removeClass('error');
 					$container.find('.error').remove();
 				} else if (e.target == $el.get(0) && !$container.find('.error').length) {
-					$container.append('<div class="error">Введите настояшие данные</div>');
+					$container.append('<div class="error">Введите настоящие данные</div>');
 				} else if ($container.find('.error').length && e.type != 'submit') {
 					return;
 				} else if ($container.find('.error').length) {
