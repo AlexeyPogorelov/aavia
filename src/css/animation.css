@@ -1,3 +1,21 @@
+.anim-fast {
+	animation-duration: .3s;
+	-webkit-animation-duration: .3s;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+.anim-medium {
+	animation-duration: .6s;
+	-webkit-animation-duration: .6s;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+.anim-slow {
+	animation-duration: 1.2s;
+	-webkit-animation-duration: 1.2s;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
 @keyframes cloudsFloating {
 	from {
 		background-position: left;

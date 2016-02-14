@@ -1,11 +1,94 @@
-// test
-$('#main-overlay').on('click', function () {
-	$('.main-overlay').toggleClass('hidden');
-});
-$('#grid-overlay').on('click', function () {
-	$('.grid-overlay').toggleClass('hidden');
-});
-+function () {
+var loading = {
+			avgTime: 3000,
+			trg: 1,
+			state: 0,
+			preloader: $('body > .page-wrapper > .main-preloader'),
+			loaded: function () {
+				if(++loading.state == loading.trg) {
+					loading.status(1);
+					setTimeout(loading.done, 500);
+				} else {
+					loading.status(loading.state / loading.trg / 1.1);
+				}
+			},
+			status: function (mult) {
+				loading.preloader.find('> .after').css({
+					'width': mult * 100 + '%'
+				});
+			},
+			done: function () {
+				if (loading.finished) {
+					return;
+				}
+
+				loading.finished = true;
+
+				mainScripts();
+
+				// hide preloader
+				loading.preloader.animate({}).delay(100).animate({
+					'opacity': 0
+				}, 600, function () {
+					loading.status(0);
+					$(this).detach();
+				});
+			}
+	};
+	$('img').each(function () {
+		if (!this.naturalWidth || true) {
+			loading.trg ++;
+			$(this).one('load', loading.loaded)
+		}
+	});
+	setTimeout(function () {
+		loading.status(1);
+		setTimeout(loading.done, 500);
+	}, 10000);
+	$(window).on('load', function () {
+		loading.status(1);
+		setTimeout(loading.done, 500);
+	});
+
+
+// alerts and info messages
+var infoMessage = (function () {
+	var $message, timeout;
+	var plg = {
+		create: function (data) {
+			if (this.data && !data) {
+				data = this.data;
+			}
+			if ($message) {
+				clearTimeout(timeout);
+				infoMessage.hide( infoMessage.create.bind( {'data': data} ) );
+			} else {
+				$message = $('<div>').addClass('alert hidding').html(data);
+				$message.appendTo('body');
+				setTimeout(infoMessage.show, 10);
+			}
+		},
+		show: function (dur) {
+			$message.removeClass('hidding');
+			timeout = setTimeout(infoMessage.hide, 6000);
+		},
+		hide: function (callback) {
+			$message
+				.addClass('hidding')
+				.animate({
+					'opacity': 1
+				}, 800, function () {
+					$message.remove();
+					$message = null;
+					if (callback) {
+						callback();
+					}
+				});
+		}
+	}
+	return plg;
+})();
+
+function mainScripts () {
 	// global
 	var currentDate = new Date(),
 		dayNames = [ "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" ],
@@ -111,21 +194,27 @@ $('#grid-overlay').on('click', function () {
 
 	$('.modal-content').on('submit', function (e) {
 		e.preventDefault();
-		alert(1);
+		// alert(1);
 
 		//modalWindow.close( $(this));
 	});
 
-	// main page
-	//$('.main-input-holder').each(function (i) {
-	//	$(this)
-	//		.one(animationPrefix, function () {
-	//			$(this).removeClass('scaleYIn');
-	//		})
-	//		.addClass('scaleYIn anim-delay-' + (i + 1));
-	//});
+	$('.current-sales, #submit-main-form').addClass('intro-animation');
 	$('intro-animation').one(animationPrefix, function () {
 		$(this).removeClass('scaleYIn');
+	});
+
+	$('.alert').each(function () {
+		var $self = $(this);
+		setTimeout(function () {
+			$self
+				.addClass('hidding')
+				.animate({
+					'opacity': 1
+				}, 800, function () {
+					$self.remove();
+				});
+		}, 6000);
 	});
 
 	// select > blocks
@@ -277,7 +366,29 @@ $('#grid-overlay').on('click', function () {
 	});
 	$('#submit-main-form').on('click', function (e) {
 		e.preventDefault();
-		$('#form-main-form').trigger('submit');
+		var formInValid,
+			$realForm = $('#form-main-form'),
+			childPAXs = $realForm.find('#childPAXs').val(),
+			adultPAXs = $realForm.find('#adultPAXs').val(),
+			infantPAXs = $realForm.find('#infantPAXs').val();
+
+		$realForm.find('input').not('[type="checkbox"], #discount, #childPAXs, #adultPAXs, #infantPAXs').each(function() {
+			if ( !$(this).val() ) {
+				formInValid = true;
+			}
+		});
+
+		if ( !(childPAXs || adultPAXs || infantPAXs) ) {
+			formInValid = true;
+		}
+
+		if (!formInValid) {
+			$realForm.trigger('submit');
+		} else {
+			// TODO render error message
+			infoMessage.create('Введите данные для успешного поиска билетов');
+			// alert();
+		}
 	});
 
 	// jQuery UI
@@ -1168,4 +1279,4 @@ $('#grid-overlay').on('click', function () {
 
 	$('.hint').tooltip();
 
-}();
+};

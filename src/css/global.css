@@ -368,6 +368,7 @@ input[type='number'] {
 .alert {
 	background: #c328e7;
 	border-radius: 2px;
+	color: #fff;
 	position: fixed;
 	padding: 10px 20px;
 	top: 94px;
@@ -375,16 +376,24 @@ input[type='number'] {
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 
-	-webkit-animation: fadeOutUp1 .3s;
-	animation: fadeOutUp1 .3s;
+/*	-webkit-animation-name: fadeOutUp1;
+	animation-name: fadeOutUp1;*/
 
-	-webkit-animation-delay: 1.8s;
-	animation-delay: 1.8s;
+/*	-webkit-animation-delay: 1.8s;
+	animation-delay: 1.8s;*/
 
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
-}
 
+	-webkit-transition: transform .3s ease-out;
+	transition: transform .3s ease-out;
+}
+.alert.hidding {
+	-webkit-transform: translate(-50%, -200px);
+	transform: translate(-50%, -200px);
+	-webkit-transition: transform .6s ease-in;
+	transition: transform .6s ease-in;
+}
 /*	LIGHTBOX	*/
 
 .lightbox-holder::-webkit-scrollbar {

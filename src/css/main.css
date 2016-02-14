@@ -3,6 +3,27 @@ body {
 	/*padding-top: 60px;*/
 	/*display: none;*/
 }
+.main-preloader {
+	background: #fff url('../img/bg/triangles.png');
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+.main-preloader svg {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 80px;
+	height: 80px;
+}
 .grid-overlay {
 	/* display: none; */
 	background: url('../img/bg/grid.png') 50% 0 repeat-y;
@@ -74,6 +95,8 @@ body, html {
 }
 .content-wrapper > #clouds-bg {
 	background-image: url('../img/bg/clouds.png');
+	-webkit-background-size: 200%;
+	background-size: 200%;
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -82,6 +105,13 @@ body, html {
 	-webkit-animation: cloudsFloating 80s linear;
 	-webkit-animation-iteration-count: 99;
 	z-index: 0;
+}
+.info-message {
+	margin: 0 0 20px;
+}
+.info-message a {
+	color: #7a0fad;
+	text-decoration: underline;
 }
 /* CALENDAR */
 .ui-datepicker {
