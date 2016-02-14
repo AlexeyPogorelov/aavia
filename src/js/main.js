@@ -431,7 +431,7 @@ $('#grid-overlay').on('click', function () {
 		};
 		regularExp = {
 			name: function (data) {
-				var exp = /^[а-яА-Яa-zA-Z\-]+$/;
+				var exp = /^([^-\s\d\W_])([a-zA-Z\-]+)$/;
 				return exp.test(data);
 			},
 			email: function (data) {
@@ -439,7 +439,8 @@ $('#grid-overlay').on('click', function () {
 				return exp.test(data);
 			},
 			empty: function (data) {
-				return data.replace(/\s+/g, '');
+				var exp = /^([^-])([^%])+$/;
+				return exp.test(data);
 			},
 			phone: function (data) {
 				var exp = /^[\(\)0-9\-\s\+]{8,}/;
@@ -558,89 +559,94 @@ $('#grid-overlay').on('click', function () {
 			}
 		};
 		$('.order-form').find('form.container').on('change submit', function (e) {
-			if (notValid) {
-				e.preventDefault();
-			} else {
-				var status = 0;
-				$(this).find('input').each(function () {
-					var $self = $(this),
-						valType = $self.data('validate'),
-						now = new Date();
-					if (valType) status++;
-					if (valType == "name") {
-						if (regularExp.name($self.val())) {
-							renderMessage.nameError($self, true, e);
-							status--;
-						} else {
-							renderMessage.nameError($self, false, e);
-						}
-					} else if (valType == "empty") {
-						if (regularExp.empty($self.val())) {
-							renderMessage.empty($self, true, e);
-							status--;
-						} else {
-							renderMessage.empty($self, false, e);
-						}
-					} else if (valType == "phone") {
-						if (regularExp.phone($self.val())) {
-							renderMessage.phone($self, true, e);
-							status--;
-						} else {
-							renderMessage.phone($self, false, e);
-						}
-					} else if (valType == "email") {
-						if (regularExp.email($self.val())) {
-							renderMessage.email($self, true, e);
-							status--;
-						} else {
-							renderMessage.email($self, false, e);
-						}
-					} else if (valType == "date-passport") {
-						$self.val( selectDateToInput ($self) );
-						if (new Date($self.val()) > new Date(now.getFullYear() - settings.passportYears, now.getMonth(), now.getDate())) {
-							renderMessage.passportExpire($self, true, e);
-							status--;
-						} else {
-							renderMessage.passportExpire($self, false, e);
-						}
-					} else if (valType == "date-full") {
-						$self.val( selectDateToInput ($self) );
-						if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
-							renderMessage.birthDate($self, true, e);
-							status--;
-						} else {
-							renderMessage.birthDate($self, false, e);
-						}
-					} else if (valType == "date-child") {
-						$self.val( selectDateToInput ($self) );
-						var tempDate = new Date($self.val())
-						if (tempDate > new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate()) && tempDate < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
-							renderMessage.birthDate($self, true, e);
-							status--;
-						} else {
-							renderMessage.birthDate($self, false, e);
-						}
-					} else if (valType == "date-baby") {
-						$self.val( selectDateToInput ($self) );
-						if (new Date($self.val()) > new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
-							renderMessage.birthDate($self, true, e);
-							status--;
-						} else {
-							renderMessage.birthDate($self, false, e);
-						}
-					} else if (valType == "novalidate") {
-						//
+			var status = 0;
+			$(this).find('input').each(function () {
+				var $self = $(this),
+					valType = $self.data('validate'),
+					now = new Date();
+				if ($(this).data('date')) {
+					now = new Date($(this).data('date'));
+				}
+				if (valType) status++;
+				if (valType == "name") {
+					if (regularExp.name($self.val())) {
+						renderMessage.nameError($self, true, e);
+						status--;
 					} else {
-						// console.log($self);
-						// console.log(valType);
-						// status--;
+						renderMessage.nameError($self, false, e);
 					}
-				});
-			}
+				} else if (valType == "empty") {
+					if (regularExp.empty($self.val())) {
+						renderMessage.empty($self, true, e);
+						status--;
+					} else {
+						renderMessage.empty($self, false, e);
+					}
+				} else if (valType == "phone") {
+					if (regularExp.phone($self.val())) {
+						renderMessage.phone($self, true, e);
+						status--;
+					} else {
+						renderMessage.phone($self, false, e);
+					}
+				} else if (valType == "email") {
+					if (regularExp.email($self.val())) {
+						renderMessage.email($self, true, e);
+						status--;
+					} else {
+						renderMessage.email($self, false, e);
+					}
+				} else if (valType == "date-passport") {
+					$self.val( selectDateToInput ($self) );
+					if (new Date($self.val()) > new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
+						renderMessage.passportExpire($self, true, e);
+						status--;
+					} else {
+						renderMessage.passportExpire($self, false, e);
+					}
+				} else if (valType == "date-full") {
+					$self.val( selectDateToInput ($self) );
+					if (new Date($self.val()) < new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate())) {
+						renderMessage.birthDate($self, true, e);
+						status--;
+					} else {
+						renderMessage.birthDate($self, false, e);
+					}
+				} else if (valType == "date-child") {
+					$self.val( selectDateToInput ($self) );
+					var tempDate = new Date($self.val())
+					if (tempDate > new Date(now.getFullYear() - settings.halfYears, now.getMonth(), now.getDate()) && tempDate < new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+						renderMessage.birthDate($self, true, e);
+						status--;
+					} else {
+						renderMessage.birthDate($self, false, e);
+					}
+				} else if (valType == "date-baby") {
+					$self.val( selectDateToInput ($self) );
+					if (new Date($self.val()) > new Date(now.getFullYear() - settings.babyYears, now.getMonth(), now.getDate())) {
+						renderMessage.birthDate($self, true, e);
+						status--;
+					} else {
+						renderMessage.birthDate($self, false, e);
+					}
+				} else if (valType == "novalidate") {
+					//
+				} else {
+					// console.log($self);
+					// console.log(valType);
+					// status--;
+				}
+			});
+
 			console.log(status);
-			if (e.type == 'submit' && status == 0) {
-				notValid = true;
-				$(this).trigger('submit');
+
+			if(e.type == 'submit' && status == 0)
+			{
+				// notValid = true;
+				// $(this).trigger('submit');
+			} else
+			{
+				e.preventDefault();
 			}
 		});
 	}();

@@ -90,6 +90,10 @@
 		display: block;
 		margin: 10px 0 14px;
 	}
+	.order-form .mobile-phone .intl-tel-input,
+	.order-form .form-group input {
+		width: 100%;
+	}
 	.order-form .form-group.pull-right {
 		float: none;
 	}
