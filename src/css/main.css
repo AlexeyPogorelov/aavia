@@ -12,6 +12,7 @@ body {
 	bottom: 0;
 	height: 100%;
 	width: 100%;
+	z-index: 999;
 }
 .main-preloader svg {
 	content: "";
@@ -23,6 +24,9 @@ body {
 	transform: translate(-50%, -50%);
 	width: 80px;
 	height: 80px;
+}
+.main-preloader.privat {
+	background: #5f6671 url('../img/bg/triangles.png');
 }
 .grid-overlay {
 	/* display: none; */

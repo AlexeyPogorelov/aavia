@@ -2,7 +2,7 @@ var loading = {
 			avgTime: 3000,
 			trg: 1,
 			state: 0,
-			preloader: $('body > .page-wrapper > .main-preloader'),
+			preloader: $('.main-preloader'),
 			loaded: function () {
 				if(++loading.state == loading.trg) {
 					loading.status(1);
@@ -49,6 +49,9 @@ var loading = {
 		setTimeout(loading.done, 500);
 	});
 
+$(document).on('ready', function () {
+	loading.preloader = $('.main-preloader');
+});
 
 // alerts and info messages
 var infoMessage = (function () {
