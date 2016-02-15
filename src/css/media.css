@@ -447,4 +447,11 @@
 	section.bottom-tickets-nav .container {
 		margin-left: -10px;
 	}
+	.callback-modal .modal-dialog {
+		overflow: auto;
+	}
+	.callback-modal .modal-dialog {
+		height: 100%;
+		width: 100%;
+	}
 }

@@ -140,16 +140,16 @@ function mainScripts () {
 			},
 			send: function ($el) {
 				//TODO need write some script on submit
-				var data = {}
+				var data = $el.serialize();
 
 				$.ajax({
 					url: '/call-me',
 					method: 'POST',
 					data: data,
 					success: function (response) {
-						if (response.status == 201) {
-							//TODO response
-						}
+						//TODO response
+						infoMessage.create('Сообщение отправлено успешно');
+						modalWindow.close($el.closest('.opened'));
 					}
 				});
 			},
@@ -194,6 +194,11 @@ function mainScripts () {
 			modalWindow.close( $(this) );
 		}
 	});
+
+	// send message
+	$('#myModal').on('click', '[type="submit"]', function (e) {
+		modalWindow.send($(this).closest('form'));
+	})
 
 	$('.modal-content').on('submit', function (e) {
 		e.preventDefault();
